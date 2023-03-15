@@ -1,4 +1,3 @@
-#!/usr/bin/env python -B
 import sys 
 sys.dont_write_bytecode = True
 from flask import Flask, render_template
