@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Subletting Listing Form</h1>
+<form action="{{ url_for('create_listing') }}" method="POST" enctype="multipart/form-data">
+  <label for="beds">Number of Beds:</label>
+  <input type="number" id="beds" name="beds" required>
+  <br>
+  <label for="baths">Number of Baths:</label>
+  <input type="number" id="baths" name="baths" required>
+  <br>
+  <label for="sqft">Sqft:</label>
+  <input type="number" id="sqft" name="sqft" required>
+  <br>
+  <label for="location">City and State:</label>
+  <input type="text" id="location" name="location" required>
+  <br>
+  <label for="rent">Rent:</label>
+  <input type="number" id="rent" name="rent" required>
+  <br>
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="description" required>
+  <br>
+  <label for="image">Listing Image:</label>
+  <input type="file" id="image" name="image" accept="image/*" required>
+  <br>
+  <input type="submit" value="Create Listing">
+</form>
+{% endblock %}
