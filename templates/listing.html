@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Subletting Listing</h1>
+<div id = "image-container">
+    <img src="{{ url_for('static', filename='img/AIroom.png') }}" alt="image not found">
+</div>
+<ul>
+    <li><strong>Number of Beds:</strong> 2</li>
+    <li><strong>Number of Baths:</strong> 1</li>
+    <li><strong>Sqft:</strong> 900</li>
+    <li><strong>Location:</strong> San Marcos, Texas</li>
+    <li><strong>Rent:</strong> $1000/month</li>
+</ul>
+<p>
+    This is a spacious and cozy 2-bedroom apartment available for subletting. It has a beautiful view of the city and is conveniently located close to public transportation, restaurants, and shops. The apartment is fully furnished and has all the necessary amenities including a washer and dryer, air conditioning, and high-speed internet.
+</p>
+<p>
+    Please contact us if you're interested in subletting this apartment.
+</p>
+
+{% endblock %}
