@@ -1,6 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, StatusBar} from 'react-native';
+import {NativeBaseProvider} from 'native-base';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import axios from 'axios';
+
+import {Theme} from './Theme';
+
+import HomePage from './pages/HomePage';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [getMessage, setGetMessage] = useState({});
@@ -15,9 +23,14 @@ export default function App() {
   }, []);
 
   return (
-    <View>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider theme={Theme}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomePage} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </NativeBaseProvider>
   );
 }
+
+export {App};
