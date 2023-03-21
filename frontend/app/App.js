@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, StatusBar} from 'react-native';
+import axios from 'axios';
 
 export default function App() {
+  const [getMessage, setGetMessage] = useState({});
+
+  useEffect(()=>{
+    axios.get('http://localhost:5000/flask/hello').then((response) => {
+      console.log('SUCCESS', response);
+      setGetMessage(response);
+    }).catch((error) => {
+      console.log(error);
+    });
+  }, []);
+
   return (
-    <View style={styles.container}>
+    <View>
       <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
