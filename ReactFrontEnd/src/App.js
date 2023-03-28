@@ -42,7 +42,7 @@ function App() {
         <ul>
           
             {listings.map((apartment)=>
-              <div>
+              <div key={apartment.rent}>
                 <li>{apartment.description}</li>
               </div>
             )}

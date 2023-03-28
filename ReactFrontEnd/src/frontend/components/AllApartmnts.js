@@ -749,7 +749,7 @@ function AllApartmnts() {
            
             <div className="listContainer">
                 {apartmentInfo.map((apartment)=>
-                    <div className = "apartmentCard">
+                    <div className = "apartmentCard" key={apartment.name}>
                         <img src={testur} alt="n/a"></img>
                         <p>{apartment.name}</p>
                         <button className="generalBtn" type="button" onClick={()=>{navigate("/apartmntview")}}>More Info</button>

@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import AllApartmnts from './frontend/components/AllApartmnts';
 import ApartmentView from './frontend/components/ApartmentView';
+import SignUp from './frontend/components/SignUp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <Routes>
       <Route path = "/" element={<App/>}/>
       <Route path = "*" element={<App/>}/>
+      <Route path = "/signup" element={<SignUp/>}/>
       <Route path = "/allapartments" element={<AllApartmnts/>}/>
       <Route path = "/apartmntview" element={<ApartmentView/>}/>
     </Routes>
