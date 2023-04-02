@@ -3,6 +3,9 @@
   <div class="jumbo">
     <h2>Welcome to Leasly<h2>
     <h3>This is the home page for Leasly<h3>
+      {% if current_user.is_authenticated %}
+        Hi {{ current_user }}!
+      {% endif %}
   </div>
   <ul>
     {% for listing in listings %}

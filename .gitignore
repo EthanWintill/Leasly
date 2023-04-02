@@ -2,3 +2,7 @@ static/img/*
 .DS_Store
 
 *.pyc
+
+secret/keys.py
+
+.vscode/settings.json
