@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7b902835.css",
+    "main.js": "/static/js/main.de353fbb.js",
+    "static/media/samantha-gades-fIHozNWfcvs-unsplash.jpg": "/static/media/samantha-gades-fIHozNWfcvs-unsplash.d570cb36cebded7860a6.jpg",
+    "static/media/the-outpost.jpg": "/static/media/the-outpost.635d4ebf0c4531b9508d.jpg",
+    "index.html": "/index.html",
+    "main.7b902835.css.map": "/static/css/main.7b902835.css.map",
+    "main.de353fbb.js.map": "/static/js/main.de353fbb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b902835.css",
+    "static/js/main.de353fbb.js"
+  ]
+}
