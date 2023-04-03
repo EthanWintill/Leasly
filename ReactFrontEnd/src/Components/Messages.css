@@ -1,0 +1,44 @@
+.messagesContainer{
+    margin: auto;
+    margin-top: 2%;
+    display: grid;
+    grid-template-areas:
+    '. userlist msgview .';
+    grid-template-columns: 1fr 2fr 3fr 1fr;
+    grid-template-rows: 100%;
+
+    width: 80%;
+    background-color: white;
+    border: 1px solid gray;
+}
+
+.messagesUserList{
+    grid-area: userlist;
+    border-right: 1px solid black;
+    height: 100%;
+}
+
+.indivUser{
+    display: grid;
+    grid-template-areas:
+    'img username date'
+    'img message message';
+    grid-template-columns: .5fr 1fr 1fr;
+
+}
+
+.indivUserImg{
+    grid-area: img;
+    width: auto;
+}
+
+.indivUserName{
+    grid-area: username;
+}
+
+.indivUserPreview{
+    grid-area: message;
+}
+.messagesView{
+    grid-area: msgview;
+}
