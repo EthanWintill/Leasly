@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import {useNavigate} from "react-router-dom"
 import './HomePage.css';
 import Navbar from './Components/Navbar';
@@ -5,27 +6,28 @@ import Navbar from './Components/Navbar';
 function HomePage() {
 
   const navigate = useNavigate();
-  {/*needs an api call to flask backend to call recent postings from server? */}
-  const listings = [
-    {
-        'description': 'This studio apartment is perfect for a single person or couple. It features a comfortable bed, a fully equipped kitchen, and a modern bathroom. Located in a quiet neighborhood with easy access to public transportation.',
-        'bedrooms': 1,
-        'bathrooms': 1,
-        'rent':1000,
-        'location':"san marcos",
-        'sqft': 500,
-        'image': 'AIroom.png'
-    },
-    {
-        'description': 'This beautiful house is perfect for families or groups. It features three bedrooms, two bathrooms, a large living room, and a fully equipped kitchen. The house is located in a quiet, tree-lined neighborhood with easy access to shopping and dining.',
-        'bedrooms': 3,
-        'bathrooms': 2,
-        'rent':5000,
-        'location':'houston',
-        'sqft': 2000,
-        'image': 'AIroom.png'
-    },
-  ]
+  {}
+  const [data, setdata] = useState({
+		listings:[]
+	});
+
+	// Using useEffect for single rendering
+	useEffect(() => {
+		// Using fetch to fetch the api from
+		// flask server it will be redirected to proxy
+		fetch("/api/sublets").then((res) =>
+			res.json().then((data) => {
+				// Setting a data from api
+        //only one listing rn, feel free to add some
+				setdata({
+					listings:data
+				});
+        console.log(data)
+			})
+		);
+	}, []);
+  
+
   return (
     <div className="App">
       <div className="homeNav">
@@ -42,7 +44,7 @@ function HomePage() {
         {/* Carousel listing recent postings?*/}
         <ul>
           
-            {listings.map((apartment)=>
+            {data.listings.map((apartment)=>
               <div key={apartment.rent}>
                 <li>{apartment.description}</li>
               </div>

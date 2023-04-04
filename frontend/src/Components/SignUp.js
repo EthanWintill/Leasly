@@ -6,17 +6,36 @@ const SignUp =() =>{
 
     const SignUp = () =>{
 
-        createUserWithEmailAndPassword(auth, document.querySelector("#email").value,document.querySelector("#password").value)
+        const email = document.querySelector("#email").value;
+		const password = document.querySelector("#password").value;
+		const username = document.querySelector("#username").value;
+
+        createUserWithEmailAndPassword(auth, email , password)
         .then((userCredential) => {
             console.log(userCredential.user.uid)
-            navigate("/")
         })
         .catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorCode +": " + errorMessage)
             document.querySelector("#errorField").innerHTML= "Please enter a valid email and password";
-        });
+        }); 
+        
+        const data = {email: email, password: password, username: username};
+
+        fetch('/api/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            navigate('/')
+        })
+        .catch((error) => {console.log(error); });
 
     }
 

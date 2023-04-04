@@ -114,3 +114,6 @@ htmlcov/
 .coverage
 .coverage.*
 *,cover
+backend/secret/Keys.py
+
+frontend2/
