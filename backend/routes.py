@@ -21,7 +21,7 @@ with app.app_context():
 
 #returns JSON for a specific account given their ID
 #test with curl 127.0.0.1:5000/account/0
-@app.route('/account/<int:id>', methods=['GET'])
+@app.route('/account/<string:id>', methods=['GET'])
 def getUser(id):
   user = User.query.get(id) #TODO update this to UUID and in database as well
   if not user:
@@ -33,12 +33,15 @@ def getUser(id):
 
 #add a user to database, returns json from user in database
 #test with curl --location --request POST '127.0.0.1:5000/signup' --header 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'username=johndoe' --data-urlencode 'password=secret' --data-urlencode 'email=john@doe.com' --data-urlencode 'id=0'
-@app.route('/signup', methods=['POST'])
+#CONNECTED TO REACT
+@app.route('/api/signup', methods=['POST'])
 def addUser():
-    id = request.form.get('id')
-    email = request.form.get('email')
-    password = request.form.get('password')
-    username = request.form.get('username')
+    id = str(uuid.uuid4())
+    email = request.json['email']
+    password = request.json['password']
+    username = request.json['username']
+
+    print(f"\nNew User: {request.json} recieved")
 
     newUser = User(id=id, name=username, email=email, password=generate_password_hash(password, method='sha256'))
     db.session.add(newUser)
@@ -67,11 +70,14 @@ def addSublet():
 
 #gets a list of json representations of all listings
 #test with curl 127.0.0.1:5000/api/sublets
+#CONNECTED TO REACT
 @app.route('/api/sublets', methods=['GET'])
 def get_sublets():
     sublets = Sublease.query.all()
     sublets_list = [sublet.to_dict() for sublet in sublets]
     return jsonify(sublets_list)
+
+
 
 
 if __name__ == '__main__':

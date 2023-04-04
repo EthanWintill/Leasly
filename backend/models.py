@@ -31,7 +31,7 @@ class Sublease(db.Model):
 
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(40), primary_key=True)
     email = db.Column(db.Text, nullable=False)
     name = db.Column(db.Text, nullable=False)
     password = db.Column(db.Text, nullable=False)
