@@ -8,7 +8,7 @@ const Messages = () =>{
                 <Navbar></Navbar>
             </div>
             <div className="messagesContainer">
-                <h1>Messages</h1>
+                <br></br>
                 <div className="messagesUserList">
                     <div className="indivUser">
                         <img className="indivUserImg" src={holderPFP}></img>
@@ -20,10 +20,62 @@ const Messages = () =>{
                         <p className="indivUserName"> temp user</p>
                         <p className="indivUserPreview"> random Message</p>
                     </div>
+                    <div className="indivUser">
+                        <img className="indivUserImg" src={holderPFP}></img>
+                        <p className="indivUserName"> temp user</p>
+                        <p className="indivUserPreview"> random Message</p>
+                    </div>
+                    <div className="indivUser">
+                        <img className="indivUserImg" src={holderPFP}></img>
+                        <p className="indivUserName"> temp user</p>
+                        <p className="indivUserPreview"> random Message</p>
+                    </div>
+                    <div className="indivUser">
+                        <img className="indivUserImg" src={holderPFP}></img>
+                        <p className="indivUserName"> temp user</p>
+                        <p className="indivUserPreview"> random Message</p>
+                    </div>
+                    <div className="indivUser">
+                        <img className="indivUserImg" src={holderPFP}></img>
+                        <p className="indivUserName"> temp user</p>
+                        <p className="indivUserPreview"> random Message</p>
+                    </div>
+                    <div className="indivUser">
+                        <img className="indivUserImg" src={holderPFP}></img>
+                        <p className="indivUserName"> temp user</p>
+                        <p className="indivUserPreview"> random Message</p>
+                    </div>
+                    <div className="indivUser">
+                        <img className="indivUserImg" src={holderPFP}></img>
+                        <p className="indivUserName"> temp user</p>
+                        <p className="indivUserPreview"> random Message</p>
+                    </div>
+                    <div className="indivUser">
+                        <img className="indivUserImg" src={holderPFP}></img>
+                        <p className="indivUserName"> temp user</p>
+                        <p className="indivUserPreview"> random Message</p>
+                    </div>
+                    <div className="indivUser">
+                        <img className="indivUserImg" src={holderPFP}></img>
+                        <p className="indivUserName"> temp user</p>
+                        <p className="indivUserPreview"> random Message</p>
+                    </div>
+                    
                     
                 </div>
                 <div className="messagesView">
-                    <p>Ayyy yyooo</p>
+                    <div className="messagerInfo">
+                        <p className="messagerName">Ayyy yyooo</p>
+                    </div>
+                    <div className="messageHistory">
+
+                    </div>
+                    <div className="messageTypeBox">
+                        
+                        <textarea></textarea>
+                        <button className="messageSendBtn" type="button">Send Message</button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
