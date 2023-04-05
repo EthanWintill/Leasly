@@ -2,7 +2,7 @@
     display: grid;
     grid-template-areas: 
     '. title account .';
-    grid-template-columns: 1fr 2fr 1fr 1fr;
+    grid-template-columns: .5fr 2.5fr 1.5fr .5fr;
     background-color:  grey;
     width: 100%;
 }
@@ -21,6 +21,8 @@ h1:hover{
 .accountIcon{
     grid-area: account;
     margin: auto;
+    margin-right: 0%;
+    
 }
 
 .material-symbols-outlined{
