@@ -4,6 +4,8 @@ from models import User, Messages, Sublease, db
 from werkzeug.security import generate_password_hash
 import uuid
 from flask_cors import CORS
+from datetime import datetime
+
 
 
 
@@ -50,7 +52,7 @@ def addUser():
 
 #add a listing to database, returns object from listing in database
 #test with curl --location --request POST '127.0.0.1:5000/addListing' --header 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'apartment=' --data-urlencode 'rent=1000' --data-urlencode 'user_id=1' --data-urlencode 'bed=4' --data-urlencode 'bath=3' --data-urlencode 'sqft=2000' --data-urlencode 'location=houston' --data-urlencode 'description=This beautiful house is perfect for families or groups. It features three bedrooms, two bathrooms, a large living room, and a fully equipped kitchen. The house is located in a quiet, tree-lined neighborhood with easy access to shopping and dining.'
-@app.route('/addListing', methods=['POST'])
+@app.route('/api/listings', methods=['POST'])
 def addSublet():
     id = str(uuid.uuid4())
     subleaser_id = request.form.get('user_id')
@@ -66,18 +68,122 @@ def addSublet():
     db.session.add(newListing)
     db.session.commit()
 
-    return str(Sublease.query.get(id))+'\n' #TODO change this to JSON once getListing route implemented
+    return jsonify(newListing.to_dict()) #TODO change this to JSON once getListing route implemented
 
-#gets a list of json representations of all listings
+
+#gets a listing by id, and deletes it if that's the request method
+@app.route('/api/listings/<string:listing_id>', methods=['GET', 'DELETE'])
+def manage_listing(listing_id):
+    listing = Sublease.query.get_or_404(listing_id)
+
+    if request.method == 'DELETE':
+        db.session.delete(listing)
+        db.session.commit()
+        return '', 204  # Return empty response with 204 status code for successful deletion
+    elif request.method == 'GET':
+        return jsonify(listing.to_dict())
+
+#gets a list of json representations of all listings with param arguments to filter
 #test with curl 127.0.0.1:5000/api/sublets
 #CONNECTED TO REACT
 @app.route('/api/sublets', methods=['GET'])
 def get_sublets():
-    sublets = Sublease.query.all()
+
+    min_price = request.args.get('min_price', '')
+    max_price = request.args.get('max_price', '')
+    max_beds = request.args.get('max_beds', '')
+    min_beds = request.args.get('min_beds', '')
+    max_baths = request.args.get('max_baths', '')
+    min_baths = request.args.get('min_baths', '')
+    max_sqft = request.args.get('max_sqft', '')
+    min_sqft = request.args.get('min_sqft', '')
+    before = request.args.get('before', '')
+    after = request.args.get('after','')
+    apartment = request.args.get('apartment', '')
+    location = request.args.get('location', '')
+    sort_by = request.args.get('sort_by', '')
+
+
+    sublets = Sublease.query
+    if max_price:
+        sublets = sublets.filter(Sublease.rent <= max_price)
+    if max_baths:
+        sublets = sublets.filter(Sublease.rent <= max_baths)
+    if max_beds:
+        sublets = sublets.filter(Sublease.bed <= max_beds)
+    if max_sqft:
+        sublets = sublets.filter(Sublease.sqft <= max_sqft)
+    if min_baths:
+        sublets = sublets.filter(Sublease.bath >= min_baths)
+    if min_beds:
+        sublets = sublets.filter(Sublease.bed >= min_beds)
+    if min_sqft:
+        sublets = sublets.filter(Sublease.sqft >= min_sqft)
+    if min_price:
+        sublets = sublets.filter(Sublease.rent >= min_price)
+    if before: 
+        sublets = sublets.filter(Sublease.date_posted <= before)
+    if after: 
+        sublets = sublets.filter(Sublease.date_posted >= after)
+    if location:
+        sublets = sublets.filter(Sublease.location == location)
+    if apartment:
+        sublets = sublets.filter(Sublease.apartment_name == apartment)
+        
+    # Sort the Sublease objects based on the query parameter
+    if sort_by == 'price_inc':
+        sublets = sublets.order_by(Sublease.rent.asc())
+    elif sort_by == 'price_dec':
+        sublets = sublets.order_by(Sublease.rent.desc())
+    elif sort_by == 'sqft_inc':
+        sublets = sublets.order_by(Sublease.sqft.asc())
+    elif sort_by == 'sqft_dec':
+        sublets = sublets.order_by(Sublease.sqft.desc())
+    elif sort_by == 'beds_inc':
+        sublets = sublets.order_by(Sublease.bed.asc())
+    elif sort_by == 'beds_dec':
+        sublets = sublets.order_by(Sublease.bed.desc())
+    elif sort_by == 'baths_inc':
+        sublets = sublets.order_by(Sublease.bath.asc())
+    elif sort_by == 'baths_dec':
+        sublets = sublets.order_by(Sublease.bath.desc())
+    elif sort_by == 'date_inc':
+        sublets = sublets.order_by(Sublease.date_posted.asc()) 
+    elif sort_by == 'date_dec': #I just realized this could've just been one condition and dictionary .....
+        sublets = sublets.order_by(Sublease.date_posted.desc())  #I'll fix it eventually ... (No I won't)
+
     sublets_list = [sublet.to_dict() for sublet in sublets]
     return jsonify(sublets_list)
 
 
+'''
+###################
+ROUTES FOR MESSAGES
+###################
+'''
+
+#TODO add message
+
+#TODO get message from id
+
+#TODO get messages from user, sort and filter, should be easy to get conversation
+
+#TODO delete message, might not need route unless we want to let users delete them
+
+
+'''
+###################
+ROUTES FOR APARTMENTS
+###################
+'''
+
+#TODO add apartment, might not need to be route
+
+#TODO get apartment from id
+
+#TODO get apartments with sort and filter
+
+#TODO delete apartments, might not need route unless we want to let users delete them
 
 
 if __name__ == '__main__':

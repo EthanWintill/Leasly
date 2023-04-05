@@ -15,6 +15,8 @@ class Sublease(db.Model):
     bath = db.Column(db.Integer, nullable=True)
     sqft = db.Column(db.Double, nullable=True)
     location = db.Column(db.String(20), nullable=True)
+    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
 
     def to_dict(self):
         return {
@@ -26,7 +28,8 @@ class Sublease(db.Model):
             'bed': self.bed,
             'bath': self.bath,
             'sqft': self.sqft,
-            'location': self.location
+            'location': self.location,
+            'date_posted': self.date_posted
         }
 
 
