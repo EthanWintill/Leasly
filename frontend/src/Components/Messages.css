@@ -6,20 +6,23 @@
     'userlist msgview';
     grid-template-columns: 2fr 3fr;
     width: 80%;
-    height: 80vh;
+    height: 55rem;
     background-color: white;
     border: 1px solid gray;
+    box-shadow: 0px 1px 10px grey;
 }
 
 .messagesUserList{
     grid-area: userlist;
-    border: 1px solid black;
-    height: 100%;
+    border: none;
+    height: 55rem;
     display: flex;
     flex-flow: column;
     gap: 2%;
     overflow-y:scroll;
 }
+
+
 
 .indivUser{
     display: grid;
@@ -27,7 +30,7 @@
     'img username date'
     'img message message';
     grid-template-columns: .5fr 1fr 1fr;
-    margin: 0% 2%;
+    margin: 2%;
     border-radius: 24px;
 
 }
@@ -76,7 +79,43 @@
 .messageHistory{
     grid-area: messageHistory;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    color: white;
+    font-weight:400;
 }
+
+.messageHistory > div{
+    margin-left: 4%;
+    margin-bottom: 4%;
+    min-width: 1rem;
+    max-width: 24rem;
+    word-wrap: break-word;
+}
+
+.messageHistory > div >div{
+    padding: .05rem .5rem;
+    background-color: grey;
+    border-radius: 4px;
+    text-align: left;
+    
+}
+
+.messageHistory > div:nth-child(2){
+    align-self: flex-end;
+    margin-right: 4%;
+    margin-left: 0%;
+   
+}
+
+.messageHistory > div:nth-child(2) >div{
+    background-color: #1DA1F2;
+    text-align: left;
+}
+
+
 
 .messagerName{
     text-align: center;
