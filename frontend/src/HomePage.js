@@ -53,10 +53,15 @@ function HomePage() {
 
         </ul>
         {/**/}
+
+        <div className="homeBtns">
           <form action="form">
-            <button type="submit">Create a New Listing</button>
+            <button className="homeNewSubBtn" type="submit">Create a New Listing</button>
           </form>
+          
           <button className="generalBtn" type="button" onClick={()=>{navigate("/allapartments")}}>View All Apartments</button>
+        </div>
+          
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState} from 'react';
-import { auth, onAuthStateChanged, signOut} from "../FirebaseFuncs"
+import { auth, onAuthStateChanged, signOut, signInWithEmailAndPassword} from "../FirebaseFuncs"
 
 
 
@@ -23,6 +23,13 @@ function Navbar() {
       signOut(auth).catch((error)=>{console.log(error)})
       navigate("/")
     }
+
+    const testActSignIn = () =>{
+        signInWithEmailAndPassword( auth, "aguestaccount@gmail.com", "atest123").catch(()=>{
+            errorDisplay.innerHTML = "Test Account not available, please try again later!"
+        })
+    }
+    
 
     useEffect(() => {
       onAuthStateChanged(auth,(user)=>{
@@ -47,8 +54,9 @@ function Navbar() {
             <div className="accountDiv">
                 {/* If user is found to not be signed in, it will display options to log in or create an account. If they are signed in, then it will display the account icon.*/}
                       <div className="dropdown-log">
-                          <button type="button" onClick={() => navigate("/signin")}>Log In</button>
+                          <button type="button" onClick={() => {navigate("/signin")}}>Log In</button>
                           <button type="button" onClick={()=>{navigate("/signup")}}>Create An Account</button>
+                          <button type="button" onClick={()=> {testActSignIn()}}>Sign into test Account</button>
                       </div>
 
                       <div className="dropdown">

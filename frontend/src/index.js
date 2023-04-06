@@ -18,7 +18,7 @@ root.render(
       <Route path = "/signup" element={<SignUp/>}/>
       <Route path = "/signin" element={<LogIn/>}/>
       <Route path = "/allapartments" element={<AllApartmnts/>}/>
-      <Route path = "/apartmntview" element={<ApartmentView/>}/>
+      <Route path = "/apartmntview/:id" element={<ApartmentView/>}/>
       <Route path = "/messages" element={<Messages/>}/>
     </Routes>
   </BrowserRouter>,
