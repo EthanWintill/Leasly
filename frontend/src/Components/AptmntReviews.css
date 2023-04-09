@@ -1,0 +1,53 @@
+.reviewContainer{
+    width: 100%;
+    height: 100%;
+    
+    display: grid;
+    grid-template-areas:
+    'title'
+    'reviewList';
+    grid-template-rows: 5rem 40rem;
+}
+
+.reviewTitle{
+    grid-area: title;
+    font-size: larger;
+    margin-bottom: none;
+}
+
+.reviewList{
+    grid-area: reviewList;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.uniqueReview{
+    
+    display: grid;
+    grid-template-areas: 
+    'img username rating'
+    'img review review';
+    grid-template-columns: .25fr 1fr 1fr;
+    grid-template-rows:min-content min-content;
+    
+    
+}
+
+.reviewerPFP{
+    grid-area: img;
+
+}
+
+.reviewerUsername{
+    grid-area: username;
+    text-align: left;
+}
+
+.reviewerRating{
+    grid-area: rating;
+}
+
+.reviewerStory{
+    grid-area: review;
+}

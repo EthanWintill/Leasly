@@ -642,11 +642,24 @@ function AllApartmnts() {
             furnished: true,
             rmMatching: true
         }]
+    {/* Uncomment after database and backend are hosted online, will not load until on computers not running sqlite until then.
+    // Using useEffect for single rendering
+        useEffect(() => {
+            // Using fetch to fetch the api from
+            // flask server it will be redirected to proxy
+            fetch("/api/apartments").then((res) =>
+                res.json().then((data) => {
+                    // Setting a data from api
+                    setAllApartmentsArr({
+                        apartments: data
+                    });
+                })
+            );
+        }, []);
+    */}
+    const [allApartmentsArr, setAllApartmentsArr] = useState(apartmentInfoTest);
 
-    const [allApartmentsArr, setAllApartmentsArr] = useState({
-        apartments: []
-    });
-
+    {/* Will only need to be ran once for the online database, can be deleted after
     if (false) { //adds all apartments to database
         apartmentInfoTest.forEach((apartment) => {
             fetch('/api/apartments', {
@@ -661,22 +674,8 @@ function AllApartmnts() {
                 .catch(error => console.error(error))
         });
     }
-
-
-
-    // Using useEffect for single rendering
-    useEffect(() => {
-        // Using fetch to fetch the api from
-        // flask server it will be redirected to proxy
-        fetch("/api/apartments").then((res) =>
-            res.json().then((data) => {
-                // Setting a data from api
-                setAllApartmentsArr({
-                    apartments: data
-                });
-            })
-        );
-    }, []);
+    */}
+    
     /*needs:
 
     -fetch call, to get the List of apartments in our database, creates an array of objects called apartmentInfo, and passes that into AllApartmentsArr()
@@ -694,13 +693,13 @@ function AllApartmnts() {
             </div>
 
             <div className="listContainer">
-                {allApartmentsArr.apartments.map((apartment) =>
+                {allApartmentsArr.map((apartment) =>
                     <div className="apartmentCard" key={apartment.name}>
                         <img src={testur} alt="n/a"></img>
                         <p>{apartment.name}</p>
                         {/*on click, get the apartments name and pass that as a  prop to apartmntview.js.
                             or pass the apartments name itself to navigate("")*/}
-                        {/*:id will replace /00. :id is simply the UUID for the apartment that they are clicking on */}
+                        {/*:id will replace /00. :id is simply the UUID for the apartment that they are clicking on, or just apartment.name for now */}
                         <button className="generalBtn" type="button" onClick={() => { navigate("/apartmntview/"+apartment.name) }}>More Info</button>
                     </div>)}
             </div>
