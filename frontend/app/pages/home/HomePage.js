@@ -1,7 +1,18 @@
 import React, {useState, useEffect} from 'react';
+import {ImageBackground} from 'react-native';
 import {useNavigate} from 'react-router-dom';
+import {
+  Button,
+  Center,
+  Flex,
+  HStack,
+  Text,
+  View,
+} from 'native-base';
 
 import Navbar from '../../components/Navbar';
+
+import backgroundImage from '../../imgs/samantha-gades-fIHozNWfcvs-unsplash.jpg';
 import './HomePage.css';
 
 function HomePage() {
@@ -27,47 +38,57 @@ function HomePage() {
     );
   }, []);
 
+  // text-shadow: -1px 1px 10px rgba(0, 0, 0, 0.75)
+
+  const jumbo = {
+    mt: '4%',
+    pt: '14rem',
+    width: '100%',
+    height: '40rem',
+  };
+
+  const titleText = {
+    shadowColor: 'black',
+    shadowOpacity: 0.75,
+    elevation: 20,
+    letterSpacing: 'sm',
+    bold: true,
+  };
 
   return (
-    <div className="App">
+    <View>
       <div className="homeNav">
         <Navbar />
       </div>
+      <ImageBackground source={{uri: backgroundImage}} w="100%">
+        <Flex {...jumbo}>
+          <Center>
+            <Text {...titleText} fontSize="4xl">Welcome to Leasly</Text>
+            <Text {...titleText} fontSize="2xl">Find your dream apartment in San Marcos. Browse our listings and search for the perfect home with ease. Start your search today!</Text>
+          </Center>
+        </Flex>
+      </ImageBackground>
 
-      <div className="viewContainer">
-        <div className="jumbo">
-          <div className = "jumboText">
-            <h2>Welcome to Leasly</h2>
-            {/* If we really wanna go ham, we could make it so that this will randomly display and animate these senteces in intervals. Probably no time though */}
-            <h3>Find your dream apartment in San Marcos. Browse our listings and search for the perfect home with ease. Start your search today!</h3>
-          </div>
-        </div>
-        {/* Carousel listing recent postings? Not necessary at all btw*/}
-        <ul>
+      {/* Carousel listing recent postings? Not necessary at all btw*/}
 
-          {data.listings.map((apartment)=>
-            <div key={apartment.rent}>
-              <li>{apartment.description}</li>
-            </div>,
-          )}
+      <ul>
+        {data.listings.map((apartment)=>
+          <div key={apartment.rent}>
+            <li>{apartment.description}</li>
+          </div>,
+        )}
 
-        </ul>
-        {/**/}
+      </ul>
 
-        <div className="homeBtns">
-          <form action="form">
-            <button className="homeNewSubBtn" type="button" onClick={()=>{
-              navigate('/addapartment');
-            }}>Create a New Listing</button>
-          </form>
+      {/**/}
 
-          <button className="generalBtn" type="button" onClick={()=>{
-            navigate('/allapartments');
-          }}>View All Apartments</button>
-        </div>
-
-      </div>
-    </div>
+      <Center>
+        <HStack space={10}>
+          <Button onPress={() => navigate('/addapartment')}>Create a New Listing</Button>
+          <Button onPress={() => navigate('/allapartments')}>View All Apartments</Button>
+        </HStack>
+      </Center>
+    </View>
   );
 }
 
