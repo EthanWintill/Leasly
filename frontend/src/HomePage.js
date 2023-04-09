@@ -38,10 +38,11 @@ function HomePage() {
         <div className="jumbo">
           <div className = "jumboText">
             <h2>Welcome to Leasly</h2>
-            <h3>Find your dream apartment in San Marcos. Browse our listings and search for the perfect home with ease. Our friendly staff is here to help. Start your search today!</h3>
+            {/* If we really wanna go ham, we could make it so that this will randomly display and animate these senteces in intervals. Probably no time though */}
+            <h3>Find your dream apartment in San Marcos. Browse our listings and search for the perfect home with ease. Start your search today!</h3>
           </div>
         </div>
-        {/* Carousel listing recent postings?*/}
+        {/* Carousel listing recent postings? Not necessary at all btw*/}
         <ul>
           
             {data.listings.map((apartment)=>
@@ -52,10 +53,15 @@ function HomePage() {
 
         </ul>
         {/**/}
+
+        <div className="homeBtns">
           <form action="form">
-            <button type="submit">Create a New Listing</button>
+            <button className="homeNewSubBtn" type="submit">Create a New Listing</button>
           </form>
+          
           <button className="generalBtn" type="button" onClick={()=>{navigate("/allapartments")}}>View All Apartments</button>
+        </div>
+          
       </div>
     </div>
   );

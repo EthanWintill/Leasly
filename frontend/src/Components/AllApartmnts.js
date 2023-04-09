@@ -2,10 +2,11 @@ import Navbar from "./Navbar";
 import "./AllApartmnts.css"
 import testur from "../imgs/the-outpost.jpg"
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 function AllApartmnts() {
 
     /* This will hold basic apartment information until i can put it all in a database. It's really long. Like, REALLY long... */
-    const apartmentInfo = [
+    const apartmentInfoTest = [
         {
             name:'The Outpost',
             image:'',
@@ -740,6 +741,16 @@ function AllApartmnts() {
         }
     ]
 
+    const [allApartmentsArr, setAllApartmentsArr] = useState(apartmentInfoTest)
+
+    /*needs:
+
+    -fetch call, to get the List of apartments in our database, creates an array of objects called apartmentInfo, and passes that into AllApartmentsArr()
+    -apartmentInfo just needs to have the same fields as apartmentInfoTest above, that one is just to help visualize what it looks like when complete
+    -to pass into setAllApartmentsArr, add setAllApartmentsArr([...apartmentInfo]) to the end of the fetch call.
+
+    
+    */
     const navigate = useNavigate();
     return (
         <div className="mainContainer">
@@ -748,13 +759,14 @@ function AllApartmnts() {
             </div>
            
             <div className="listContainer">
-                {apartmentInfo.map((apartment)=>
+                {allApartmentsArr.map((apartment)=>
                     <div className = "apartmentCard" key={apartment.name}>
                         <img src={testur} alt="n/a"></img>
                         <p>{apartment.name}</p>
                         {/*on click, get the apartments name and pass that as a  prop to apartmntview.js.
                             or pass the apartments name itself to navigate("")*/}
-                        <button className="generalBtn" type="button" onClick={()=>{navigate("/apartmntview")}}>More Info</button>
+                        {/*:id will replace /00. :id is simply the UUID for the apartment that they are clicking on */}
+                        <button className="generalBtn" type="button" onClick={()=>{navigate("/apartmntview/00")}}>More Info</button>
                     </div>)}
             </div>
         </div>

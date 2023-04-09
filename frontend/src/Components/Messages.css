@@ -3,20 +3,26 @@
     margin-top: 2%;
     display: grid;
     grid-template-areas:
-    '. userlist msgview .';
-    grid-template-columns: 1fr 2fr 3fr 1fr;
-    grid-template-rows: 100%;
-
+    'userlist msgview';
+    grid-template-columns: 2fr 3fr;
     width: 80%;
+    height: 55rem;
     background-color: white;
     border: 1px solid gray;
+    box-shadow: 0px 1px 10px grey;
 }
 
 .messagesUserList{
     grid-area: userlist;
-    border-right: 1px solid black;
-    height: 100%;
+    border: none;
+    height: 55rem;
+    display: flex;
+    flex-flow: column;
+    gap: 2%;
+    overflow-y:scroll;
 }
+
+
 
 .indivUser{
     display: grid;
@@ -24,21 +30,125 @@
     'img username date'
     'img message message';
     grid-template-columns: .5fr 1fr 1fr;
+    margin: 2%;
+    border-radius: 24px;
 
+}
+
+.indivUser:hover{
+    cursor: pointer;
+    background-color: rgba(209, 209, 209, 0.959);
 }
 
 .indivUserImg{
     grid-area: img;
-    width: auto;
+    max-width: 100%;
+    height:auto;
+    border-radius: 50%;
 }
 
 .indivUserName{
     grid-area: username;
+    margin-bottom:0px;
+    padding-left: 1rem;
 }
 
 .indivUserPreview{
     grid-area: message;
+    text-decoration: none;
+    font-weight:400;
+    text-align: left;
+    padding-left: 2rem;
 }
 .messagesView{
     grid-area: msgview;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    'messagerInfo'
+    'messageHistory'
+    'messageTypeBox';
+    grid-template-rows: 1.25fr 10fr 3fr;
+}
+
+.messagerInfo{
+    grid-area: messagerInfo;
+    border-bottom: 0.25px solid grey;
+}
+
+.messageHistory{
+    grid-area: messageHistory;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    color: white;
+    font-weight:400;
+}
+
+.messageHistory > div{
+    margin-left: 4%;
+    margin-bottom: 4%;
+    min-width: 1rem;
+    max-width: 24rem;
+    word-wrap: break-word;
+}
+
+.messageHistory > div >div{
+    padding: .05rem .5rem;
+    background-color: grey;
+    border-radius: 4px;
+    text-align: left;
+    
+}
+
+.messageHistory > div:nth-child(2){
+    align-self: flex-end;
+    margin-right: 4%;
+    margin-left: 0%;
+   
+}
+
+.messageHistory > div:nth-child(2) >div{
+    background-color: #1DA1F2;
+    text-align: left;
+}
+
+
+
+.messagerName{
+    text-align: center;
+}
+
+.messageTypeBox{
+    grid-area: messageTypeBox;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+textarea{
+    font-size: x-large;
+    border: 1px solid black;
+    border-right: none;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    width: 80%;
+    min-height: 10rem;
+    overflow:auto;
+    resize: none;
+}
+
+.messageSendBtn{
+    border: none;
+    background-color: #1DA1F2;
+    color: white;
+    font-weight: 700;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.messageSendBtn:hover{
+    cursor: pointer;
+    background-color: #097fc9;
 }
