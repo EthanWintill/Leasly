@@ -63,7 +63,7 @@ function Navbar() {
                         <button onClick={()=>{toggleDropdown()}} className="accntBtn"><span className="material-symbols-outlined"> account_circle </span></button>
                             <div id="myDropdown" className="dropdownContent">
                                 {/* These are placeholders but their functions are easy to deduce. Components/ pages will need to be made for each drop down option*/}
-                                <button type="button" className="dropdownProfile" onClick={()=>{navigate("/")}}>Profile</button>
+                                <button type="button" className="dropdownProfile" onClick={()=>{navigate("/profile")}}>Profile</button>
                                 <button type="button" className="dropdownMessages" onClick={()=>{navigate("/messages")}} >Messages</button>
                                 <button type="button" className="dropdownSignout" onClick={()=>{ signOutClick()}}>Sign Out</button>
                             </div>
