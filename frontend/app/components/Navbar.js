@@ -1,8 +1,13 @@
-import './Navbar.css';
+import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import {useEffect, useState} from 'react';
-import {auth, onAuthStateChanged, signOut, signInWithEmailAndPassword} from '../FirebaseFuncs';
+import {
+  auth,
+  onAuthStateChanged,
+  signOut,
+  signInWithEmailAndPassword,
+} from '../FirebaseFuncs';
 
+import './Navbar.css';
 
 function Navbar() {
   const navigate = useNavigate();
