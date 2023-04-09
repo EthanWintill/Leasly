@@ -1,7 +1,10 @@
+import React from 'react';
 import Navbar from '../../components/Navbar';
+
+import holderPFP from '../../imgs/holderPFP.jpg';
 import './Messages.css';
-import holderPFP from '../imgs/holderPFP.jpg';
-const Messages = () =>{
+
+function Messages() {
   return (
     <div>
       <div>
@@ -59,6 +62,6 @@ const Messages = () =>{
       </div>
     </div>
   );
-};
+}
 
 export default Messages;

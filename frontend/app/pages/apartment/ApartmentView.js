@@ -1,9 +1,12 @@
-import Navbar from './Navbar';
+
 import React, {useState, useEffect} from 'react';
-import testur from '../imgs/the-outpost.jpg';
 import {useParams} from 'react-router-dom';
-import AptmntReviews from './AptmntReviews';
-import AptmntSubleaseBoard from './AptmntSubleaseBoard';
+
+import AptmntReviews from '../../components/AptmntReviews';
+import AptmntSubleaseBoard from '../../components/AptmntSubleaseBoard';
+
+import Navbar from '../../components/Navbar';
+import testur from '../../imgs/the-outpost.jpg';
 import './ApartmentView.css';
 
 const ApartmentView = () => {

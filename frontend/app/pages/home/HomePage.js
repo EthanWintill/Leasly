@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
+
+import Navbar from '../../components/Navbar';
 import './HomePage.css';
-import Navbar from './Components/Navbar';
 
 function HomePage() {
   const navigate = useNavigate();
-  {}
+
   const [data, setdata] = useState({
     listings: [],
   });
