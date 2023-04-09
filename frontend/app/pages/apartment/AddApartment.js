@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import {auth} from '../FirebaseFuncs';
+import {auth} from '../../FirebaseFuncs';
 import {useNavigate} from 'react-router-dom';
 
 function addApartment() {

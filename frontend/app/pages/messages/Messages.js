@@ -1,4 +1,4 @@
-import Navbar from './Navbar';
+import Navbar from '../../components/Navbar';
 import './Messages.css';
 import holderPFP from '../imgs/holderPFP.jpg';
 const Messages = () =>{

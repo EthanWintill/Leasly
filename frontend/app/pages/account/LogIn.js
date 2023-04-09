@@ -1,5 +1,5 @@
 import {useNavigate} from 'react-router-dom';
-import {auth, signInWithEmailAndPassword} from '../FirebaseFuncs';
+import {auth, signInWithEmailAndPassword} from '../../FirebaseFuncs';
 const LogIn = () =>{
   const navigate = useNavigate();
 
