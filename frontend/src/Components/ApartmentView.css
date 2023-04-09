@@ -1,0 +1,62 @@
+
+.aptmntViewContainer{
+    display: grid;
+    grid-template-areas:
+    'apartmentInfoView'
+    'subleasesView'
+    'reviewsView'
+    ;
+    grid-template-rows: 2fr 2fr 2fr;
+    border: solid 1px black;
+    height: 130rem;
+    width: 80%;
+    margin: 2% auto auto auto;
+}
+
+.apartmentInfoContainer{
+    grid-area: apartmentInfoView;
+    display: grid;
+    grid-template-areas:
+    'aptmntImage aptmntInfo';
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.apartmentImage{
+    grid-area: aptmntImage;
+    height: auto;
+    width: 100%;
+}
+
+.apartmentInfo{
+    text-align: center;
+    grid-area: aptmntInfo;
+}
+
+.apartmentName{
+    font-size:xx-large;
+}
+
+.subleaseViewContainer{
+    padding-left: 3rem;
+    padding-top: 1rem;
+    grid-area: subleasesView
+}
+
+.reviewViewContainer{
+    padding-left: 3rem;
+    grid-area: reviewsView
+}
+
+
+.amenitiesContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+    width: 100%;
+}
+
+.amenitiesContainer > div{
+    background-color: rgb(121, 121, 121);
+    border: 1px solid burlywood
+}

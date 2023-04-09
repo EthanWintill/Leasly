@@ -1,11 +1,15 @@
 import Navbar from "./Navbar"
 import React, { useState, useEffect } from 'react';
+import testur from "../imgs/the-outpost.jpg";
 import { useParams } from "react-router-dom";
+import AptmntReviews from "./AptmntReviews"
+import AptmntSubleaseBoard from "./AptmntSubleaseBoard";
+import './ApartmentView.css'
 
 const ApartmentView = () => {
     const { id } = useParams();
     const [data, setdata] = useState({
-        listings: []
+        listings: [{}]
     });
     /*needed functions
         - api call to flask backend, gets apartment based on a search for id, returns this in json format, then renders page with apartments info such as listings and ammenities 
@@ -31,27 +35,62 @@ const ApartmentView = () => {
     return (
         <div>
             {/* HTML CSS Needs:
-            
-            -make layout to display all relevant info (Apartment, name, amenities etc)
-            -make section for available subleases for apartment
             -make buttons for needed function reqs above
             -make it look pretty.
             */}
             <Navbar></Navbar>
-            <p>This will take a bit to make, will display apartment based on the name of the prop that is passed through.</p>
-            <h1 style={{color: 'black'}}>{id}</h1>
-            <div className="listings">
-                <ul>
-
-                    {data.listings.map((sublet) =>
-                        <div key={sublet.rent}>
-                            <li>Listing description: {sublet.description}</li>
+            <div className="aptmntViewContainer">
+                        
+                        <div className="apartmentInfoContainer">
+                            
+                                <img className="apartmentImage" src={testur}></img>
+                            
+                            <div className="apartmentInfo">
+                                <p className="apartmentName"> {id}</p>
+                                <p> rating</p>
+                                <p> 4.5/5</p>
+                                <p> apartment link</p>
+                                <a> a link to the apartment website </a>
+                                <p> (512) - 512-5123</p>
+                                <p> amenities</p>
+                                <div className="amenitiesContainer">
+                                    {/* 9 divs acting as cards, one for each amenitie, arranged in a flex container*/}
+                                    <div>
+                                        <span class="material-symbols-outlined"> pets </span>
+                                    </div>
+                                    <div>
+                                        <span class="material-symbols-outlined"> spa </span>
+                                    </div>
+                                    <div>
+                                        <span class="material-symbols-outlined"> sports_gymnastics </span>
+                                    </div>
+                                    <div>
+                                        <span class="material-symbols-outlined"> water_ec </span>
+                                    </div>
+                                    <div>
+                                        <span class="material-symbols-outlined"> directions_bus </span>
+                                    </div>
+                                    <div>
+                                        <span class="material-symbols-outlined"> self_improvement </span>
+                                    </div>
+                                    <div>
+                                        <span class="material-symbols-outlined"> local_laundry_service </span>
+                                    </div>
+                                    <div>
+                                        <span class="material-symbols-outlined"> bed </span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    )}
-
-                </ul>
-
-            </div>
+                        <div className="subleaseViewContainer">
+                            <AptmntSubleaseBoard identifier={data.listings}/>
+                        </div>
+                        
+                        <div className="reviewViewContainer">
+                            <AptmntReviews identifier={id}/>
+                        </div>
+                        
+                    </div>
         </div>
     )
 
