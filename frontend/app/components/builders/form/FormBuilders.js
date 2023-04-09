@@ -25,6 +25,37 @@ import AbstractComponentBuilder from '../AbstractComponentBuilder';
  */
 function VerticalForm(props) {
   const {vstack} = props.form;
+
+  const componentFromElement = (element, key) => {
+    switch (element.element) {
+      case 'label':
+        return (
+          <FormControl.Label key={key} {...element.props}>{element.text}</FormControl.Label>
+        );
+      case 'help':
+        return (
+          <FormControl.HelperText key={key} {...element.props}>{element.text}</FormControl.HelperText>
+        );
+      case 'error':
+        return (
+          <FormControl.ErrorMessage key={key} {...element.props}>{element.text}</FormControl.ErrorMessage>
+        );
+      case 'input':
+        return (
+          <Input key={key} {...element.props} />
+        );
+      case 'group':
+        const {elements, form} = element;
+        return (
+          <FormControl key={key} {...form}>
+            {
+              elements.map((groupElement, gKey) => componentFromElement(groupElement, gKey))
+            }
+          </FormControl>
+        );
+    }
+  };
+
   return (
     <VStack {...vstack}>
       {
@@ -36,32 +67,12 @@ function VerticalForm(props) {
               );
             case 'form':
               const {elements, form} = element.props;
-              return (
-                <FormControl key={eKey} {...form}>
-                  {
-                    elements.map((formElement, fKey) => {
-                      switch (formElement.element) {
-                        case 'label':
-                          return (
-                            <FormControl.Label key={fKey} {...formElement.props}>{formElement.text}</FormControl.Label>
-                          );
-                        case 'error':
-                          return (
-                            <FormControl.ErrorMessage key={fKey} {...formElement.props}>{formElement.text}</FormControl.ErrorMessage>
-                          );
-                        case 'help':
-                          return (
-                            <FormControl.HelperText key={fKey} {...formElement.props}>{formElement.text}</FormControl.HelperText>
-                          );
-                        case 'input':
-                          return (
-                            <Input key={fKey} {...formElement.props} />
-                          );
-                      }
-                    })
-                  }
-                </FormControl>
-              );
+              const baseForm = {
+                element: 'group',
+                elements: elements,
+                form: form,
+              };
+              return componentFromElement(baseForm, eKey);
             case 'button':
               return (
                 <Button key={eKey} {...element.props}>{element.text}</Button>
