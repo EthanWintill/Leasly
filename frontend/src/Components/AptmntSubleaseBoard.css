@@ -1,0 +1,59 @@
+.bountyContainer{
+    display: grid;
+    grid-template-areas:
+    'title'
+    'bountyBoard';
+    width: 100%;
+    height: 100%;
+    
+}
+
+.bountyTitle{
+    grid-area: title;
+    font-size: larger;
+}
+
+.bountyView{
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+}
+
+.bountyCards{
+    border: 1px solid grey;
+    display: grid;
+    grid-template-areas:
+    'image general'
+    'description description';
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: 25rem;
+    height: 22rem;
+    
+    
+}
+
+.bountyImage{
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+}
+
+.bountyGeneral{
+    grid-area: general;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.bountyDescription{
+    display: flex;
+    flex-direction: column;
+    grid-area: description;
+    height: 100%;
+}
+
+.bountyDescription > button{
+    width: 5rem;
+    margin: auto;
+}
