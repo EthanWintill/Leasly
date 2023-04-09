@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from secret.Keys import appkey 
-from models import User, Messages, Sublease, db
+from models import User, Messages, Sublease, Apartment, db
 from werkzeug.security import generate_password_hash
 import uuid
 from flask_cors import CORS
@@ -38,7 +38,7 @@ def getUser(id):
 #CONNECTED TO REACT
 @app.route('/api/signup', methods=['POST'])
 def addUser():
-    id = str(uuid.uuid4())
+    id = request.json['userId']
     email = request.json['email']
     password = request.json['password']
     username = request.json['username']
@@ -55,14 +55,15 @@ def addUser():
 @app.route('/api/listings', methods=['POST'])
 def addSublet():
     id = str(uuid.uuid4())
-    subleaser_id = request.form.get('user_id')
-    apartment_name = request.form.get('apartment')
-    rent = request.form.get('rent')
-    bed = request.form.get('bed')
-    bath = request.form.get('bath')
-    sqft = request.form.get('sqft')
-    desc = request.form.get('description')
-    location = request.form.get('location')
+    subleaser_id = request.json['user_id']
+    apartment_name = request.json['apartment']
+    rent = request.json['rent']
+    bed = request.json['beds']
+    bath = request.json['baths']
+    sqft = request.json['sqft']
+    desc = request.json['description']
+    location = request.json['location']
+
 
     newListing = Sublease(id=id, subleaser_id=subleaser_id, apartment_name=apartment_name, rent=rent, bed=bed, bath=bath, sqft=sqft, description=desc, location=location)
     db.session.add(newListing)
@@ -101,6 +102,7 @@ def get_sublets():
     after = request.args.get('after','')
     apartment = request.args.get('apartment', '')
     location = request.args.get('location', '')
+    user = request.args.get('user','')
     sort_by = request.args.get('sort_by', '')
 
 
@@ -129,6 +131,8 @@ def get_sublets():
         sublets = sublets.filter(Sublease.location == location)
     if apartment:
         sublets = sublets.filter(Sublease.apartment_name == apartment)
+    if user:
+        sublets = sublets.filter(Sublease.subleaser_id == user)
         
     # Sort the Sublease objects based on the query parameter
     if sort_by == 'price_inc':
@@ -177,11 +181,66 @@ ROUTES FOR APARTMENTS
 ###################
 '''
 
-#TODO add apartment, might not need to be route
+#add apartment, might not need to be route
+@app.route('/api/apartments', methods=['POST'])
+def addApartment():
+    name = request.json['name']
+    pets = request.json['pets']
+    pool = request.json['pool']
+    gym = request.json['gym']
+    incldUtilities = request.json['incldUtilities']
+    shuttleRte = request.json['shuttleRte']
+    indvLeasing = request.json['indvLeasing']
+    wsherDryer = request.json['wsherDryer']
+    furnished = request.json['furnished']
+    rmMatching = request.json['rmMatching']
+
+
+    newApartment = Apartment(name=name, pets=pets, pool=pool, gym=gym, incldUtilities=incldUtilities, shuttleRte=shuttleRte, indvLeasing=indvLeasing, wsherDryer=wsherDryer, furnished=furnished, rmMatching=rmMatching)
+    db.session.add(newApartment)
+    db.session.commit()
+
+    return jsonify(newApartment.to_dict())
 
 #TODO get apartment from id
 
 #TODO get apartments with sort and filter
+@app.route('/api/apartments', methods=['GET'])
+def getApartments():
+    name = request.args.get('name', '')
+    pool = request.args.get('pool', '')
+    gym = request.args.get('gym', '')
+    incldUtilities = request.args.get('incldUtilities', '')
+    shuttleRte = request.args.get('shuttleRte', '')
+    indvLeasing = request.args.get('indvLeasing', '')
+    wsherDryer = request.args.get('wsherDryer', '')
+    furnished = request.args.get('furnished', '')
+    rmMatching = request.args.get('rmMatching', '')
+
+    apartments = Apartment.query
+
+    if pool:
+        apartments = apartments.filter(Apartment.pool)
+    if gym:
+        apartments = apartments.filter(Apartment.gym == gym)
+    if incldUtilities:
+        apartments = apartments.filter(Apartment.incldUtilities)
+    if shuttleRte:
+        apartments = apartments.filter(Apartment.shuttleRte)
+    if indvLeasing:
+        apartments = apartments.filter(Apartment.indvLeasing)
+    if wsherDryer:
+        apartments = apartments.filter(Apartment.wsherDryer)
+    if furnished:
+        apartments = apartments.filter(Apartment.furnished)
+    if rmMatching:
+        apartments = apartments.filter(Apartment.rmMatching)
+    if name:
+        apartments = apartments.filter(Apartment.name==name)
+    print(apartments)
+    apartments_list = [apartment.to_dict() for apartment in apartments]
+    return jsonify(apartments_list)
+
 
 #TODO delete apartments, might not need route unless we want to let users delete them
 

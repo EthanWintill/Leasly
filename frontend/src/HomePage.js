@@ -18,7 +18,7 @@ function HomePage() {
 		fetch("/api/sublets?sort_by=date_dec").then((res) =>
 			res.json().then((data) => {
 				// Setting a data from api
-        //only one listing rn, feel free to add some
+        // only one listing rn, feel free to add some
 				setdata({
 					listings:data
 				});
@@ -56,7 +56,7 @@ function HomePage() {
 
         <div className="homeBtns">
           <form action="form">
-            <button className="homeNewSubBtn" type="submit">Create a New Listing</button>
+            <button className="homeNewSubBtn" type="button" onClick={()=>{navigate("/addapartment")}}>Create a New Listing</button>
           </form>
           
           <button className="generalBtn" type="button" onClick={()=>{navigate("/allapartments")}}>View All Apartments</button>
