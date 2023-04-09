@@ -9,7 +9,7 @@ import HomePage from './pages/home/HomePage';
 import AddApartment from './pages/apartment/AddApartment';
 import AllApartments from './pages/apartment/AllApartments';
 import ApartmentView from './pages/apartment/ApartmentView';
-import SignUp from './pages/account/SignUp';
+import SignupPage from './pages/account/SignupPage.js';
 import LogIn from './pages/account/LogIn';
 import Messages from './pages/messages/Messages';
 import Profile from './pages/account/Profile';
@@ -22,7 +22,7 @@ export default function App() {
         <Routes>
           <Route path = "/" element={<HomePage/>}/>
           <Route path = "*" element={<HomePage/>}/>
-          <Route path = "/signup" element={<SignUp/>}/>
+          <Route path = "/signup" element={<SignupPage/>}/>
           <Route path = "/signin" element={<LogIn/>}/>
           <Route path = "/allapartments" element={<AllApartments/>}/>
           <Route path = "/apartmntview/:id" element={<ApartmentView/>}/>
