@@ -1,6 +1,6 @@
 import React from 'react';
 
-import holderPFP from '../../imgs/holderPFP.jpg';
+import holderPFP from '../../../assets/profile/dog.jpg';
 import './Messages.css';
 
 function Messages() {

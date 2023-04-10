@@ -11,7 +11,7 @@ import {
   onAuthStateChanged,
   signOut,
   signInWithEmailAndPassword,
-} from '../FirebaseFuncs';
+} from '../util/FirebaseFuncs';
 import {Divide as Hamburger} from 'hamburger-react';
 
 import {Theme} from '../Theme';

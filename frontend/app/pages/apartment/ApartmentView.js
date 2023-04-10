@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom';
 import ApartmentReviews from '../../components/ApartmentReviews';
 import ApartmentSubleaseBoard from '../../components/ApartmentSubleaseBoard';
 
-import testur from '../../imgs/the-outpost.jpg';
+import testur from '../../../assets/apartments/apartment.jpg';
 import './ApartmentView.css';
 
 export default function ViewApartmentPage() {

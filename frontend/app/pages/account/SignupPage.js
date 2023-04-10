@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View} from 'native-base';
-import {auth, createUserWithEmailAndPassword} from '../../FirebaseFuncs';
+import {auth, createUserWithEmailAndPassword} from '../../util/FirebaseFuncs';
 
 import useEffectAfterMount from '../../hooks/AfterMountHook';
 import FormBuilders from '../../components/builders/form/FormBuilders';

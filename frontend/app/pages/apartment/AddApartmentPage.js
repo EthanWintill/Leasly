@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {auth} from '../../FirebaseFuncs';
+import {auth} from '../../util/FirebaseFuncs';
 
 export default function AddApartmentPage(props) {
   const {navigation} = props;

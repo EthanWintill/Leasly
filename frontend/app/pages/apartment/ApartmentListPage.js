@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import testur from '../../imgs/the-outpost.jpg';
+import testur from '../../../assets/apartments/apartment.jpg';
 import './ApartmentListPage.css';
 
 export default function ApartmentListPage(props) {

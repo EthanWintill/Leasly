@@ -9,7 +9,7 @@ import {
   View,
 } from 'native-base';
 
-import backgroundImage from '../../imgs/samantha-gades-fIHozNWfcvs-unsplash.jpg';
+import backgroundImage from '../../../assets/backgrounds/school.jpg';
 
 function HomePage(props) {
   const {navigation} = props;

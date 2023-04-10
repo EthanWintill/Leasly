@@ -1,6 +1,6 @@
 import {React, useState} from 'react';
 import {View} from 'native-base';
-import {auth, signInWithEmailAndPassword} from '../../FirebaseFuncs';
+import {auth, signInWithEmailAndPassword} from '../../util/FirebaseFuncs';
 
 import FormBuilders from '../../components/builders/form/FormBuilders';
 

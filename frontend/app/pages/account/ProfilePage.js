@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {auth} from '../../FirebaseFuncs';
+import {auth} from '../../util/FirebaseFuncs';
 
 export default function ProfilePage() {
   const [data, setdata] = useState({
