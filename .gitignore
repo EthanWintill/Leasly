@@ -119,5 +119,7 @@ backend/secret/Keys.py
 
 frontend2/
  
-# Expo
+# Our stuff
 .expo
+web-build
+build
