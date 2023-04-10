@@ -1,4 +1,3 @@
-import Navbar from '../../components/Navbar';
 import React, {useState, useEffect} from 'react';
 import {auth} from '../../FirebaseFuncs';
 
@@ -25,9 +24,6 @@ export default function ProfilePage() {
 
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
       <h1 style={{color: 'black'}}>Your listings</h1>
       <div className="listings">
         <ul>

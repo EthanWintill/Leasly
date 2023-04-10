@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {
   Button,
-  Flex,
   HStack,
   Image,
   Menu,
@@ -57,7 +56,9 @@ function NavbarMenu(props) {
       {isSignedIn &&
         <Menu.Item onPress={() => navigation.navigate('profile')}>Profile</Menu.Item>
       }
-      <Menu.Item onPress={() => navigation.navigate('addApartment')}>Add An Apartment</Menu.Item>
+      {isSignedIn &&
+        <Menu.Item onPress={() => navigation.navigate('addApartment')}>Add An Apartment</Menu.Item>
+      }
       <Menu.Item onPress={() => navigation.navigate('allApartments')}>View Apartments</Menu.Item>
       {isSignedIn &&
         <Menu.Item onPress={() => navigation.navigate('messages')}>Messages</Menu.Item>
