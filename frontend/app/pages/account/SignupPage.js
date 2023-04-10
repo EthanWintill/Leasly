@@ -1,5 +1,4 @@
-
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {View} from 'native-base';
 import {auth, createUserWithEmailAndPassword} from '../../FirebaseFuncs';
@@ -7,7 +6,7 @@ import {auth, createUserWithEmailAndPassword} from '../../FirebaseFuncs';
 import useEffectAfterMount from '../../hooks/AfterMountHook';
 import FormBuilders from '../../components/builders/form/FormBuilders';
 
-export default function SignupPage({navigation}) {
+export default function SignupPage() {
   const navigate = useNavigate();
 
   // Form Data
@@ -19,7 +18,8 @@ export default function SignupPage({navigation}) {
   // Verifiers
   const MIN_PASSWORD_LENGTH = 8;
   const [passwordsMatch, setPasswordsMatch] = useState(true);
-  const [passwordPassesChecksum, setPasswordPassesChecksum] = useState(true);
+  const [passwordGoodLength, setPasswordGoodLength] = useState(true);
+  const [databaseError, setDatabaseError] = useState(false);
 
   // Events
   useEffectAfterMount(() => {
@@ -27,14 +27,21 @@ export default function SignupPage({navigation}) {
   }, [password, confirmPassword]);
 
   useEffectAfterMount(() => {
-    setPasswordPassesChecksum(password.length === 0 || password.length >= MIN_PASSWORD_LENGTH);
+    setPasswordGoodLength(password.length === 0 || password.length >= MIN_PASSWORD_LENGTH);
   }, [password]);
+
+  useEffectAfterMount(() => {
+    if (databaseError) {
+      setDatabaseError(false);
+    }
+  }, [email, username, password, confirmPassword]);
 
   /**
    * Creates a user in firebase based on the form data.
    */
-  const createUser = () => {
-    createUserWithEmailAndPassword(auth)
+  const signup = async () => {
+    let error = false;
+    await createUserWithEmailAndPassword(auth)
         .then((userCredential) => {
           const userData = {
             email: email,
@@ -57,22 +64,25 @@ export default function SignupPage({navigation}) {
                 console.log(data);
                 navigate('/');
               })
-              .catch((error) => {
-                console.log(error);
+              .catch((err) => {
+                console.error(err);
+                error = true;
               });
         })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorCode + ': ' + errorMessage);
-          document.querySelector('#errorField').innerHTML = 'Please enter a valid email and password';
+        .catch((err) => {
+          console.error(`${err.code}: ${err.message}`);
+          error = true;
         });
+    return error;
   };
 
   // Use builder to create form
   const AccountForm = FormBuilders.AccountForm(
       {
         form: {
+          control: {
+            isInvalid: databaseError,
+          },
           vstack: {
             space: 3,
             mt: 5,
@@ -124,7 +134,6 @@ export default function SignupPage({navigation}) {
                   type: 'text',
                   isRequired: true,
                   onChangeText: (text) => {
-                    console.log(`Email: ${email}`);
                     setEmail(text);
                   },
                 },
@@ -139,7 +148,6 @@ export default function SignupPage({navigation}) {
                   type: 'text',
                   isRequired: true,
                   onChangeText: (text) => {
-                    console.log(`Username: ${username}`);
                     setUsername(text);
                   },
                 },
@@ -153,7 +161,7 @@ export default function SignupPage({navigation}) {
                   {
                     element: 'group',
                     form: {
-                      isInvalid: !passwordPassesChecksum,
+                      isInvalid: !passwordGoodLength,
                     },
                     elements: [
                       {
@@ -166,14 +174,13 @@ export default function SignupPage({navigation}) {
                           type: 'password',
                           isRequired: true,
                           onChangeText: (text) => {
-                            console.log(`Password: ${email}`);
                             setPassword(text);
                           },
                         },
                       },
                       {
                         element: 'error',
-                        text: 'Passwords must be longer than 8 characters.',
+                        text: 'Passwords must be at least 8 characters.',
                       },
                     ],
                   },
@@ -187,7 +194,6 @@ export default function SignupPage({navigation}) {
                       type: 'password',
                       isRequired: true,
                       onChangeText: (text) => {
-                        console.log(`Email: ${email}`);
                         setConfirmPassword(text);
                       },
                     },
@@ -198,6 +204,10 @@ export default function SignupPage({navigation}) {
                   },
                 ],
               },
+              {
+                element: 'error',
+                text: 'Please enter a valid email and password.',
+              },
             ],
           },
       )
@@ -206,9 +216,16 @@ export default function SignupPage({navigation}) {
           {
             mt: 5,
             onPress: () => {
-              if (passwordsMatch && passwordPassesChecksum && password.length > 0 && confirmPassword.length > 0) {
-                createUser();
-                navigate('/');
+              const allowed = passwordsMatch &&
+                passwordGoodLength &&
+                email.length > 0 &&
+                username.length > 0 &&
+                password.length > 0 &&
+                confirmPassword.length > 0;
+              if (allowed) {
+                signup().then((error) => {
+                  setDatabaseError(error);
+                });
               }
             },
           })
@@ -219,6 +236,24 @@ export default function SignupPage({navigation}) {
               navigate('/');
             },
           })
+      .setFooter(
+          'Already have an account? ',
+          {
+            fontSize: 'sm',
+          },
+          'Sign In',
+          {
+            variant: 'link',
+            py: 0,
+            onPress: () => {
+              navigate('/signin');
+            },
+          },
+          {
+            mt: 4,
+            justifyContent: 'center',
+          },
+      )
       .build();
 
   // Create final component
