@@ -45,9 +45,6 @@ function HomePage(props) {
   };
 
   const titleText = {
-    shadowColor: 'black',
-    shadowOpacity: 0.75,
-    elevation: 20,
     letterSpacing: 'sm',
     bold: true,
   };
