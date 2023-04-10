@@ -22,7 +22,7 @@ export default function App() {
     <NativeBaseProvider theme={Theme}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="SigninPage"
+          initialRouteName="home"
           screenOptions={{
             // eslint-disable-next-line react/no-unstable-nested-components
             header: (props) => <Navbar {...props} />,
