@@ -642,12 +642,11 @@ function AllApartmnts() {
             furnished: true,
             rmMatching: true
         }]
-    {/* Uncomment after database and backend are hosted online, will not load until on computers not running sqlite until then.
     // Using useEffect for single rendering
         useEffect(() => {
             // Using fetch to fetch the api from
             // flask server it will be redirected to proxy
-            fetch("/api/apartments").then((res) =>
+            fetch("https://leaslybackend.herokuapp.com/api/apartments").then((res) =>
                 res.json().then((data) => {
                     // Setting a data from api
                     setAllApartmentsArr({
@@ -656,13 +655,13 @@ function AllApartmnts() {
                 })
             );
         }, []);
-    */}
+    
     const [allApartmentsArr, setAllApartmentsArr] = useState(apartmentInfoTest);
 
     {/* Will only need to be ran once for the online database, can be deleted after
     if (false) { //adds all apartments to database
         apartmentInfoTest.forEach((apartment) => {
-            fetch('/api/apartments', {
+            fetch('https://leaslybackend.herokuapp.com/api/apartments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

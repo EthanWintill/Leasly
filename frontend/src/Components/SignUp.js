@@ -18,7 +18,7 @@ const SignUp =() =>{
               userId: userCredential.user.uid // add user ID to data object
             };
       
-            fetch('/api/signup', {
+            fetch('https://leaslybackend.herokuapp.com/api/signup', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'

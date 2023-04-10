@@ -21,7 +21,7 @@ const ApartmentView = () => {
     */
     console.log(id)
     useEffect(() => {
-        fetch("/api/sublets?apartment=" + id).then((res) =>
+        fetch("https://leaslybackend.herokuapp.com/api/sublets?apartment=" + id).then((res) =>
             res.json().then((data) => {
                 setdata({
                     listings: data
