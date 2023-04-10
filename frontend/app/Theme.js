@@ -102,8 +102,12 @@ const LightTheme = new CustomTheme(
  * @param {*} lightTag
  * @return {*}
  */
-function color(colorMode, darkTag, lightTag) {
+function colorPreset(colorMode, darkTag, lightTag) {
   return colorMode === 'dark' ? DarkTheme.presets[darkTag] : LightTheme.presets[lightTag];
+}
+
+function color(colorMode, darkColor, lightColor) {
+  return colorMode === 'dark' ? DarkTheme.color[darkColor] : LightTheme.color[lightColor];
 }
 
 /* ------------------------------ React Native ------------------------------ */
@@ -112,8 +116,15 @@ function color(colorMode, darkTag, lightTag) {
 const ViewTheme = {
   baseStyle: ({colorMode}) => {
     return {
-      bg: color(colorMode, 'bg_dark', 'bg_dark'),
+      bg: colorPreset(colorMode, 'bg_dark', 'bg_dark'),
     };
+  },
+  variants: {
+    accented: ({colorMode}) => {
+      return {
+        bg: color(colorMode, 'gray_dark', 'rose'),
+      };
+    },
   },
   defaultProps: {
     w: '100%',
@@ -128,7 +139,7 @@ const BoxTheme = {
   variants: {
     rounded_25_accent: ({colorMode}) => {
       return {
-        bg: color(colorMode, 'bg_light', 'bg_light'),
+        bg: colorPreset(colorMode, 'bg_light', 'bg_light'),
         rounded: '25',
       };
     },
@@ -215,12 +226,12 @@ const TextTheme = {
   variants: {
     title: ({colorMode}) => {
       return {
-        color: color(colorMode, 'txt_light', 'txt_l;ight'),
+        color: colorPreset(colorMode, 'txt_light', 'txt_l;ight'),
       };
     },
     paragraph: ({colorMode}) => {
       return {
-        color: color(colorMode, 'txt_light', 'txt_light'),
+        color: colorPreset(colorMode, 'txt_light', 'txt_light'),
       };
     },
   },

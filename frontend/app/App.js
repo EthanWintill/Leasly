@@ -11,8 +11,8 @@ import ApartmentListPage from './pages/apartment/ApartmentListPage';
 import ApartmentView from './pages/apartment/ApartmentView';
 import HomePage from './pages/home/HomePage';
 import Messages from './pages/messages/Messages';
-import Navbar from './components/Navbar';
 
+import Navbar from './components/Navbar';
 import {Theme} from './Theme';
 
 export default function App() {
@@ -20,7 +20,6 @@ export default function App() {
 
   return (
     <NativeBaseProvider theme={Theme}>
-
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="SigninPage"
@@ -42,7 +41,7 @@ export default function App() {
     </NativeBaseProvider>
   );
 }
+
 export {
   App,
 };
-

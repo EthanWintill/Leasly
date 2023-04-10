@@ -1,5 +1,12 @@
-import React, {useEffect} from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {
+  Button,
+  Flex,
+  HStack,
+  Image,
+  Menu,
+  View,
+} from 'native-base';
 import {
   auth,
   onAuthStateChanged,
@@ -8,89 +15,100 @@ import {
 } from '../FirebaseFuncs';
 import {Divide as Hamburger} from 'hamburger-react';
 
-import './Navbar.css';
+import {Theme} from '../Theme';
+
+function NavbarMenu(props) {
+  const {navigation, isSignedIn} = props;
+  const [isOpen, setIsOpen] = useState(false);
+
+  const signout = () =>{
+    signOut(auth).then(() => {
+      navigation.navigate('home');
+    }).catch((error)=>{
+      console.error(error);
+    });
+  };
+
+  const testAccountSignin = () =>{
+    signInWithEmailAndPassword(auth, 'aguestaccount@gmail.com', 'atest123')
+        .catch((error)=>{
+          // eslint-disable-next-line no-alert
+          alert('Test Account not available, please try again later!');
+          console.error(error);
+        });
+  };
+
+  return (
+    <Menu placement="bottom left"
+      mt={65}
+      isOpen={isOpen}
+      onClose={() => {
+        setIsOpen(false);
+      }}
+      // eslint-disable-next-line react/no-unstable-nested-components
+      trigger={(triggerProps) => {
+        return (
+          <Hamburger
+            color={Theme.colors.dark.gray_light}
+            toggled={isOpen} toggle={setIsOpen}/>
+        );
+      }}>
+      <Menu.Item onPress={() => navigation.navigate('home')}>Home</Menu.Item>
+      {isSignedIn &&
+        <Menu.Item onPress={() => navigation.navigate('profile')}>Profile</Menu.Item>
+      }
+      <Menu.Item onPress={() => navigation.navigate('addApartment')}>Add An Apartment</Menu.Item>
+      <Menu.Item onPress={() => navigation.navigate('allApartments')}>View Apartments</Menu.Item>
+      {isSignedIn &&
+        <Menu.Item onPress={() => navigation.navigate('messages')}>Messages</Menu.Item>
+      }
+      {isSignedIn &&
+        <Menu.Item onPress={() => {
+          signout();
+          navigation.navigate('home');
+        }}>Sign-out</Menu.Item>
+      }
+      {!isSignedIn &&
+        <>
+          <Menu.Item onPress={() => testAccountSignin()}>Test Account Sign-in</Menu.Item>
+          <Menu.Item onPress={() => navigation.navigate('signin')}>Sign-in</Menu.Item>
+        </>
+      }
+    </Menu>
+  );
+}
 
 export default function Navbar(props) {
   const {navigation} = props;
-
-  const toggleDropdown = () => {
-    document.querySelector('.dropdownContent').classList.toggle('show');
-  };
-  {/* toggles whether or not to show the dropdown menu */}
-  window.onclick = function(event) {
-    if (!event.target.matches('.material-symbols-outlined')) {
-      if (document.querySelector('.dropdownContent') && document.querySelector('.dropdownContent').classList.contains('show')) {
-        document.querySelector('.dropdownContent').classList.toggle('show');
-      }
-    }
-  };
-
-  const signOutClick = () =>{
-    signOut(auth).catch((error)=>{
-      console.log(error);
-    });
-    navigation.navigate('home');
-  };
-
-  const testActSignIn = () =>{
-    signInWithEmailAndPassword( auth, 'aguestaccount@gmail.com', 'atest123').catch(()=>{
-      errorDisplay.innerHTML = 'Test Account not available, please try again later!';
-    });
-  };
-
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user)=>{
-      if (user) {
-        document.querySelector('.dropdown-log').style.display = 'none';
-        document.querySelector('.dropdown').style.display = 'flex';
-      } else {
-        document.querySelector('.dropdown').style.display = 'none';
-        document.querySelector('.dropdown-log').style.display = 'inline-block';
-      }
+    onAuthStateChanged(auth, (user) => {
+      setIsSignedIn(user);
     });
   }, []);
 
-
   return (
-    <div className="navContainer">
-      <h1 onClick={()=>navigation.navigate('home')}> Leasly</h1>
-      <div className="accountIcon">
-
-        <div className="accountDiv">
-          {/* If user is found to not be signed in, it will display options to log in or create an account. If they are signed in, then it will display the account icon.*/}
-          <div className="dropdown-log">
-            <button type="button" onClick={() => {
-              navigation.navigate('signin');
-            }}>Log In</button>
-            <button type="button" onClick={()=>{
-              navigation.navigate('signup');
-            }}>Create An Account</button>
-            <button type="button" onClick={()=> {
-              testActSignIn();
-            }}>Sign into test Account</button>
-          </div>
-
-          <div className="dropdown">
-            <button onClick={()=>{
-              toggleDropdown();
-            }} className="accntBtn"><span className="material-symbols-outlined"> account_circle </span></button>
-            <div id="myDropdown" className="dropdownContent">
-              {/* These are placeholders but their functions are easy to deduce. Components/ pages will need to be made for each drop down option*/}
-              <button type="button" className="dropdownProfile" onClick={()=>{
-                navigation.navigate('profile');
-              }}>Profile</button>
-              <button type="button" className="dropdownMessages" onClick={()=>{
-                navigation.navigate('messages');
-              }} >Messages</button>
-              <button type="button" className="dropdownSignout" onClick={()=>{
-                signOutClick();
-              }}>Sign Out</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <View variant="accented" h={75}>
+      <HStack alignItems="center">
+        <HStack ml={5} alignItems="center" justifyContent="flex-start">
+          <NavbarMenu isSignedIn={isSignedIn} {...props}/>
+          <Button variant="unstyled"
+            ml={5}
+            _text={{
+              fontSize: '4xl',
+              letterSpacing: 'sm',
+              bold: true,
+            }}
+            onPress={() => navigation.navigate('home')}>
+              Leasly
+          </Button>
+        </HStack>
+        {isSignedIn &&
+          <Image margin-left={'auto'} right={0} size={50} borderRadius={100} source={{uri: 'https://wallpaperaccess.com/full/317501.jpg'}} alt="Profile_Image"/>
+        }
+      </HStack>
+    </View>
   );
 }
 
