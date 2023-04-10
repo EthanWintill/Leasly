@@ -24,8 +24,6 @@ import AbstractComponentBuilder from '../AbstractComponentBuilder';
  * @return {VerticalFormBuilder}
  */
 function VerticalForm(props) {
-  const {vstack} = props.form;
-
   const componentFromElement = (element, key) => {
     switch (element.element) {
       case 'label':
@@ -45,37 +43,38 @@ function VerticalForm(props) {
           <Input key={key} {...element.props} />
         );
       case 'group':
-        const {elements, form} = element;
         return (
-          <FormControl key={key} {...form}>
+          <FormControl key={key} {...element.form}>
             {
-              elements.map((groupElement, gKey) => componentFromElement(groupElement, gKey))
+              element.elements.map((groupElement, gKey) => componentFromElement(groupElement, gKey))
             }
           </FormControl>
         );
     }
   };
 
+  const {vstack, control} = props.form;
+
   return (
     <VStack {...vstack}>
       {
-        props.elements.map((element, eKey) => {
+        props.elements.map((element, key) => {
           switch (element.element) {
             case 'heading':
               return (
-                <Heading key={eKey} {...element.props}>{element.text}</Heading>
+                <Heading key={key} {...element.props}>{element.text}</Heading>
               );
             case 'form':
-              const {elements, form} = element.props;
+              const {elements} = element.props;
               const baseForm = {
                 element: 'group',
                 elements: elements,
-                form: form,
+                form: control,
               };
-              return componentFromElement(baseForm, eKey);
+              return componentFromElement(baseForm, key);
             case 'button':
               return (
-                <Button key={eKey} {...element.props}>{element.text}</Button>
+                <Button key={key} {...element.props}>{element.text}</Button>
               );
             case 'component':
               return element.component;
@@ -213,8 +212,8 @@ class AccountFormBuilder extends VerticalFormBuilder {
   }
 
   build() {
-    const vFormProps = super.build();
     const {center, box, vstack} = this.props;
+    const vFormProps = super.build();
     return (
       <Center {...center}>
         <Box {...box}>
