@@ -226,7 +226,7 @@ const TextTheme = {
   variants: {
     title: ({colorMode}) => {
       return {
-        color: colorPreset(colorMode, 'txt_light', 'txt_l;ight'),
+        color: colorPreset(colorMode, 'txt_light', 'txt_light'),
       };
     },
     paragraph: ({colorMode}) => {
