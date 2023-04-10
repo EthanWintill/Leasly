@@ -1,36 +1,44 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {NativeBaseProvider} from 'native-base';
-import '../index.js';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+import LoginPage from './pages/account/LoginPage';
+import ProfilePage from './pages/account/ProfilePage';
+import SignupPage from './pages/account/SignupPage';
+import AddApartmentPage from './pages/apartment/AddApartmentPage';
+import ApartmentListPage from './pages/apartment/ApartmentListPage';
+import ApartmentView from './pages/apartment/ApartmentView';
+import HomePage from './pages/home/HomePage';
+import Messages from './pages/messages/Messages';
+import Navbar from './components/Navbar';
 
 import {Theme} from './Theme';
 
-import HomePage from './pages/home/HomePage';
-import AddApartment from './pages/apartment/AddApartment';
-import AllApartments from './pages/apartment/AllApartments';
-import ApartmentView from './pages/apartment/ApartmentView';
-import SignupPage from './pages/account/SignupPage';
-import LoginPage from './pages/account/LoginPage';
-import Messages from './pages/messages/Messages';
-import Profile from './pages/account/Profile';
-
 export default function App() {
-  return (
+  const Stack = createNativeStackNavigator();
 
+  return (
     <NativeBaseProvider theme={Theme}>
-      <BrowserRouter>
-        <Routes>
-          <Route path = "/" element={<HomePage/>}/>
-          <Route path = "*" element={<HomePage/>}/>
-          <Route path = "/signup" element={<SignupPage/>}/>
-          <Route path = "/signin" element={<LoginPage/>}/>
-          <Route path = "/allapartments" element={<AllApartments/>}/>
-          <Route path = "/apartmntview/:id" element={<ApartmentView/>}/>
-          <Route path = "/messages" element={<Messages/>}/>
-          <Route path = "/addapartment" element={<AddApartment/>}/>
-          <Route path = "/profile" element={<Profile/>}/>
-        </Routes>
-      </BrowserRouter>
+
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="SigninPage"
+          screenOptions={{
+            // eslint-disable-next-line react/no-unstable-nested-components
+            header: (props) => <Navbar {...props} />,
+            headerBackVisible: false,
+          }}>
+          <Stack.Screen name="home" component={HomePage}/>
+          <Stack.Screen name="signin" component={LoginPage}/>
+          <Stack.Screen name="profile" component={ProfilePage}/>
+          <Stack.Screen name="signup" component={SignupPage}/>
+          <Stack.Screen name="addApartment" component={AddApartmentPage}/>
+          <Stack.Screen name="allApartments" component={ApartmentListPage}/>
+          <Stack.Screen name="viewApartment" component={ApartmentView}/>
+          <Stack.Screen name="messages" component={Messages}/>
+        </Stack.Navigator>
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }

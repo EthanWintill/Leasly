@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {
   auth,
@@ -6,11 +6,12 @@ import {
   signOut,
   signInWithEmailAndPassword,
 } from '../FirebaseFuncs';
+import {Divide as Hamburger} from 'hamburger-react';
 
 import './Navbar.css';
 
-function Navbar() {
-  const navigate = useNavigate();
+export default function Navbar(props) {
+  const {navigation} = props;
 
   const toggleDropdown = () => {
     document.querySelector('.dropdownContent').classList.toggle('show');
@@ -28,7 +29,7 @@ function Navbar() {
     signOut(auth).catch((error)=>{
       console.log(error);
     });
-    navigate('/');
+    navigation.navigate('home');
   };
 
   const testActSignIn = () =>{
@@ -53,17 +54,17 @@ function Navbar() {
 
   return (
     <div className="navContainer">
-      <h1 onClick={()=>navigate('/')}> Leasly</h1>
+      <h1 onClick={()=>navigation.navigate('home')}> Leasly</h1>
       <div className="accountIcon">
 
         <div className="accountDiv">
           {/* If user is found to not be signed in, it will display options to log in or create an account. If they are signed in, then it will display the account icon.*/}
           <div className="dropdown-log">
             <button type="button" onClick={() => {
-              navigate('/signin');
+              navigation.navigate('signin');
             }}>Log In</button>
             <button type="button" onClick={()=>{
-              navigate('/signup');
+              navigation.navigate('signup');
             }}>Create An Account</button>
             <button type="button" onClick={()=> {
               testActSignIn();
@@ -77,10 +78,10 @@ function Navbar() {
             <div id="myDropdown" className="dropdownContent">
               {/* These are placeholders but their functions are easy to deduce. Components/ pages will need to be made for each drop down option*/}
               <button type="button" className="dropdownProfile" onClick={()=>{
-                navigate('/profile');
+                navigation.navigate('profile');
               }}>Profile</button>
               <button type="button" className="dropdownMessages" onClick={()=>{
-                navigate('/messages');
+                navigation.navigate('messages');
               }} >Messages</button>
               <button type="button" className="dropdownSignout" onClick={()=>{
                 signOutClick();
@@ -93,5 +94,7 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export {
+  Navbar,
+};
 

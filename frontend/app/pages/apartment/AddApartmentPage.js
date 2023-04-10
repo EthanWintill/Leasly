@@ -1,10 +1,8 @@
-import React from 'react';
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {auth} from '../../FirebaseFuncs';
-import {useNavigate} from 'react-router-dom';
 
-function addApartment() {
-  const navigate = useNavigate();
+export default function AddApartmentPage(props) {
+  const {navigation} = props;
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -38,7 +36,7 @@ function addApartment() {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          navigate('/');
+          navigation.navigate('home');
         })
         .catch((error) => {
           console.log(error);
@@ -77,4 +75,7 @@ function addApartment() {
     );
   }
 }
-export default addApartment;
+
+export {
+  AddApartmentPage,
+};

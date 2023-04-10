@@ -1,9 +1,8 @@
-import './AptmntSubleaseBoard.css';
+import React from 'react';
+import './ApartmentSubleaseBoard.css';
 
-
-const AptmntSubleaseBoard = ({listings}) =>{
+export default function ApartmentSubleaseBoard({listings}) {
   return (
-
     <div className="bountyContainer">
       <p className="bountyTitle">Subleases Available</p>
       <div className="bountyView">
@@ -26,12 +25,12 @@ const AptmntSubleaseBoard = ({listings}) =>{
                                 sapien dui mattis dui, non pulvinar lorem felis nec erat</p>
             <button> Message </button>
           </div>
-
         </div>
-        {/* )}*/}
       </div>
     </div>
   );
-};
+}
 
-export default AptmntSubleaseBoard;
+export {
+  ApartmentSubleaseBoard,
+};

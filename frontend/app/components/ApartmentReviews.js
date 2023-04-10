@@ -1,6 +1,7 @@
-import './AptmntReviews.css';
+import React from 'react';
+import './ApartmentReviews.css';
 
-const AptmntReviews = ({identifier}) =>{
+export default function ApartmentReviews({identifier}) {
   return (
     <div className="reviewContainer">
       <p className="reviewTitle"> Reviews</p>
@@ -17,6 +18,8 @@ const AptmntReviews = ({identifier}) =>{
       </div>
     </div>
   );
-};
+}
 
-export default AptmntReviews;
+export {
+  ApartmentReviews,
+};

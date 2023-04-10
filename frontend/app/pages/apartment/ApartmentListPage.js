@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import Navbar from '../../components/Navbar';
-import './AllApartments.css';
-import testur from '../../imgs/the-outpost.jpg';
-import {useNavigate} from 'react-router-dom';
+import React, {useState} from 'react';
 
-function AllApartments() {
+import testur from '../../imgs/the-outpost.jpg';
+import './ApartmentListPage.css';
+
+export default function ApartmentListPage(props) {
   /* This will hold basic apartment information until i can put it all in a database. It's really long. Like, REALLY long... */
   const apartmentInfoTest = [
     {
@@ -687,13 +686,11 @@ function AllApartments() {
 
 
     */
-  const navigate = useNavigate();
+
+  const {navigation} = props;
+
   return (
     <div className="mainContainer">
-      <div className="nav">
-        <Navbar />
-      </div>
-
       <div className="listContainer">
         {allApartmentsArr.map((apartment) =>
           <div className="apartmentCard" key={apartment.name}>
@@ -703,7 +700,7 @@ function AllApartments() {
                             or pass the apartments name itself to navigate("")*/}
             {/* :id will replace /00. :id is simply the UUID for the apartment that they are clicking on, or just apartment.name for now */}
             <button className="generalBtn" type="button" onClick={() => {
-              navigate('/apartmntview/' + apartment.name);
+              navigation.navigate('viewApartment', {name: apartment.name});
             }}>More Info</button>
           </div>)}
       </div>
@@ -711,4 +708,6 @@ function AllApartments() {
   );
 }
 
-export default AllApartments;
+export {
+  ApartmentListPage,
+};

@@ -2,7 +2,7 @@ import Navbar from '../../components/Navbar';
 import React, {useState, useEffect} from 'react';
 import {auth} from '../../FirebaseFuncs';
 
-const Profile = () => {
+export default function ProfilePage() {
   const [data, setdata] = useState({
     listings: [],
   });
@@ -22,7 +22,6 @@ const Profile = () => {
       }),
     );
   }, []);
-
 
   return (
     <div>
@@ -44,6 +43,8 @@ const Profile = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Profile;
+export {
+  ProfilePage,
+};

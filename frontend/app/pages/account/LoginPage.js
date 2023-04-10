@@ -1,12 +1,11 @@
 import {React, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
 import {View} from 'native-base';
 import {auth, signInWithEmailAndPassword} from '../../FirebaseFuncs';
 
 import FormBuilders from '../../components/builders/form/FormBuilders';
 
-export default function LoginPage() {
-  const navigate = useNavigate();
+export default function LoginPage(props) {
+  const {navigation} = props;
 
   // Form Data
   const [email, setEmail] = useState('');
@@ -24,7 +23,7 @@ export default function LoginPage() {
     await signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           console.log(userCredential.user.uid);
-          navigate('/');
+          navigation.navigate('home');
         })
         .catch((err) => {
           console.error(`${err.code}: ${err.message}`);
@@ -150,7 +149,7 @@ export default function LoginPage() {
             variant: 'link',
             py: 0,
             onPress: () => {
-              navigate('/signup');
+              navigation.navigate('signup');
             },
           },
           {
@@ -162,7 +161,7 @@ export default function LoginPage() {
           'Cancel',
           {
             onPress: () => {
-              navigate('/');
+              navigation.navigate('home');
             },
           })
       .build();

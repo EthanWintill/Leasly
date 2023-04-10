@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../../components/Navbar';
 
 import holderPFP from '../../imgs/holderPFP.jpg';
 import './Messages.css';
@@ -7,9 +6,6 @@ import './Messages.css';
 function Messages() {
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
       <div className="messagesContainer">
         <br />
         <div className="messagesUserList">

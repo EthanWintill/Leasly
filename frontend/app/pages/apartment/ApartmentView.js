@@ -2,14 +2,13 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 
-import AptmntReviews from '../../components/AptmntReviews';
-import AptmntSubleaseBoard from '../../components/AptmntSubleaseBoard';
+import ApartmentReviews from '../../components/ApartmentReviews';
+import ApartmentSubleaseBoard from '../../components/ApartmentSubleaseBoard';
 
-import Navbar from '../../components/Navbar';
 import testur from '../../imgs/the-outpost.jpg';
 import './ApartmentView.css';
 
-const ApartmentView = () => {
+export default function ViewApartmentPage() {
   const {id} = useParams();
   const [data, setdata] = useState({
     listings: [{}],
@@ -34,14 +33,10 @@ const ApartmentView = () => {
         console.log(data);
       }),
     );
-  }, []);
+  }, [id]);
+
   return (
     <div>
-      {/* HTML CSS Needs:
-            -make buttons for needed function reqs above
-            -make it look pretty.
-            */}
-      <Navbar />
       <div className="aptmntViewContainer">
 
         <div className="apartmentInfoContainer">
@@ -86,16 +81,18 @@ const ApartmentView = () => {
           </div>
         </div>
         <div className="subleaseViewContainer">
-          <AptmntSubleaseBoard identifier={data.listings}/>
+          <ApartmentSubleaseBoard identifier={data.listings}/>
         </div>
 
         <div className="reviewViewContainer">
-          <AptmntReviews identifier={id}/>
+          <ApartmentReviews identifier={id}/>
         </div>
 
       </div>
     </div>
   );
-};
+}
 
-export default ApartmentView;
+export {
+  ViewApartmentPage,
+};

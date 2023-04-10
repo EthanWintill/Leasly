@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {ImageBackground} from 'react-native';
-import {useNavigate} from 'react-router-dom';
 import {
   Button,
   Center,
@@ -10,13 +9,11 @@ import {
   View,
 } from 'native-base';
 
-import Navbar from '../../components/Navbar';
-
 import backgroundImage from '../../imgs/samantha-gades-fIHozNWfcvs-unsplash.jpg';
 import './HomePage.css';
 
-function HomePage() {
-  const navigate = useNavigate();
+function HomePage(props) {
+  const {navigation} = props;
 
   const [data, setdata] = useState({
     listings: [],
@@ -57,9 +54,6 @@ function HomePage() {
 
   return (
     <View>
-      <div className="homeNav">
-        <Navbar />
-      </div>
       <ImageBackground source={{uri: backgroundImage}} w="100%">
         <Flex {...jumbo}>
           <Center>
@@ -84,8 +78,8 @@ function HomePage() {
 
       <Center>
         <HStack space={10}>
-          <Button onPress={() => navigate('/addapartment')}>Create a New Listing</Button>
-          <Button onPress={() => navigate('/allapartments')}>View All Apartments</Button>
+          <Button onPress={() => navigation.navigate('addApartment')}>Create a New Listing</Button>
+          <Button onPress={() => navigation.navigate('/allApartments')}>View All Apartments</Button>
         </HStack>
       </Center>
     </View>

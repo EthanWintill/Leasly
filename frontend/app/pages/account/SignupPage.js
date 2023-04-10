@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
 import {View} from 'native-base';
 import {auth, createUserWithEmailAndPassword} from '../../FirebaseFuncs';
 
 import useEffectAfterMount from '../../hooks/AfterMountHook';
 import FormBuilders from '../../components/builders/form/FormBuilders';
 
-export default function SignupPage() {
-  const navigate = useNavigate();
+export default function SignupPage(props) {
+  const {navigation} = props;
 
   // Form Data
   const [email, setEmail] = useState('');
@@ -62,7 +61,7 @@ export default function SignupPage() {
               .then((response) => response.json())
               .then((data) => {
                 console.log(data);
-                navigate('/');
+                navigation.navigate('home');
               })
               .catch((err) => {
                 console.error(err);
@@ -233,7 +232,7 @@ export default function SignupPage() {
           'Cancel',
           {
             onPress: () => {
-              navigate('/');
+              navigation.navigate('home');
             },
           })
       .setFooter(
@@ -246,7 +245,7 @@ export default function SignupPage() {
             variant: 'link',
             py: 0,
             onPress: () => {
-              navigate('/signin');
+              navigation.navigate('signin');
             },
           },
           {
