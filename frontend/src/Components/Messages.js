@@ -1,7 +1,56 @@
 import Navbar from "./Navbar"
 import './Messages.css'
 import holderPFP from '../imgs/holderPFP.jpg'
+import{ collection, getDoc, doc, updateDoc, arrayUnion} from "firebase/firestore"
+import { db } from "../FirebaseFuncs"
+import { auth  } from "../FirebaseFuncs"
+import { useNavigate } from "react-router-dom"
+
+import { useEffect, useState } from "react"
 const Messages = () =>{
+
+    const [messageList, setMessageList] = useState();
+    const navigate = useNavigate()
+    const sendMessage = async ()=>{
+        const message = document.getElementById("messageBox").value
+        const searchParam = auth.currentUser.uid+" "
+        const docRef = doc(db, "userData", searchParam);
+        const docSnap = await updateDoc(docRef, {
+            "user.inbox.0.messages": arrayUnion(message)
+          });
+        
+    }
+    
+
+    useEffect(() => {
+
+        const getUserDataDoc = async () =>{
+            console.log(auth.currentUser.uid)
+            const searchParam = auth.currentUser.uid+" "
+            
+
+            const docRef = doc(db, "userData", searchParam);
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                console.log("Document data:", docSnap.data().user.inbox[0]);
+                getMessages(docSnap.data().user);
+              } else {
+                // docSnap.data() will be undefined in this case
+                console.log("No such document!");
+              }
+        }
+
+       const getMessages = (userList) => {
+            const messages = userList.inbox[0];
+            setMessageList(messages)
+            console.log(messages)
+        }
+        
+        getUserDataDoc();
+    }, [])
+
+    
+    
     return(
         <div>
             <div>
@@ -36,23 +85,24 @@ const Messages = () =>{
                         stay empty*/}
 
                     <div className="messageHistory">
-
-                            <div>
-                                <div>
-                                    <p> Woof! Woof! ARRRRRRRGH!  Woof! Woof!  Woof! Woof! Woof! Woof!</p>
+                        {(messageList) ? messageList.messages.map((message)=>
+                                    <div>
+                                        <div>
+                                            <p>{message} </p>
+                                        </div>
+                                    </div>
+                                )
+                            :   <div>
+                                    <div>
+                                        <p>   </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <p> Bark! </p>
-                                </div>
-                            </div>
-
+                        }
                     </div>
                     <div className="messageTypeBox">
-                        <textarea></textarea>
+                        <textarea id="messageBox"></textarea>
                         {/*OnClick, send contents of textarea*/}
-                        <button className="messageSendBtn" type="button">Send Message</button>
+                        <button className="messageSendBtn" type="button" onClick={()=>sendMessage()}>Send Message</button>
                     </div>
                     
                 </div>

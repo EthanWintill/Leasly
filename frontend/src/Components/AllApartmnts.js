@@ -3,6 +3,8 @@ import "./AllApartmnts.css"
 import testur from "../imgs/the-outpost.jpg"
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import{ collection, getDocs } from "firebase/firestore"
+import { db } from "../FirebaseFuncs"
 function AllApartmnts() {
 
     /* This will hold basic apartment information until i can put it all in a database. It's really long. Like, REALLY long... */
@@ -642,7 +644,7 @@ function AllApartmnts() {
             furnished: true,
             rmMatching: true
         }]
-    {/* Uncomment after database and backend are hosted online, will not load until on computers not running sqlite until then.
+    /* Uncomment after python database and backend are hosted online, will not load until on computers not running sqlite until then.*/
     // Using useEffect for single rendering
         useEffect(() => {
             // Using fetch to fetch the api from
@@ -656,10 +658,15 @@ function AllApartmnts() {
                 })
             );
         }, []);
-    */}
+    
     const [allApartmentsArr, setAllApartmentsArr] = useState(apartmentInfoTest);
+   
 
-    {/* Will only need to be ran once for the online database, can be deleted after
+    
+    
+    
+
+    /* Will only need to be ran once for the online database, can be deleted after
     if (false) { //adds all apartments to database
         apartmentInfoTest.forEach((apartment) => {
             fetch('/api/apartments', {
@@ -674,7 +681,7 @@ function AllApartmnts() {
                 .catch(error => console.error(error))
         });
     }
-    */}
+    */
     
     /*needs:
 
