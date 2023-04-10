@@ -10,7 +10,6 @@ import {
 } from 'native-base';
 
 import backgroundImage from '../../imgs/samantha-gades-fIHozNWfcvs-unsplash.jpg';
-import './HomePage.css';
 
 function HomePage(props) {
   const {navigation} = props;
