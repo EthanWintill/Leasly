@@ -44,6 +44,7 @@ bower_components
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.history
 
 # misc
 .sass-cache
@@ -117,3 +118,6 @@ htmlcov/
 backend/secret/Keys.py
 
 frontend2/
+ 
+# Expo
+.expo

@@ -4,5 +4,13 @@
   },
   "eslint.workingDirectories": [
     {"mode": "auto"}
+  ],
+  "cSpell.words": [
+    "bttn",
+    "Leasly",
+    "Pressable",
+    "signin",
+    "Signout",
+    "vstack"
   ]
 }
