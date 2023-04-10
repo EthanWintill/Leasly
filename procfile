@@ -1,1 +1,1 @@
-web: cd bacend && gunicorn routes:app
+web: cd bacend && python routes:app
