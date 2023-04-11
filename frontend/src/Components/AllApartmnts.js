@@ -642,21 +642,24 @@ function AllApartmnts() {
             furnished: true,
             rmMatching: true
         }]
+    const [allApartmentsArr, setAllApartmentsArr] = useState({
+        apartments: []
+    });
     // Using useEffect for single rendering
-        useEffect(() => {
-            // Using fetch to fetch the api from
-            // flask server it will be redirected to proxy
-            fetch("https://leaslybackend.herokuapp.com/api/apartments").then((res) =>
-                res.json().then((data) => {
-                    // Setting a data from api
-                    setAllApartmentsArr({
-                        apartments: data
-                    });
-                })
-            );
-        }, []);
-    
-    const [allApartmentsArr, setAllApartmentsArr] = useState(apartmentInfoTest);
+    useEffect(() => {
+        // Using fetch to fetch the api from
+        // flask server it will be redirected to proxy
+        fetch("https://leaslybackend.herokuapp.com/api/apartments").then((res) =>
+            res.json().then((data) => {
+                // Setting a data from api
+                // only one listing rn, feel free to add some
+                setAllApartmentsArr({
+                    apartments: data
+                });
+                console.log(data)
+            })
+        );
+    }, []);
 
     {/* Will only need to be ran once for the online database, can be deleted after
     if (false) { //adds all apartments to database
@@ -674,7 +677,7 @@ function AllApartmnts() {
         });
     }
     */}
-    
+
     /*needs:
 
     -fetch call, to get the List of apartments in our database, creates an array of objects called apartmentInfo, and passes that into AllApartmentsArr()
@@ -692,14 +695,14 @@ function AllApartmnts() {
             </div>
 
             <div className="listContainer">
-                {allApartmentsArr.map((apartment) =>
+                {allApartmentsArr.apartments.map((apartment) =>
                     <div className="apartmentCard" key={apartment.name}>
                         <img src={testur} alt="n/a"></img>
                         <p>{apartment.name}</p>
                         {/*on click, get the apartments name and pass that as a  prop to apartmntview.js.
                             or pass the apartments name itself to navigate("")*/}
                         {/*:id will replace /00. :id is simply the UUID for the apartment that they are clicking on, or just apartment.name for now */}
-                        <button className="generalBtn" type="button" onClick={() => { navigate("/apartmntview/"+apartment.name) }}>More Info</button>
+                        <button className="generalBtn" type="button" onClick={() => { navigate("/apartmntview/" + apartment.name) }}>More Info</button>
                     </div>)}
             </div>
         </div>

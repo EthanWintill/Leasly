@@ -18,12 +18,6 @@ const AptmntSubleaseBoard = ({ listings }) => {
                     </div>
                     <div className="bountyDescription">
                         <p> {sublet.description}</p>
-                        <p> Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Nunc maximus, nulla ut commodo sagittis,
-                            sapien dui mattis dui, non pulvinar lorem felis nec erat
-                            r sit amet, consectetur
-                            adipiscing elit. Nunc maximus, nulla ut commodo sagittis,
-                            sapien dui mattis dui, non pulvinar lorem felis nec erat</p>
                         <button> Message </button>
                     </div>
 
