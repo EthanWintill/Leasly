@@ -10,8 +10,7 @@ import ApartmentSubleaseBoard from '../../components/ApartmentSubleaseBoard';
 import testur from '../../../assets/apartments/apartment.jpg';
 import './ApartmentView.css';
 
-export default function ViewApartmentPage({route, navigation}) {
-  const {name} = route.params
+export default function ViewApartmentPage({name, navigation}) {
   const [data, setdata] = useState({
     listings: [],
   });

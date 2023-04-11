@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 
 import testur from '../../../assets/apartments/apartment.jpg';
 import './ApartmentListPage.css';
@@ -641,56 +641,64 @@ export default function ApartmentListPage(props) {
       furnished: true,
       rmMatching: true,
     }];
-  const [allApartmentsArr, setAllApartmentsArr] = useState({
-    apartments: []
-  });
+
+  /* Uncomment after python database and backend are hosted online, will not load until on computers not running sqlite until then.*/
   // Using useEffect for single rendering
   useEffect(() => {
     // Using fetch to fetch the api from
     // flask server it will be redirected to proxy
-    fetch("https://leaslybackend.herokuapp.com/api/apartments").then((res) =>
+    fetch('/api/apartments').then((res) =>
       res.json().then((data) => {
         // Setting a data from api
-        // only one listing rn, feel free to add some
         setAllApartmentsArr({
-          apartments: data
+          apartments: data,
         });
-        console.log(data)
-      })
+      }),
     );
   }, []);
-  /*
-    // Will only need to be ran once for the online database, can be deleted after
-    if (false) { //adds all apartments to database
-        apartmentInfoTest.forEach((apartment) => {
-            fetch('/api/apartments', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(apartment)
-            })
-                .then(response => response.json())
-                .then(data => console.log(data))
-                .catch(error => console.error(error))
-        });
-    }
-    */
 
-  const { navigation } = props;
+  const [allApartmentsArr, setAllApartmentsArr] = useState(apartmentInfoTest);
 
+
+  /* Will only need to be ran once for the online database, can be deleted after
+if (false) { //adds all apartments to database
+  apartmentInfoTest.forEach((apartment) => {
+      fetch('/api/apartments', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(apartment)
+      })
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error(error))
+  });
+}
+*/
+
+  /* needs:
+
+-fetch call, to get the List of apartments in our database, creates an array of objects called apartmentInfo, and passes that into AllApartmentsArr()
+-apartmentInfo just needs to have the same fields as apartmentInfoTest above, that one is just to help visualize what it looks like when complete
+-to pass into setAllApartmentsArr, add setAllApartmentsArr([...apartmentInfo]) to the end of the fetch call.
+DONE, feel free to modify, I'm not sure if the way it works right now is good practice...
+
+
+*/
+  const {navigation} = props;
   return (
     <div className="mainContainer">
       <div className="listContainer">
-        {allApartmentsArr.apartments.map((apartment) =>
+        {allApartmentsArr.map((apartment) =>
           <div className="apartmentCard" key={apartment.name}>
             <img src={testur} alt="n/a" />
             <p>{apartment.name}</p>
             {/* on click, get the apartments name and pass that as a  prop to apartmntview.js.
-                            or pass the apartments name itself to navigate("")*/}
+                      or pass the apartments name itself to navigate("")*/}
             {/* :id will replace /00. :id is simply the UUID for the apartment that they are clicking on, or just apartment.name for now */}
             <button className="generalBtn" type="button" onClick={() => {
-              navigation.navigate('viewApartment', { name: apartment.name });
+              navigation.navigate('viewApartment', {name: apartment.name});
             }}>More Info</button>
           </div>)}
       </div>
