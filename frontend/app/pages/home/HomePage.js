@@ -75,7 +75,7 @@ function HomePage(props) {
       <Center>
         <HStack space={10}>
           <Button onPress={() => navigation.navigate('addApartment')}>Create a New Listing</Button>
-          <Button onPress={() => navigation.navigate('/allApartments')}>View All Apartments</Button>
+          <Button onPress={() => navigation.navigate('allApartments')}>View All Apartments</Button>
         </HStack>
       </Center>
     </View>

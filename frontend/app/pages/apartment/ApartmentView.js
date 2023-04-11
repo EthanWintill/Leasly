@@ -1,6 +1,8 @@
 
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
+import { MaterialIcons } from 'react-native-vector-icons';
+
 
 import ApartmentReviews from '../../components/ApartmentReviews';
 import ApartmentSubleaseBoard from '../../components/ApartmentSubleaseBoard';
@@ -54,28 +56,35 @@ export default function ViewApartmentPage() {
             <div className="amenitiesContainer">
               {/* 9 divs acting as cards, one for each amenitie, arranged in a flex container*/}
               <div>
-                <span class="material-symbols-outlined"> pets </span>
+                <MaterialIcons name="pets" size={32} color="red" />
               </div>
               <div>
-                <span class="material-symbols-outlined"> spa </span>
+                
+                <MaterialIcons name="spa" size={32} color="red" />
               </div>
               <div>
-                <span class="material-symbols-outlined"> sports_gymnastics </span>
+                
+                <MaterialIcons name="directions-run" size={32} color="red" />
               </div>
               <div>
-                <span class="material-symbols-outlined"> water_ec </span>
+                
+                <MaterialIcons  name="ac-unit" size={32} color="red" />
               </div>
               <div>
-                <span class="material-symbols-outlined"> directions_bus </span>
+                
+                <MaterialIcons name="bus-alert" size={32} color="red" />
               </div>
               <div>
-                <span class="material-symbols-outlined"> self_improvement </span>
+                
+                <MaterialIcons name="person" size={32} color="red" />
               </div>
               <div>
-                <span class="material-symbols-outlined"> local_laundry_service </span>
+                
+                <MaterialIcons name="dry-cleaning" size={32} color="red" />
               </div>
               <div>
-                <span class="material-symbols-outlined"> bed </span>
+                
+                <MaterialIcons name="king-bed" size={32} color="red" />
               </div>
             </div>
           </div>
