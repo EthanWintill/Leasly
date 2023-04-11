@@ -26,7 +26,7 @@ export default function AddApartmentPage(props) {
     console.log(data);
 
 
-    fetch('/api/listings', {
+    fetch('https://leaslybackend.herokuapp.com/api/listings', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
