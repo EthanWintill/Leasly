@@ -1,8 +1,9 @@
 import {React, useState} from 'react';
-import {View} from 'native-base';
+import {Box, Button, Center, HStack, Heading, Text, View} from 'native-base';
 import {auth, signInWithEmailAndPassword} from '../../util/FirebaseFuncs';
 
 import FormBuilders from '../../components/builders/form/FormBuilders';
+import useEffectAfterMount from '../../hooks/AfterMountHook';
 
 export default function LoginPage(props) {
   const {navigation} = props;
@@ -10,7 +11,14 @@ export default function LoginPage(props) {
   // Form Data
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [databaseError, setDatabaseError] = useState(false);
+
+  const [loginFailed, setLoginFailed] = useState(false);
+
+  useEffectAfterMount(() => {
+    if (loginFailed) {
+      setLoginFailed(false);
+    }
+  }, [email, password]);
 
   /**
    * Logs a user in based on form data.
@@ -33,28 +41,19 @@ export default function LoginPage(props) {
   };
 
   // Use builder to create form
-  const AccountForm = new FormBuilders.AccountForm(
+  const LoginForm = new FormBuilders.Vertical(
       {
         form: {
-          control: {
-            isInvalid: databaseError,
-          },
           vstack: {
             space: 3,
             mt: 5,
           },
         },
-        center: {
-          w: '100%',
-          h: '100%',
-        },
         box: {
-          safeArea: true,
-          p: 10,
-          py: 8,
-          w: '90%',
-          maxW: 500,
           variant: 'rounded_25_accent',
+          maxW: 500,
+          w: '90%',
+          p: 10,
         },
         vstack: {
           space: 3,
@@ -62,58 +61,26 @@ export default function LoginPage(props) {
         },
       })
       .setHeader(
-          'Welcome',
-          {
-            size: 'lg',
-            fontWeight: 'semibold',
-          },
-          'Sign in to continue!',
-          {
-            mt: 1,
-            fontWeight: 'medium',
-            size: 'xs',
-          },
+          <Box>
+            <Heading size={'lg'} fontWeight={'semibol'}>Welcome</Heading>
+            <Heading mt={1} size={'xs'} fontWeight={'medium'}>Sign-in to continue!</Heading>
+          </Box>,
       )
-      .addForm(
-          {
-            elements: [
-              {
-                element: 'label',
-                text: 'Email',
-                props: {
-                  mt: 2,
-                },
-              },
-              {
-                element: 'input',
-                props: {
-                  type: 'text',
-                  isRequired: true,
-                  onChangeText: (text) => {
-                    setEmail(text);
-                  },
-                },
-              },
-              {
-                element: 'label',
-                text: 'Password',
-              },
-              {
-                element: 'input',
-                props: {
-                  type: 'password',
-                  isRequired: true,
-                  onChangeText: (text) => {
-                    setPassword(text);
-                  },
-                },
-              },
-              {
-                element: 'error',
-                text: 'Please enter a valid email and password.',
-              },
-            ],
-          },
+      .setFooter(
+          <HStack justifyContent={'center'} mt={4}>
+            <Text fontSize={'sm'}>Don't have an account? </Text>
+            <Button variant={'link'} py={0} onPress={() => navigation.navigate('signup')}>Sign-up</Button>
+          </HStack>,
+      )
+      .addFormGroup(
+          FormBuilders.Group({invalidConditions: {
+            'login': () => loginFailed,
+          }})
+              .addLabel('Email')
+              .addTextInput(setEmail, ['login'], {isRequired: true})
+              .addLabel('Password')
+              .addPasswordInput(setPassword, ['login'], {isRequired: true})
+              .addError('Please enter a valid email and password.', ['login']),
       )
       .addButton(
           'Forgot Password?',
@@ -128,35 +95,15 @@ export default function LoginPage(props) {
           {
             mt: 5,
             onPress: () => {
-              if (!databaseError) {
-                const allowed = email.length > 0 &&
+              const allowed = email.length > 0 &&
                 password.length > 0;
-                if (allowed) {
-                  login().then((error) => {
-                    setDatabaseError(error);
-                  });
-                }
+              if (allowed && login()) {
+                navigation.navigate('home');
+              } else {
+                setLoginFailed(true);
               }
             },
           })
-      .setFooter(
-          'Don\'t have an account? ',
-          {
-            fontSize: 'sm',
-          },
-          'Sign Up',
-          {
-            variant: 'link',
-            py: 0,
-            onPress: () => {
-              navigation.navigate('signup');
-            },
-          },
-          {
-            mt: 4,
-            justifyContent: 'center',
-          },
-      )
       .addButton(
           'Cancel',
           {
@@ -168,7 +115,9 @@ export default function LoginPage(props) {
 
   return (
     <View>
-      {AccountForm}
+      <Center w={'100%'} h={'100%'}>
+        {LoginForm}
+      </Center>
     </View>
   );
 }

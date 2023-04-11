@@ -13,7 +13,7 @@ export default class AbstractBuilder {
   /**
    * Ensures the builder does not already have this object.
    *
-   * @param {*} obj Object to add
+   * @param {*} obj Object ot add
    * @param {*} name Name of object in error report
    */
   ensureNull(obj, name) {
@@ -22,9 +22,16 @@ export default class AbstractBuilder {
     }
   }
 
+  getOrCreateProps(props) {
+    if (typeof (props) === 'undefined') {
+      props = {};
+    }
+    return props;
+  }
+
   /**
    * Instructs the builder to build the component. Children classes
-   * must implement this function.
+   * must implement this functon.
    */
   build() {
     throw new Error('Method \'build()\' must be implemented.');
