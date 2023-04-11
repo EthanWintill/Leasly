@@ -14,7 +14,7 @@
     "expo": "~48.0.10",
     "expo-splash-screen": "~0.18.1",
     "expo-status-bar": "^1.4.4",
-    "firebase": "^9.18.0",
+    "firebase": "^9.19.1",
     "hamburger-react": "^2.5.0",
     "native-base": "^3.4.28",
     "react": "18.2.0",

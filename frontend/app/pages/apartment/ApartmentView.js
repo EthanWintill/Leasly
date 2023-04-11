@@ -55,6 +55,7 @@ export default function ViewApartmentPage({route, navigation}) {
             <p> amenities</p>
             <div className="amenitiesContainer">
               {/* 9 divs acting as cards, one for each amenitie, arranged in a flex container*/}
+              {/*change the colors lol red is horrible, but the default color */}
               <div>
                 <MaterialIcons name="pets" size={32} color="red" />
               </div>
@@ -78,28 +79,6 @@ export default function ViewApartmentPage({route, navigation}) {
               </div>
               <div>
                 <MaterialIcons name="king-bed" size={32} color="red" />
-                <span className="material-symbols-outlined"> pets </span>
-              </div>
-              <div>
-                <span className="material-symbols-outlined"> spa </span>
-              </div>
-              <div>
-                <span className="material-symbols-outlined"> sports_gymnastics </span>
-              </div>
-              <div>
-                <span className="material-symbols-outlined"> water_ec </span>
-              </div>
-              <div>
-                <span className="material-symbols-outlined"> directions_bus </span>
-              </div>
-              <div>
-                <span className="material-symbols-outlined"> self_improvement </span>
-              </div>
-              <div>
-                <span className="material-symbols-outlined"> local_laundry_service </span>
-              </div>
-              <div>
-                <span className="material-symbols-outlined"> bed </span>
               </div>
             </div>
           </div>

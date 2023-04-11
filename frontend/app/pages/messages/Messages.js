@@ -36,9 +36,8 @@ function Messages() {
     useEffect(() => {
 
         const getUserDataDoc = async () =>{
-            console.log(auth.currentUser.uid)
-            const searchParam = auth.currentUser.uid+" "
-            
+            console.log(auth.currentUser)
+            const searchParam = auth.currentUser.displayName           
 
             const docRef = doc(db, "userData", searchParam);
             const docSnap = await getDoc(docRef);
