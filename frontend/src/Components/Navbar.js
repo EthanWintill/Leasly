@@ -54,9 +54,9 @@ function Navbar() {
             <div className="accountDiv">
                 {/* If user is found to not be signed in, it will display options to log in or create an account. If they are signed in, then it will display the account icon.*/}
                       <div className="dropdown-log">
-                          <button type="button" onClick={() => {navigate("/signin")}}>Log In</button>
+                          <button type="button" onClick={() => {navigate("/signin")} }>Log In</button>
                           <button type="button" onClick={()=>{navigate("/signup")}}>Create An Account</button>
-                          <button type="button" onClick={()=> {testActSignIn()}}>Sign into test Account</button>
+                          <button type="button" onClick={()=> {testActSignIn()}}>Sign into test Account(click me fist!)</button>
                       </div>
 
                       <div className="dropdown">

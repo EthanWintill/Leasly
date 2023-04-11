@@ -59,15 +59,21 @@ const Messages = () =>{
             <div className="messagesContainer">
                 <br></br>
                 <div className="messagesUserList">
-
+                    <div className="newMessageContainer">
+                        <p> Send new message</p>
+                        <input type="text" placeholder="Enter users email address"></input>
+                        <button type="button">Send</button>
+                    </div>
+                    <div className="indivUserContainer">
                     {/*this will have to be ternary based on a state. If there are other users they have had a conversation with
                         ,each one will be its own div*/}
-                    <div className="indivUser">
-                        <img className="indivUserImg" src={holderPFP}></img>
-                        {/* will hold the username of the account talking too*/}
-                        <p className="indivUserName"> temp user</p>
-                        {/* will be a quick preview of the last recieved or sent message*/}
-                        <p className="indivUserPreview"> random Message</p>
+                        <div className="indivUser">
+                            <img className="indivUserImg" src={holderPFP}></img>
+                            {/* will hold the username of the account talking too*/}
+                            <p className="indivUserName"> temp user</p>
+                            {/* will be a quick preview of the last recieved or sent message*/}
+                            <p className="indivUserPreview"> random Message</p>
+                        </div>
                     </div>
         
                 </div>
