@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View} from 'native-base';
+import {Box, Button, Center, HStack, Heading, Text, View} from 'native-base';
 import {auth, createUserWithEmailAndPassword, updateProfile, db} from '../../util/FirebaseFuncs';
 import{ doc, setDoc} from "firebase/firestore"
 
@@ -9,30 +9,47 @@ import FormBuilders from '../../components/builders/form/FormBuilders';
 
 export default function SignupPage(props) {
   const {navigation} = props;
-  // Form Data
+
+  /* -------------------------------- Form data ------------------------------- */
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  // Verifiers
+  /* ------------------------------- Form states ------------------------------ */
   const MIN_PASSWORD_LENGTH = 8;
   const [passwordsMatch, setPasswordsMatch] = useState(true);
   const [passwordGoodLength, setPasswordGoodLength] = useState(true);
-  const [databaseError, setDatabaseError] = useState(false);
+  const [signupFailed, setSignupFailed] = useState(false);
 
-  // Events
+  /* --------------------------------- Events --------------------------------- */
+  // On password change
   useEffectAfterMount(() => {
-    setPasswordsMatch(confirmPassword.length === 0 || password === confirmPassword);
-  }, [password, confirmPassword]);
-
-  useEffectAfterMount(() => {
-    setPasswordGoodLength(password.length === 0 || password.length >= MIN_PASSWORD_LENGTH);
+    setPasswordGoodLength(password.length >= MIN_PASSWORD_LENGTH);
+    if (password.length > 0 && confirmPassword.length > 0) {
+      setPasswordsMatch(password === confirmPassword);
+    } else {
+      if (!passwordsMatch) {
+        setPasswordsMatch(true);
+      }
+    }
   }, [password]);
 
+  // On confirmed password change
   useEffectAfterMount(() => {
-    if (databaseError) {
-      setDatabaseError(false);
+    if (password.length > 0) {
+      setPasswordsMatch(password === confirmPassword);
+    } else {
+      if (!passwordsMatch) {
+        setPasswordsMatch(true);
+      }
+    }
+  }, [confirmPassword]);
+
+  // On any change
+  useEffectAfterMount(() => {
+    if (signupFailed) {
+      setSignupFailed(false);
     }
   }, [email, username, password, confirmPassword]);
 
@@ -104,28 +121,19 @@ export default function SignupPage(props) {
 
   }
   // Use builder to create form
-  const AccountForm = FormBuilders.AccountForm(
+  const SignupForm = FormBuilders.Vertical(
       {
         form: {
-          control: {
-            isInvalid: databaseError,
-          },
           vstack: {
             space: 3,
             mt: 5,
           },
         },
-        center: {
-          w: '100%',
-          h: '100%',
-        },
         box: {
-          safeArea: true,
-          p: 10,
-          py: 8,
-          w: '90%',
-          maxW: 500,
           variant: 'rounded_25_accent',
+          maxW: 500,
+          w: '90%',
+          p: 10,
         },
         vstack: {
           space: 3,
@@ -133,110 +141,34 @@ export default function SignupPage(props) {
         },
       })
       .setHeader(
-          'Welcome',
-          {
-            size: 'lg',
-            fontWeight: 'semibold',
-          },
-          'Sign up to continue!',
-          {
-            mt: 1,
-            fontWeight: 'medium',
-            size: 'xs',
-          },
+          <Box>
+            <Heading size={'lg'} fontWeight={'semibol'}>Welcome</Heading>
+            <Heading mt={1} size={'xs'} fontWeight={'medium'}>Sign-up to continue!</Heading>
+          </Box>,
       )
-      .addForm(
-          {
-            elements: [
-              {
-                element: 'label',
-                text: 'Email',
-                props: {
-                  mt: 2,
-                },
-              },
-              {
-                element: 'input',
-                props: {
-                  type: 'text',
-                  isRequired: true,
-                  onChangeText: (text) => {
-                    setEmail(text);
-                  },
-                },
-              },
-              {
-                element: 'label',
-                text: 'Username',
-              },
-              {
-                element: 'input',
-                props: {
-                  type: 'text',
-                  isRequired: true,
-                  onChangeText: (text) => {
-                    setUsername(text);
-                  },
-                },
-              },
-              {
-                element: 'group',
-                form: {
-                  isInvalid: !passwordsMatch,
-                },
-                elements: [
-                  {
-                    element: 'group',
-                    form: {
-                      isInvalid: !passwordGoodLength,
-                    },
-                    elements: [
-                      {
-                        element: 'label',
-                        text: 'Password',
-                      },
-                      {
-                        element: 'input',
-                        props: {
-                          type: 'password',
-                          isRequired: true,
-                          onChangeText: (text) => {
-                            setPassword(text);
-                          },
-                        },
-                      },
-                      {
-                        element: 'error',
-                        text: 'Passwords must be at least 8 characters.',
-                      },
-                    ],
-                  },
-                  {
-                    element: 'label',
-                    text: 'Confirm Password',
-                  },
-                  {
-                    element: 'input',
-                    props: {
-                      type: 'password',
-                      isRequired: true,
-                      onChangeText: (text) => {
-                        setConfirmPassword(text);
-                      },
-                    },
-                  },
-                  {
-                    element: 'error',
-                    text: 'Passwords must match.',
-                  },
-                ],
-              },
-              {
-                element: 'error',
-                text: 'Please enter a valid email and password.',
-              },
-            ],
-          },
+      .setFooter(
+          <HStack justifyContent={'center'} mt={4}>
+            <Text fontSize={'sm'}>Already have an account? </Text>
+            <Button variant={'link'} py={0} onPress={() => navigation.navigate('signin')}>Sign-in</Button>
+          </HStack>,
+      )
+      .addFormGroup(
+          FormBuilders.Group({invalidConditions: {
+            'signup': () => signupFailed,
+            'pass_matches': () => !passwordsMatch,
+            'pass_length': () => !passwordGoodLength,
+          }})
+              .addLabel('Email')
+              .addTextInput(setEmail, ['signup'], {isRequired: true})
+              .addLabel('Username')
+              .addTextInput(setUsername, ['signup'], {isRequired: true})
+              .addLabel('Password')
+              .addPasswordInput(setPassword, ['signup', 'pass_matches', 'pass_length'], {isRequired: true})
+              .addError('Your password must be 8 characters or longer.', ['pass_length'])
+              .addLabel('Confirm Password')
+              .addPasswordInput(setConfirmPassword, ['signup', 'pass_matches'], {isRequired: true})
+              .addError('Passwords do not match!', ['pass_matches'])
+              .addError('Failed to sign-up.', ['signup']),
       )
       .addButton(
           'Sign up',
@@ -249,10 +181,10 @@ export default function SignupPage(props) {
                 username.length > 0 &&
                 password.length > 0 &&
                 confirmPassword.length > 0;
-              if (allowed) {
-                signup().then((error) => {
-                  setDatabaseError(error);
-                });
+              if (allowed && signup()) {
+                navigation.navigate('home');
+              } else {
+                setSignupFailed(true);
               }
             },
           })
@@ -263,30 +195,14 @@ export default function SignupPage(props) {
               navigation.navigate('home');
             },
           })
-      .setFooter(
-          'Already have an account? ',
-          {
-            fontSize: 'sm',
-          },
-          'Sign In',
-          {
-            variant: 'link',
-            py: 0,
-            onPress: () => {
-              navigation.navigate('signin');
-            },
-          },
-          {
-            mt: 4,
-            justifyContent: 'center',
-          },
-      )
       .build();
 
   // Create final component
   return (
     <View>
-      {AccountForm}
+      <Center w={'100%'} h={'100%'}>
+        {SignupForm}
+      </Center>
     </View>
   );
 }
