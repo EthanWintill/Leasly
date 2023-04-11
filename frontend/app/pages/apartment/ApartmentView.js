@@ -1,6 +1,8 @@
 
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
+import { MaterialIcons } from 'react-native-vector-icons';
+
 
 import ApartmentReviews from '../../components/ApartmentReviews';
 import ApartmentSubleaseBoard from '../../components/ApartmentSubleaseBoard';
@@ -54,6 +56,28 @@ export default function ViewApartmentPage({route, navigation}) {
             <div className="amenitiesContainer">
               {/* 9 divs acting as cards, one for each amenitie, arranged in a flex container*/}
               <div>
+                <MaterialIcons name="pets" size={32} color="red" />
+              </div>
+              <div>
+                <MaterialIcons name="spa" size={32} color="red" />
+              </div>
+              <div>
+                <MaterialIcons name="directions-run" size={32} color="red" />
+              </div>
+              <div>
+                <MaterialIcons  name="ac-unit" size={32} color="red" />
+              </div>
+              <div>
+                <MaterialIcons name="bus-alert" size={32} color="red" />
+              </div>
+              <div>
+                <MaterialIcons name="person" size={32} color="red" />
+              </div>
+              <div>
+                <MaterialIcons name="dry-cleaning" size={32} color="red" />
+              </div>
+              <div>
+                <MaterialIcons name="king-bed" size={32} color="red" />
                 <span className="material-symbols-outlined"> pets </span>
               </div>
               <div>
