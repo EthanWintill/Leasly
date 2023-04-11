@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {Box, Button, Center, HStack, Heading, Text, View} from 'native-base';
-import {auth, createUserWithEmailAndPassword} from '../../util/FirebaseFuncs';
+import {auth, createUserWithEmailAndPassword, updateProfile, db} from '../../util/FirebaseFuncs';
+import{ doc, setDoc} from "firebase/firestore"
+
 
 import useEffectAfterMount from '../../hooks/AfterMountHook';
 import FormBuilders from '../../components/builders/form/FormBuilders';
@@ -56,8 +58,14 @@ export default function SignupPage(props) {
    */
   const signup = async () => {
     let error = false;
-    await createUserWithEmailAndPassword(auth)
+    await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
+          
+          updateProfile(auth.currentUser,{
+            displayName: username,
+          }).catch((error)=>{
+            console.log({error})
+          })
           const userData = {
             email: email,
             password: password,
@@ -76,6 +84,7 @@ export default function SignupPage(props) {
               .then((response) => response.json())
               .then((data) => {
                 console.log(data);
+                createMsgDoc();
                 navigation.navigate('home');
               })
               .catch((err) => {
@@ -90,6 +99,27 @@ export default function SignupPage(props) {
     return error;
   };
 
+  /*get username, create document with that name in userData collection, and a field 
+    * IMPORTANT field must follow this EXACT formula or it will reset the document everytime there is a write
+    * user(map).Inbox(array).(map).conversation(array).(map).UID(string).message(string)
+    * the map after inbox needs fields conversation and senderID(string) */
+  const createMsgDoc = async () =>{
+    const dataStruc ={
+      user:{
+        Inbox: [
+          {
+            conversation: [
+              
+              
+            ],
+            
+          }
+        ]
+      }
+    }
+    await setDoc(doc(db,"userData", username), dataStruc);
+
+  }
   // Use builder to create form
   const SignupForm = FormBuilders.Vertical(
       {

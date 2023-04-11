@@ -22,7 +22,7 @@ function Messages() {
     };
     tempArr[focusedID].conversation.push(message);
 
-    const searchParam = auth.currentUser.uid + ' ';
+    const searchParam = auth.currentUser.displayName 
     const docRef = doc(db, 'userData', searchParam);
     const docSnap = await updateDoc(docRef, {
       'user.Inbox': tempArr,
