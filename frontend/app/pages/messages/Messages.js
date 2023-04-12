@@ -1,41 +1,102 @@
 import React from 'react';
 
 import holderPFP from '../../../assets/profile/dog.jpg';
-import {collection, getDoc, doc, updateDoc, arrayUnion} from 'firebase/firestore';
+import {collection, getDoc, doc, setDoc, updateDoc, arrayUnion} from 'firebase/firestore';
 import './Messages.css';
 import {db, auth} from '../../util/FirebaseFuncs';
 import {useState, useEffect} from 'react';
 
-function Messages() {
+export default function Messages() {
   const [messageList, setMessageList] = useState([]);
   const [focusedUser, setFocusedUser] = useState([]);
   const [messagerName, setMessagerName] = useState(' ');
   /* not neccessary, but will optimize later*/
-  const [focusedID, setFocusedID] = useState(0);
+  const [focusedID, setFocusedID] = useState();
 
   const sendMessage = async ()=>{
-    const tempArr = messageList.Inbox;
-    console.log({tempArr});
+    const senderTempArr = messageList.Inbox;
+
+    //update current user conversation
     const message = {
       message: document.getElementById('messageBox').value,
-      UID: 'DFASF',
+      UID: auth.currentUser.displayName,
     };
-    tempArr[focusedID].conversation.push(message);
+    const docRef = doc(db, 'userData', auth.currentUser.displayName );
+    try{
+      senderTempArr[focusedID].conversation.push(message);
 
-    const searchParam = auth.currentUser.displayName 
-    const docRef = doc(db, 'userData', searchParam);
-    const docSnap = await updateDoc(docRef, {
-      'user.Inbox': tempArr,
+      //const searchParam = auth.currentUser.displayName 
+      
+      await updateDoc(docRef, {
+      'user.Inbox': senderTempArr,
     });
+    }catch{
+      const data = {
+        user: {
+          Inbox: [
+            {
+              conversation: [
+                {
+                  message: document.getElementById('messageBox').value,
+                  UID: auth.currentUser.displayName,
+                },
+              ] ,
+              senderID: messagerName
+            }
+          ]
+        }
+      }
+    
+      await updateDoc(docRef, data)
+    }
+    
+
+    //update reciever conversation
+    const searchParam = messagerName 
+    const receiverDocRef = doc(db, 'userData', searchParam);
+    const receiverDocSnap = await getDoc(receiverDocRef);
+    if (receiverDocSnap.exists()) {
+      let receiverTempArr = receiverDocSnap.data().user.Inbox;
+      let found = false;
+      receiverDocSnap.data().user.Inbox.forEach(async (convo,index) =>{
+        //if found, add to doc
+        if(convo.senderID == auth.currentUser.displayName){
+          receiverTempArr[index].conversation.push(message)
+          await updateDoc(receiverDocRef, {
+            'user.Inbox': receiverTempArr,
+          })
+          found=true;
+        }})
+        //if not found, merge with new information to create a conversation
+        if(found === false && receiverTempArr.length === 0){
+          const data = {
+                conversation: [
+                  {
+                    message: document.getElementById('messageBox').value,
+                    UID: auth.currentUser.displayName,
+                  },
+              ] ,
+                senderID: auth.currentUser.displayName
+          }
+            await updateDoc(receiverDocRef, {
+              'user.Inbox': arrayUnion(data)
+            })
+        }
+      
+    } else {
+      // docSnap.data() will be undefined in this case
+      console.log('No such document!');
+    }
+    /*const recieverDocSnap = await updateDoc(receiverDocRef, {
+      'user.Inbox': tempArr,
+    });*/
+
+    updateMessages();
   };
 
-
-  useEffect(() => {
-    const getUserDataDoc = async () =>{
-      console.log(auth.currentUser.uid);
-      const searchParam = auth.currentUser.uid + ' ';
-
-
+  const updateMessages = async()=>{
+    console.log(auth.currentUser.uid);
+      const searchParam = auth.currentUser.displayName;
       const docRef = doc(db, 'userData', searchParam);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
@@ -45,15 +106,18 @@ function Messages() {
         // docSnap.data() will be undefined in this case
         console.log('No such document!');
       }
-    };
+  }
 
-    const getMessages = (userList) => {
-      const messages = userList.user;
-      setMessageList(messages);
-      console.log(userList.user.Inbox.length);
-    };
+  const getMessages = (userList) => {
+    const messages = userList.user;
+    setMessageList(messages);
+    console.log(userList.user.Inbox.length);
+  };
 
-    getUserDataDoc();
+  useEffect(() => {
+    console.log(auth.currentUser.displayName, auth.currentUser.email)
+    updateMessages();
+
   }, []);
 
   // changes the focused account that will display the conversation. Needs to clear div of all content first
@@ -64,6 +128,22 @@ function Messages() {
     console.log(messageList.Inbox[id].senderID);
   };
 
+  const createNewConversation = async()=>{
+
+    const searchParam = document.querySelector(".usernameMsgSearch").value;
+    const docRef = doc(db, 'userData', searchParam);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      document.querySelector(".usernameMsgError").innerHTML="Enter a username to start a new message!"
+      //username Found now change messagerName
+      setMessagerName(searchParam)
+      
+    } else {
+      // docSnap.data() will be undefined in this case
+      document.querySelector(".usernameMsgError").innerHTML="This user does not exist!"
+    }
+  }
+
 
   return (
     <div>
@@ -71,9 +151,9 @@ function Messages() {
         <br />
         <div className="messagesUserList">
           <div className="newMessageContainer">
-            <p> Send new message</p>
-            <input type="text" placeholder="Enter users email address" />
-            <button type="button">Send</button>
+            <p className="usernameMsgError"> Enter a username to start a new message!</p>
+            <input type="text" placeholder="Enter users email address" className="usernameMsgSearch"/>
+            <button type="button" onClick={()=>{createNewConversation()}}>Send</button>
           </div>
           <div className="indivUserContainer">
             {/* this will have to be ternary based on a state. If there are other users they have had a conversation with
@@ -139,4 +219,6 @@ function Messages() {
   );
 }
 
-export default Messages;
+export{
+  Messages
+};
