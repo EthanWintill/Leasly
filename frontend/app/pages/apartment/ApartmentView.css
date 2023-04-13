@@ -6,7 +6,7 @@
     'subleasesView'
     'reviewsView'
     ;
-    grid-template-rows: 2fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
     border: solid 1px black;
     height: 130rem;
     width: 80%;

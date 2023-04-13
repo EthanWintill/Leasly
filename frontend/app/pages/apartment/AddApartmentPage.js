@@ -20,7 +20,7 @@ export default function AddApartmentPage(props) {
   const add = () => {
     const formdata = new FormData(document.querySelector('#form'));
     const data = Object.fromEntries(formdata.entries());
-    data.user_id = auth.currentUser.uid;
+    data.user_id = auth.currentUser.displayName;
 
 
     console.log(data);
@@ -34,8 +34,8 @@ export default function AddApartmentPage(props) {
       body: JSON.stringify(data),
     })
         .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
+        .then((listings) => {
+          console.log(listings);
           navigation.navigate('home');
         })
         .catch((error) => {

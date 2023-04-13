@@ -61,7 +61,7 @@ function NavbarMenu(props) {
       }
       <Menu.Item onPress={() => navigation.navigate('allApartments')}>View Apartments</Menu.Item>
       {isSignedIn &&
-        <Menu.Item onPress={() => navigation.navigate('messages')}>Messages</Menu.Item>
+        <Menu.Item onPress={() => navigation.navigate('messages', {sublet: ''})}>Messages</Menu.Item>
       }
       {isSignedIn &&
         <Menu.Item onPress={() => {
