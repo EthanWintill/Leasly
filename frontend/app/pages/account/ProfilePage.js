@@ -10,17 +10,17 @@ export default function ProfilePage() {
   useEffect(() => {
     // Using fetch to fetch the api from
     // flask server it will be redirected to proxy
-    fetch('https://leaslybackend.herokuapp.com/api/sublets?user=' + auth.currentUser.uid).then((res) =>
-      res.json().then((data) => {
+    fetch('https://leaslybackend.herokuapp.com/api/sublets?user=' + auth.currentUser.displayName).then((res) =>
+      res.json().then((sublets) => {
         // Setting a data from api
         // only one listing rn, feel free to add some
         setdata({
-          listings: data,
+          listings: sublets,
         });
         console.log(data);
       }),
     );
-  }, []);
+  });
 
   return (
     <div>

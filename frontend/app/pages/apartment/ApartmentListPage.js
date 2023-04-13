@@ -12,19 +12,17 @@ export default function ApartmentListPage(props) {
     fetch('https://leaslybackend.herokuapp.com/api/apartments').then((res) =>
       res.json().then((data) => {
         // Setting a data from api
-        console.log(data)
+        console.log(data);
         setAllApartmentsArr(data);
       }),
-    )
-    
+    );
   }, []);
 
-  
   const {navigation} = props;
   return (
     <div className="mainContainer">
       <div className="listContainer">
-      {allApartmentsArr.map((apartment) =>
+        {allApartmentsArr.map((apartment) =>
           <div className="apartmentCard" key={apartment.name}>
             <img src={testur} alt="n/a" />
             <p>{apartment.name}</p>
@@ -35,7 +33,6 @@ export default function ApartmentListPage(props) {
               navigation.navigate('viewApartment', {apartment});
             }}>More Info</button>
           </div>)}
-          
       </div>
     </div>
   );

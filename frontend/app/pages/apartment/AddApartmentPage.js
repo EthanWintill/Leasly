@@ -34,8 +34,8 @@ export default function AddApartmentPage(props) {
       body: JSON.stringify(data),
     })
         .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
+        .then((listings) => {
+          console.log(listings);
           navigation.navigate('home');
         })
         .catch((error) => {
