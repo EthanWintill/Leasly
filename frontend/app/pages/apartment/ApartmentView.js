@@ -32,7 +32,8 @@ export default function ViewApartmentPage({}) {
         console.log(data);
       }),
     );
-  });
+    // eslint-disable-next-line
+  }, []);
 
   return (
     {/* View goes here, but i don't know how to make this one specifically light themed*/},

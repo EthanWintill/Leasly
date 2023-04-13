@@ -20,10 +20,12 @@ export default function ProfilePage() {
         console.log(data);
       }),
     );
-  });
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div>
+      <p>{auth.currentUser.displayName}</p>
       <h1 style={{color: 'black'}}>Your listings</h1>
       <div className="listings">
         <ul>

@@ -1,5 +1,6 @@
 import React from 'react';
 import holderPFP from '../../../assets/profile/dog.jpg';
+import {useRoute} from '@react-navigation/native';
 import {getDoc, doc, updateDoc, arrayUnion} from 'firebase/firestore';
 import './Messages.css';
 import {db, auth} from '../../util/FirebaseFuncs';
@@ -21,7 +22,6 @@ export default function Messages() {
     const docRef = doc(db, 'userData', auth.currentUser.displayName );
     try {
       senderTempArr[focusedID].conversation.push(message);
-      // const searchParam = auth.currentUser.displayName
       await updateDoc(docRef, {
         'user.Inbox': senderTempArr,
       });
@@ -45,8 +45,7 @@ export default function Messages() {
     }
 
     // update reciever conversation
-    const searchParam = messagerName;
-    const receiverDocRef = doc(db, 'userData', searchParam);
+    const receiverDocRef = doc(db, 'userData', messagerName);
     const receiverDocSnap = await getDoc(receiverDocRef);
     if (receiverDocSnap.exists()) {
       const receiverTempArr = receiverDocSnap.data().user.Inbox;
@@ -80,16 +79,12 @@ export default function Messages() {
       // docSnap.data() will be undefined in this case
       console.log('No such document!');
     }
-    /* const recieverDocSnap = await updateDoc(receiverDocRef, {
-      'user.Inbox': tempArr,
-    });*/
     updateMessages();
   };
 
   const updateMessages = async () =>{
     console.log(auth.currentUser.uid);
-    const searchParam = auth.currentUser.displayName;
-    const docRef = doc(db, 'userData', searchParam);
+    const docRef = doc(db, 'userData', auth.currentUser.displayName);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       console.log('Document data:', docSnap.data().user.Inbox);
@@ -106,11 +101,6 @@ export default function Messages() {
     console.log(userList.user.Inbox.length);
   };
 
-  useEffect(() => {
-    console.log(auth.currentUser.displayName, auth.currentUser.email);
-    updateMessages();
-  });
-
   // changes the focused account that will display the conversation. Needs to clear div of all content first
   const changeConversation = async (id) =>{
     setFocusedUser(messageList.Inbox[id].conversation);
@@ -119,8 +109,7 @@ export default function Messages() {
     console.log(messageList.Inbox[id].senderID);
   };
 
-  const createNewConversation = async () =>{
-    const searchParam = document.querySelector('.usernameMsgSearch').value;
+  const createNewConversation = async (searchParam) =>{
     const docRef = doc(db, 'userData', searchParam);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
@@ -132,6 +121,19 @@ export default function Messages() {
       document.querySelector('.usernameMsgError').innerHTML = 'This user does not exist!';
     }
   };
+  const route = useRoute();
+  const fromSublease = route.params.sublet.subleaser_id || false;
+
+  useEffect(() => {
+    console.log(auth.currentUser.displayName, auth.currentUser.email);
+    console.log(fromSublease);
+    if (fromSublease) {
+      document.querySelector('.usernameMsgSearch').innerHTML = fromSublease;
+      createNewConversation(fromSublease);
+    }
+    updateMessages();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div>
@@ -142,7 +144,7 @@ export default function Messages() {
             <p className="usernameMsgError"> Enter a username to start a new message!</p>
             <input type="text" placeholder="Enter users email address" className="usernameMsgSearch"/>
             <button type="button" onClick={()=>{
-              createNewConversation();
+              createNewConversation(document.querySelector('.usernameMsgSearch').value);
             }}>Send</button>
           </div>
           <div className="indivUserContainer">
