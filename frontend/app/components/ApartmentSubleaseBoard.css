@@ -15,7 +15,9 @@
 
 .bountyView{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
     overflow-x: auto;
 }
 

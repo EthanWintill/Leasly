@@ -1,5 +1,6 @@
 import React from 'react';
 import './ApartmentSubleaseBoard.css';
+import holderPFP from '../../assets/profile/dog.jpg';
 
 const ApartmentSubleaseBoard = ({ listings }) => {
   return (
@@ -8,7 +9,7 @@ const ApartmentSubleaseBoard = ({ listings }) => {
       <div className="bountyView">
         {listings.map((sublet) =>
           <div className="bountyCards">
-            <img className="bountyImage"></img>
+            <img className="bountyImage" src={holderPFP}></img>
             <div className="bountyGeneral">
               <p> Floor Plan: {sublet.bed} bed, {sublet.bath} bath</p>
               <p> Price: ${sublet.rent}/month</p>

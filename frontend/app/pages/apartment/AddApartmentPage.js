@@ -20,7 +20,7 @@ export default function AddApartmentPage(props) {
   const add = () => {
     const formdata = new FormData(document.querySelector('#form'));
     const data = Object.fromEntries(formdata.entries());
-    data.user_id = auth.currentUser.uid;
+    data.user_id = auth.currentUser.displayName;
 
 
     console.log(data);
