@@ -15,6 +15,7 @@ const ApartmentSubleaseBoard = ({listings}) => {
             return (
               <div className="bountyCards">
                 <img className="bountyImage" src={holderPFP} />
+                <img className="bountyImage" src={`data:image/png;base64,${sublet.image}`} />
                 <div className="bountyGeneral">
                   <p> Poster: {sublet.subleaser_id}</p>
                   <p> Floor Plan: {sublet.bed} bed, {sublet.bath} bath</p>

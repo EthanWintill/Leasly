@@ -1,79 +1,102 @@
 import React, {useState, useEffect} from 'react';
 import {auth} from '../../util/FirebaseFuncs';
+import axios from 'axios';
+
 
 export default function AddApartmentPage(props) {
-  const {navigation} = props;
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [formData, setFormData] = useState({
+    user_id: '',
+    apartment: '',
+    rent: '',
+    bed: '',
+    bath: '',
+    sqft: '',
+    description: '',
+    location: '',
+    image: null,
+  });
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        setIsAuthenticated(true);
-      } else {
-        setIsAuthenticated(false);
-      }
-    });
-    return unsubscribe;
-  }, []);
-
-
-  const add = () => {
-    const formdata = new FormData(document.querySelector('#form'));
-    const data = Object.fromEntries(formdata.entries());
-    data.user_id = auth.currentUser.displayName;
-
-
-    console.log(data);
-
-
-    fetch('https://leaslybackend.herokuapp.com/api/listings', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-        .then((response) => response.json())
-        .then((listings) => {
-          console.log(listings);
-          navigation.navigate('home');
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
 
-  if (!isAuthenticated) {
-    return (
-      <>
-        <h2 style={{color: 'black'}}>You need to sign in to add a new apartment.</h2>
-      </>
-    );
-  } else {
-    return (
-      <React.Fragment id="mainContainer">
-        <div id="signContainer">
-          <h1>Add apartment</h1>
-          <form id="form">
-            <input type="text" name="apartment" placeholder="Enter Apartment Name" />
-            <input type="text" name="description" placeholder="Enter description" />
-            <input type="text" name="beds" placeholder="Enter number of beds" />
-            <input type="text" name="baths" placeholder="Enter number of baths" />
-            <input type="text" name="rent" placeholder="Enter rent" />
-            <input type="text" name="location" placeholder="Enter location" />
-            <input type="text" name="sqft" placeholder="Enter square footage" />
-          </form>
-          <button type="button" id="createBtn" onClick={() => {
-            add();
-          }}>Add!</button>
-          <div id="signInLink">
-            <a href="/" >Cancel</a>
-          </div>
-          <span id="error-field"> </span>
-        </div>
-      </React.Fragment>
-    );
-  }
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      image: file,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formDataToSend = new FormData();
+    formDataToSend.append('user_id', formData.user_id);
+    formDataToSend.append('apartment', formData.apartment);
+    formDataToSend.append('rent', formData.rent);
+    formDataToSend.append('bed', formData.bed);
+    formDataToSend.append('bath', formData.bath);
+    formDataToSend.append('sqft', formData.sqft);
+    formDataToSend.append('description', formData.description);
+    formDataToSend.append('location', formData.location);
+    formDataToSend.append('image', formData.image);
+
+    axios.post('https://leaslybackend.herokuapp.com/api/listings', formDataToSend)
+      .then((response) => {
+        console.log(response.data);
+        // do something with the response, e.g. show a success message
+      })
+      .catch((error) => {
+        console.log(error);
+        // do something with the error, e.g. show an error message
+      });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        User ID:
+        <input type="text" name="user_id" value={formData.user_id} onChange={handleInputChange} />
+      </label>
+      <label>
+        Apartment:
+        <input type="text" name="apartment" value={formData.apartment} onChange={handleInputChange} />
+      </label>
+      <label>
+        Rent:
+        <input type="number" name="rent" value={formData.rent} onChange={handleInputChange} />
+      </label>
+      <label>
+        Bed:
+        <input type="number" name="bed" value={formData.bed} onChange={handleInputChange} />
+      </label>
+      <label>
+        Bath:
+        <input type="number" name="bath" value={formData.bath} onChange={handleInputChange} />
+      </label>
+      <label>
+        Sqft:
+        <input type="number" name="sqft" value={formData.sqft} onChange={handleInputChange} />
+      </label>
+      <label>
+        Description:
+        <textarea name="description" value={formData.description} onChange={handleInputChange} />
+      </label>
+      <label>
+        Location:
+        <input type="text" name="location" value={formData.location} onChange={handleInputChange} />
+      </label>
+      <label>
+        Image:
+        <input type="file" name="image" onChange={handleImageChange} />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  );
 }
 
 export {
