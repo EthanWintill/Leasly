@@ -1,7 +1,10 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import './ApartmentReviews.css';
 
 export default function ApartmentReviews({identifier}) {
+  const ApartmentName = 'placeholder!';
+  const navigation = useNavigation();
   return (
     <div className="reviewContainer">
       <p className="reviewTitle"> Reviews</p>
@@ -16,6 +19,9 @@ export default function ApartmentReviews({identifier}) {
                         erat at diam finibus, et euismod enim vehicula.</p>
         </div>
       </div>
+      <button type="button" onClick={()=>{
+        navigation.navigate('review', {ApartmentName});
+      }}>Write a review!</button>
     </div>
   );
 }

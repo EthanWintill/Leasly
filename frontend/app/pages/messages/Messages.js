@@ -158,7 +158,7 @@ export default function Messages() {
                 {/* will hold the username of the account talking too*/}
                 <p className="indivUserName"> {messageList.Inbox[index].senderID}</p>
                 {/* will be a quick preview of the last recieved or sent message*/}
-                <p className="indivUserPreview"> {index}</p>
+                <p className="indivUserPreview"> </p>
               </div>,
             ) :
             <div>
@@ -175,12 +175,25 @@ export default function Messages() {
           {/* Holds the conversation log. Another state ternary. If theres a conversation, it will display the messages, if not,
                         stay empty*/}
           <div className="messageHistory">
-            {(focusedUser) ? focusedUser.map((message)=>
-              <div key={message.UID}>
-                <div>
-                  <p>{message.message} </p>
-                </div>
-              </div>,
+            {(focusedUser) ? focusedUser.map((message, index)=>{
+              if (message.UID === auth.currentUser.displayName) {
+                return (
+                  <div className="rightMsg" key={index}>
+                    <div>
+                      <p>{message.message} </p>
+                    </div>
+                  </div>
+                );
+              } else {
+                return (
+                  <div key={index}>
+                    <div>
+                      <p>{message.message} </p>
+                    </div>
+                  </div>
+                );
+              }
+            },
             ) :
             <div>
               <div>
