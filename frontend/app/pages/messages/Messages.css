@@ -70,6 +70,7 @@
     font-weight:400;
     text-align: left;
     padding-left: 2rem;
+    overflow-x: hidden
 }
 .messagesView{
     grid-area: msgview;
@@ -91,10 +92,12 @@
 
 .messageHistory{
     grid-area: messageHistory;
+    display: grid;
     color: white;
     font-weight:400;
     width: 100%;
     overflow-y: scroll;
+    align-content: end;
     
 }
 
@@ -114,14 +117,14 @@
     
 }
 
-.messageHistory > div:nth-child(2){
+.messageHistory > .rightMsg{
     
     margin-right: 4%;
     margin-left: 60%;
    
 }
 
-.messageHistory > div:nth-child(2) >div{
+.messageHistory > .rightMsg >div{
     background-color: #1DA1F2;
     text-align: left;
 }

@@ -14,6 +14,7 @@ import Messages from './pages/messages/Messages';
 
 import Navbar from './components/Navbar';
 import {Theme} from './Theme';
+import ReviewApartment from './pages/apartment/ReviewApartment';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -36,6 +37,7 @@ export default function App() {
           <Stack.Screen name="allApartments" component={ApartmentListPage}/>
           <Stack.Screen name="viewApartment" component={ApartmentView}/>
           <Stack.Screen name="messages" component={Messages}/>
+          <Stack.Screen name="review" component={ReviewApartment}/>
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
