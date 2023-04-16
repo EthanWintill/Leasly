@@ -24,6 +24,7 @@
 .bountyCards{
     border: 1px solid grey;
     display: grid;
+    background-color: white;
     grid-template-areas:
     'image general'
     'description description';

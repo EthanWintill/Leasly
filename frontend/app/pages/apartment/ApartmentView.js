@@ -1,7 +1,7 @@
 
-import React, { useState, useEffect } from 'react';
-import { useRoute } from '@react-navigation/native';
-import { MaterialIcons } from 'react-native-vector-icons';
+import React, {useState, useEffect} from 'react';
+import {useRoute} from '@react-navigation/native';
+import {MaterialIcons} from 'react-native-vector-icons';
 // import {View} from 'native-base';
 import ApartmentReviews from '../../components/ApartmentReviews';
 import ApartmentSubleaseBoard from '../../components/ApartmentSubleaseBoard';
@@ -51,7 +51,7 @@ export default function ViewApartmentPage({ }) {
             {/* 9 divs acting as cards, one for each amenitie, arranged in a flex container*/}
             {info.pets && <div> <MaterialIcons name="pets" size={32} color="white" /> </div>}
             {info.pool && <div><MaterialIcons name="spa" size={32} color="white" /></div>}
-            {info.gym  && <div> <MaterialIcons name="directions-run" size={32} color="white" /> </div>}
+            {info.gym && <div> <MaterialIcons name="directions-run" size={32} color="white" /> </div>}
             {info.incldUtilities && <div> <MaterialIcons name="ac-unit" size={32} color="white" /></div>}
             {info.shuttleRte && <div> <MaterialIcons name="bus-alert" size={32} color="white" /></div>}
             {info.indvLeasing && <div> <MaterialIcons name="person" size={32} color="white" /> </div>}

@@ -1,6 +1,7 @@
 
 .aptmntViewContainer{
     display: grid;
+    background-color: white;
     grid-template-areas:
     'apartmentInfoView'
     'subleasesView'

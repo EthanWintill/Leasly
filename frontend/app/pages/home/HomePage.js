@@ -10,6 +10,7 @@ import {
 } from 'native-base';
 
 import backgroundImage from '../../../assets/backgrounds/school.jpg';
+import ApartmentSubleaseBoard from '../../components/ApartmentSubleaseBoard';
 
 function HomePage(props) {
   const {navigation} = props;
@@ -61,14 +62,7 @@ function HomePage(props) {
 
       {/* Carousel listing recent postings? Not necessary at all btw*/}
 
-      <ul>
-        {data.listings.map((apartment)=>
-          <div key={apartment.rent}>
-            <li>{apartment.description}</li>
-          </div>,
-        )}
-
-      </ul>
+      <ApartmentSubleaseBoard listings={data.listings} />
 
       {/**/}
 

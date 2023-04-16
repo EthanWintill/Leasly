@@ -1,6 +1,5 @@
 import React from 'react';
 import './ApartmentSubleaseBoard.css';
-import holderPFP from '../../assets/profile/dog.jpg';
 import {useNavigation} from '@react-navigation/native';
 import {auth} from '../util/FirebaseFuncs';
 
@@ -14,7 +13,6 @@ const ApartmentSubleaseBoard = ({listings}) => {
           if (sublet.subleaser_id !== auth.currentUser.displayName) {
             return (
               <div className="bountyCards">
-                <img className="bountyImage" src={holderPFP} />
                 <img className="bountyImage" src={`data:image/png;base64,${sublet.image}`} />
                 <div className="bountyGeneral">
                   <p> Poster: {sublet.subleaser_id}</p>
