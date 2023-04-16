@@ -1,31 +1,41 @@
-import React from 'react';
-import {useNavigation} from '@react-navigation/native';
+import React, { useState, useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import './ApartmentReviews.css';
 
-export default function ApartmentReviews({identifier}) {
-  const ApartmentName = 'placeholder!';
+export default function ApartmentReviews({ identifier }) {
+  const ApartmentName = identifier;
   const navigation = useNavigation();
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://leaslybackend.herokuapp.com/api/review?apartment=${ApartmentName}`)
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, [ApartmentName]);
+
   return (
     <div className="reviewContainer">
       <p className="reviewTitle"> Reviews</p>
       <div className="reviewList">
-        <div className="uniqueReview">
-          <img className="reviewerPFP" />
-          <p className="reviewerUsername">Slippin' Jimmy</p>
-          <p className="reviewerRating"> Rating </p>
-          <p className="reviewerStory">Praesent cursus scelerisque orci vitae ornare. Sed volutpat ullamcorper interdum.
-                        Nulla consequat lectus at lorem blandit laoreet. Vivamus posuere nunc sit amet leo ultrices,
-                        id suscipit justo imperdiet. Donec non tristique ipsum, ut tristique risus. Quisque posuere
-                        erat at diam finibus, et euismod enim vehicula.</p>
-        </div>
+        {reviews.map((review) => (
+          <div className="uniqueReview" key={review.id}>
+            <img className="reviewerPFP" />
+            <p className="reviewerUsername">Name: {review.user_id}</p>
+            <p className="reviewerRating">Rating: {review.rating}</p>
+            <p className="reviewerStory">{review.comment}</p>
+          </div>
+        ))}
       </div>
-      <button type="button" onClick={()=>{
-        navigation.navigate('review', {ApartmentName});
-      }}>Write a review!</button>
+      <button
+        type="button"
+        onClick={() => {
+          navigation.navigate('review', { ApartmentName });
+        }}
+      >
+        Write a review!
+      </button>
     </div>
   );
 }
 
-export {
-  ApartmentReviews,
-};
+export { ApartmentReviews };
