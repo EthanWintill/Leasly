@@ -1,12 +1,13 @@
 
 .aptmntViewContainer{
     display: grid;
+    background-color: white;
     grid-template-areas:
     'apartmentInfoView'
     'subleasesView'
     'reviewsView'
     ;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto auto;
     border: solid 1px black;
     height: 130rem;
     width: 80%;
@@ -18,7 +19,7 @@
     display: grid;
     grid-template-areas:
     'aptmntImage aptmntInfo';
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .apartmentImage{
@@ -44,19 +45,27 @@
 
 .reviewViewContainer{
     padding-left: 3rem;
+    padding-right: 3rem;
     grid-area: reviewsView
 }
 
 
 .amenitiesContainer{
     display: flex;
+    margin:auto;
     flex-direction: row;
     justify-content: space-around;
-    gap: 1rem;
-    width: 100%;
+    
+    width: 40rem;
+    overflow: auto;
 }
 
 .amenitiesContainer > div{
     background-color: rgb(121, 121, 121);
-    border: 1px solid burlywood
+    width: 30%;
+    height: 7rem;
+    color: white;
+    border: 1px solid burlywood;
+    justify-content: center;
+    padding: 12px;
 }

@@ -10,6 +10,7 @@ import {
 } from 'native-base';
 
 import backgroundImage from '../../../assets/backgrounds/school.jpg';
+import ApartmentSubleaseBoard from '../../components/ApartmentSubleaseBoard';
 
 function HomePage(props) {
   const {navigation} = props;
@@ -23,13 +24,12 @@ function HomePage(props) {
     // Using fetch to fetch the api from
     // flask server it will be redirected to proxy
     fetch('https://leaslybackend.herokuapp.com/api/sublets?sort_by=date_dec').then((res) =>
-      res.json().then((data) => {
+      res.json().then((sublets) => {
         // Setting a data from api
         // only one listing rn, feel free to add some
         setdata({
-          listings: data,
+          listings: sublets,
         });
-        console.log(data);
       }),
     );
   }, []);
@@ -61,14 +61,7 @@ function HomePage(props) {
 
       {/* Carousel listing recent postings? Not necessary at all btw*/}
 
-      <ul>
-        {data.listings.map((apartment)=>
-          <div key={apartment.rent}>
-            <li>{apartment.description}</li>
-          </div>,
-        )}
-
-      </ul>
+      <ApartmentSubleaseBoard listings={data.listings} />
 
       {/**/}
 

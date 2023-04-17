@@ -1,12 +1,10 @@
 .reviewContainer{
     width: 100%;
-    height: 100%;
-    
     display: grid;
     grid-template-areas:
     'title'
     'reviewList';
-    grid-template-rows: 5rem 40rem;
+    grid-template-rows: 5rem max(30rem);
 }
 
 .reviewTitle{
@@ -20,11 +18,19 @@
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    gap: 1rem;
+}
+
+.noReviews{
+    text-align: center;
+    font-size: xx-large;
+    margin-top: 1rem;
 }
 
 .uniqueReview{
     
     display: grid;
+    border: solid 1px black;
     grid-template-areas: 
     'img username rating'
     'img review review';
