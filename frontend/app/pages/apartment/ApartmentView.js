@@ -49,14 +49,14 @@ export default function ViewApartmentPage({ }) {
           <p> amenities</p>
           <div className="amenitiesContainer">
             {/* 9 divs acting as cards, one for each amenitie, arranged in a flex container*/}
-            {info.pets && <div> <MaterialIcons name="pets" size={32} color="white" /> </div>}
-            {info.pool && <div><MaterialIcons name="spa" size={32} color="white" /></div>}
-            {info.gym && <div> <MaterialIcons name="directions-run" size={32} color="white" /> </div>}
-            {info.incldUtilities && <div> <MaterialIcons name="ac-unit" size={32} color="white" /></div>}
-            {info.shuttleRte && <div> <MaterialIcons name="bus-alert" size={32} color="white" /></div>}
-            {info.indvLeasing && <div> <MaterialIcons name="person" size={32} color="white" /> </div>}
-            {info.wsherDryer && <div> <MaterialIcons name="dry-cleaning" size={32} color="white" /></div>}
-            {info.furnished && <div> <MaterialIcons name="king-bed" size={32} color="white" /></div>}
+            {info.pets && <div> <p> Pet Friendly </p> <MaterialIcons name="pets" size={32} color="white" /> </div>}
+            {info.pool && <div> <p> Pool </p> <MaterialIcons name="spa" size={32} color="white" /></div>}
+            {info.gym && <div> <p> </p> <MaterialIcons name="directions-run" size={32} color="white" /> </div>}
+            {info.incldUtilities && <div> <p> Utilities Included </p> <MaterialIcons name="ac-unit" size={32} color="white" /></div>}
+            {info.shuttleRte && <div> <p>Campus Bus Route</p> <MaterialIcons name="bus-alert" size={32} color="white" /></div>}
+            {info.indvLeasing && <div> <p> individual lease</p> <MaterialIcons name="person" size={32} color="white" /> </div>}
+            {info.wsherDryer && <div> <p> Washer/Dryer included </p> <MaterialIcons name="dry-cleaning" size={32} color="white" /></div>}
+            {info.furnished && <div> <p> Furnished </p> <MaterialIcons name="king-bed" size={32} color="white" /></div>}
           </div>
         </div>
       </div>

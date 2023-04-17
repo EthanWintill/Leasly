@@ -1,7 +1,7 @@
 import React from 'react';
 import './ApartmentSubleaseBoard.css';
 import {useNavigation} from '@react-navigation/native';
-import {auth} from '../util/FirebaseFuncs';
+
 
 const ApartmentSubleaseBoard = ({listings}) => {
   const navigation = useNavigation();
@@ -10,7 +10,7 @@ const ApartmentSubleaseBoard = ({listings}) => {
       <p className="bountyTitle">Subleases Available </p>
       <div className="bountyView">
         {listings.map((sublet) => {
-          if (sublet.subleaser_id !== auth.currentUser.displayName) {
+          if (sublet.subleaser_id) {
             return (
               <div className="bountyCards">
                 <img className="bountyImage" src={`data:image/png;base64,${sublet.image}`} />
