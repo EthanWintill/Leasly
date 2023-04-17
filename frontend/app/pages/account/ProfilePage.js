@@ -30,34 +30,39 @@ export default function ProfilePage() {
         }));
       }),
     );
-    // eslint-disable-next-line
   }, []);
 
   return (
     <div>
+      <h1 style={{color: 'black'}}>Username</h1>
       <p>{auth.currentUser.displayName}</p>
       <h1 style={{color: 'black'}}>Your listings</h1>
       <div className="listings">
-        <ul>
-          {data.listings.map((sublet) =>
-            <div key={sublet.rent}>
+        {data.listings.map((sublet) =>
+          <div key={sublet.rent}>
+            <ul>
+              <li>Apartment name: {sublet.apartment_name}</li>
+              <li>Price: {sublet.rent}</li>
+              <li>Start date: {sublet.start_date}</li>
+              <li> Floor Plan: {sublet.bed} bed, {sublet.bath} bath</li>
               <li>Listing description: {sublet.description}</li>
-            </div>,
-          )}
-        </ul>
+            </ul>
+          </div>,
+        )}
+
       </div>
 
       <h1 style={{color: 'black'}}>Your reviews</h1>
       <div className="reviews">
-        <ul>
-          {data.reviews.map((review) =>
-            <div key={review.id}>
+        {data.reviews.map((review) =>
+          <div key={review.id}>
+            <ul>
               <li>Apartment name: {review.apartment_name}</li>
               <li>Rating: {review.rating}</li>
               <li>Comment: {review.comment}</li>
-            </div>,
-          )}
-        </ul>
+            </ul>
+          </div>,
+        )}
       </div>
     </div>
   );
