@@ -14,7 +14,7 @@ import Messages from './pages/messages/Messages';
 
 import Navbar from './components/Navbar';
 import {Theme} from './Theme';
-import ReviewApartment from './pages/apartment/ReviewApartment';
+import ReviewApartment from './pages/apartment/ReviewApartmentForm';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
