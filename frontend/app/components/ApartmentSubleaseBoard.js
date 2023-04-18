@@ -9,7 +9,7 @@ const ApartmentSubleaseBoard = ({listings}) => {
     <div className="bountyContainer">
       <p className="bountyTitle">Subleases Available </p>
       <button type="button" className="aptmntViewButton"onClick={() => {
-        navigation.navigate('addApartments');
+        navigation.navigate('addApartment');
       }}> Post a Sublease </button>
       <div className="bountyView">
         {(listings.length === 0) ? <p className="noSubleases"> No Current Subleases!</p> :
