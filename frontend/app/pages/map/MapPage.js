@@ -1,9 +1,12 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {
+  AlertDialog,
+  Box,
   Center,
   Heading,
   Spinner,
   Text,
+  TextArea,
   View,
 } from 'native-base';
 import {
@@ -12,6 +15,7 @@ import {
   TransitLayer,
   Marker,
   useJsApiLoader,
+  InfoWindow,
 } from '@react-google-maps/api';
 
 import * as Location from 'expo-location';
@@ -20,7 +24,34 @@ import useEffectAfterMount from '../../hooks/AfterMountHook';
 import MapStyle from './MapStyle';
 import MapMenu from './MapMenu';
 
+const RESPONSES = [
+  require('./poi/response10000-0.json'),
+  require('./poi/response10000-1.json'),
+  require('./poi/response10000-2.json'),
+];
+
 const MAPS_LIBRARIES = ['places'];
+
+function MapMarker(props) {
+  const {info, marker} = props;
+  const [infoVisible, setInfoVisible] = useState(false);
+
+  return (
+    <>
+      <Marker onClick={() => setInfoVisible(true)} {...marker}/>
+      <AlertDialog isOpen={infoVisible} onClose={() => setInfoVisible(false)}>
+        <AlertDialog.Content>
+          <AlertDialog.CloseButton />
+          <AlertDialog.Header>{info.name}</AlertDialog.Header>
+          <AlertDialog.Body>
+            <Text>Rating: {info.rating}/5</Text>
+            <Text>Tagged: {info.types.toString()}</Text>
+          </AlertDialog.Body>
+        </AlertDialog.Content>
+      </AlertDialog>
+    </>
+  );
+}
 
 export default function MapPage() {
   /* --------------------------------- States --------------------------------- */
@@ -71,6 +102,7 @@ export default function MapPage() {
       stylers: [{'visibility': mapPOIs['poi.sports_complex']}],
     },
   ]));
+  const [aptMarkersVisible, setAptMarkersVisible] = useState(true);
 
   // Location
   const [userLocation, setUserLocation] = useState();
@@ -197,7 +229,32 @@ export default function MapPage() {
               <BicyclingLayer/>
               <TransitLayer />
               <Marker position={userLocationMap} cursor={'Current Location'}/>
-              <MapMenu mapPOIs={mapPOIs} setMapPOIs={setMapPOIs}/>
+              {
+                RESPONSES.map((json, key) => {
+                  return (
+                    <React.Fragment key={key}>
+                      {
+                        json.results.map((r, k) => {
+                          return (
+                            <MapMarker
+                              key={k}
+                              marker={{
+                                visible: aptMarkersVisible,
+                                position: {lat: r.geometry.location.lat, lng: r.geometry.location.lng},
+                              }}
+                              info={{
+                                name: r.name,
+                                rating: r.rating,
+                                types: r.types,
+                              }}/>
+                          );
+                        })
+                      }
+                    </React.Fragment>
+                  );
+                })
+              }
+              <MapMenu mapPOIs={mapPOIs} setMapPOIs={setMapPOIs} setAptMarkersVisible={setAptMarkersVisible}/>
             </GoogleMap>
         }
         {!isLoaded && hasLocationPerms &&

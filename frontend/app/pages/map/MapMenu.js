@@ -20,6 +20,7 @@ import Collapsible from 'react-native-collapsible';
 import FormBuilders from '../../components/builders/form/FormBuilders';
 import FormSections from '../../components/builders/form/FormSections';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import useEffectAfterMount from '../../hooks/AfterMountHook';
 
 function PointsOfInterestSection(props) {
   /* ---------------------------------- Props --------------------------------- */
@@ -303,9 +304,60 @@ function AddLocationButton(props) {
   );
 }
 
+function ApartmentSection(props) {
+  /* ---------------------------------- Props --------------------------------- */
+  const {setAptMarkersVisible} = props;
+
+  /* ---------------------------------- State --------------------------------- */
+  const [toggle, setToggle] = useState(true);
+
+  /* --------------------------------- Events --------------------------------- */
+  // Toggle change
+  useEffectAfterMount(() => {
+    setAptMarkersVisible(toggle);
+  }, [toggle]);
+
+  /* -------------------------------- Component ------------------------------- */
+  return (
+    <>
+      <Text bold fontSize={'xl'} ml={5} mt={5}>
+        Apartments
+      </Text>
+      <Divider/>
+      {
+
+        FormBuilders.Vertical(
+            {
+              form: {
+                vstack: {
+                  ml: 5,
+                  mt: 2.5,
+                  mb: 5,
+                },
+              },
+            })
+            .addSection(
+                'checkbox',
+                FormSections.Checkbox()
+                    .check(
+                        'Toggle',
+                        setToggle,
+                        [],
+                        {
+                          colorScheme: 'red',
+                          icon: 'home-city',
+                          size: 'md',
+                          defaultIsChecked: true,
+                        }))
+            .build()
+      }
+    </>
+  );
+}
+
 export default function MapMenu(props) {
   /* ---------------------------------- Props --------------------------------- */
-  const {setMapPOIs} = props;
+  const {setMapPOIs, setAptMarkersVisible} = props;
 
   /* --------------------------------- States --------------------------------- */
   // Collapsible
@@ -322,9 +374,10 @@ export default function MapMenu(props) {
         </Button>
         <Collapsible collapsed={isMenuCollapsed}>
           <Center w={200}>
-            <Box variant={'accented'} rounded={10} w={175} h={500}>
+            <Box variant={'accented'} rounded={10} w={175} h={550}>
               <LocationSection />
               <PointsOfInterestSection setMapPOIs={setMapPOIs}/>
+              <ApartmentSection setAptMarkersVisible={setAptMarkersVisible}/>
             </Box>
           </Center>
         </Collapsible>

@@ -1,0 +1,905 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "AUjq9jmmU4AqtUnmjKQ-C0pf7Dsa8f4JPgpRdy5YDdshy4HBf2OmR3pYs2XJaLNYApOV_xUwpO7vd2FTARaZHXzswxDmBdaBCtLwCgnIu14wXu3ewYixTzFYyY8T0XQj8SV0XI6nPn4RMJCWF8in3K-y8tWZGlR9tFWaolWgJM2pVzdDhPoJmVrU-S8eg0eKCuTrUUIXSDHYzcNt57Qv35Ryocz7IK_CAiGsiSnXotXC1DJ0f4HMPtoyVKIXyePaOf_j5MGj-fPfq5wzgtB4264vq3m_yjopJxyUvlIN6hZV4JgaNSKkrdyd3Ja_T13rf2TcApwx1y-Z9xYmML0jn4EzSf1D1bt2BTtS2PLs0XzA-aHWHGuuXEHT8bRBEohGPg_5nzXE7m8HjRJ59HAYg_Sr1Bss4J1yG2Dh1TTnvnQerD_VVcnXL7_dKjXiv80tYhA26ZSxwZtHE3SUnE7cNSUe80HqxjlcE1eePij22aqTjsHV-MflW-pisGzPjF8HTKfAvEpM08ob1iTVQxHrDYWWN4DnAVOifyEIhDZG-LUdILtJHRFAYNjla7Y5yGPKJq0Oenb48xchNjc_qH6-eM7SfyVnvz_FSadjcaK-QHhHZgCRbp9xPlSr1KXwCtU-KaNGaQmXD2Dn_HTXz0z7",
+   "results" : [
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.899168,
+               "lng" : -97.9098587
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.8998922,
+                  "lng" : -97.90664975000001
+               },
+               "southwest" : {
+                  "lat" : 29.89699539999999,
+                  "lng" : -97.91092834999999
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Verandah Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 480,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101687427284739112230\"\u003eVerandah Apartments\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jnk0zBtkNmVmPj_WPU1d3daPHj_N3qipZRolfR-uRqDnpKgesv_9OrTwDtXeMav6gs7WY1jl_pDTLna_aXbOkIdBiC0sa45-7zHoP8hAoQkkem7rjtWMRdKE9sHHHx_7nzqKF5yExrjiHJLw1Bab2LPFSD6hz0a3hxr0OF20JFfpec_",
+               "width" : 640
+            }
+         ],
+         "place_id" : "ChIJOZTaPLapXIYR8xSbQUi-Quw",
+         "plus_code" : {
+            "compound_code" : "V3XR+M3 San Marcos, Texas",
+            "global_code" : "76X4V3XR+M3"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJOZTaPLapXIYR8xSbQUi-Quw",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 18,
+         "vicinity" : "1805 IH 35 North, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.89645489999999,
+               "lng" : -97.9440273
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89776857989272,
+                  "lng" : -97.94263062010728
+               },
+               "southwest" : {
+                  "lat" : 29.89506892010727,
+                  "lng" : -97.94533027989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Stonegate Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 720,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103322309759036624807\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jkRhYTF7s6XT3yTpwbufxPMbBw1GTFHJyNVEtZoGxEXZDWaY_0dXY0FnXNsanU_lmTLMcMOb-42MYiFe71Ptb6uoEEseBuV2Y-HoFjL-V0t9uji2pDbxJGYpGM0F2wWySj-97PCJxHBLdKTyTjW6Fjq_BQ6gO9Wsspebm22ahQ-Max6",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJd-KBlRmpXIYRYq7lFsfZRyI",
+         "plus_code" : {
+            "compound_code" : "V3W4+H9 San Marcos, Texas",
+            "global_code" : "76X4V3W4+H9"
+         },
+         "rating" : 0,
+         "reference" : "ChIJd-KBlRmpXIYRYq7lFsfZRyI",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 0,
+         "vicinity" : "1204 N LBJ Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.90620149999999,
+               "lng" : -97.9119188
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.90754382989272,
+                  "lng" : -97.91051107010729
+               },
+               "southwest" : {
+                  "lat" : 29.90484417010728,
+                  "lng" : -97.91321072989274
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Millennium on Post",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 788,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100392160251737473075\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jlLkwZNLb7FnYiODYmFLQICC507GfIsjDU6UXVwe75WdwXfPk9uRo4lPazqP6hIjraPXAo9j6uVtTnnsfCWPD9tvF6KORvsK19iaqPjOgNRVeLawynnjLK84u9Sai8R0BkbbnPYG4UCfD0_Qu4OrqhfERu_ovPqDxa89G3RHvuepnIN",
+               "width" : 940
+            }
+         ],
+         "place_id" : "ChIJXZR9RsypXIYRUnxPMuXzvgY",
+         "plus_code" : {
+            "compound_code" : "W34Q+F6 San Marcos, Texas",
+            "global_code" : "76X4W34Q+F6"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJXZR9RsypXIYRUnxPMuXzvgY",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 54,
+         "vicinity" : "1651 Post Rd, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8996929,
+               "lng" : -97.9149357
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.90048017989272,
+                  "lng" : -97.91298127010728
+               },
+               "southwest" : {
+                  "lat" : 29.89778052010728,
+                  "lng" : -97.91568092989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Thompson",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 2000,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110629963376380149148\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jmQOACzyhk6Q0a8LPw_uBSrX2EwXwUUvGn1M-KnvbU9pWY13Y0_RQcwbrFgiJP4XiF_zDzZjbLA1Jrw93fVqRKutE6B9HeRnYqYC-qwvqB3bjujqjYNMezj4UTZEytJTFyHOzvWBa7quKNJkPGVgwutq6YD3GUA656afuHpBV60y6Jd",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJ1emS4WeoXIYRN7aUAH0DTzM",
+         "plus_code" : {
+            "compound_code" : "V3XP+V2 San Marcos, Texas",
+            "global_code" : "76X4V3XP+V2"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ1emS4WeoXIYRN7aUAH0DTzM",
+         "scope" : "GOOGLE",
+         "types" : [ "real_estate_agency", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 345,
+         "vicinity" : "1655 Mill St, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8974431,
+               "lng" : -97.94633449999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89879962989272,
+                  "lng" : -97.94497372010728
+               },
+               "southwest" : {
+                  "lat" : 29.89609997010728,
+                  "lng" : -97.94767337989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Monarch Apartments",
+         "place_id" : "ChIJP-VAxq-pXIYRt9ZZVk0KXsc",
+         "plus_code" : {
+            "compound_code" : "V3W3+XF San Marcos, Texas",
+            "global_code" : "76X4V3W3+XF"
+         },
+         "rating" : 0,
+         "reference" : "ChIJP-VAxq-pXIYRt9ZZVk0KXsc",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 0,
+         "vicinity" : "1249 N LBJ Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8938323,
+               "lng" : -97.9030678
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89469517989272,
+                  "lng" : -97.90189812010728
+               },
+               "southwest" : {
+                  "lat" : 29.89199552010728,
+                  "lng" : -97.90459777989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Lodge Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 3376,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114062549334795235014\"\u003eThe Lodge at Southwest\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jmtDGvF5913gqO6VtM5baWZE05_n4iBMdJpxUDocYh3s65MxzWn-FssIWZdzxopJ0m3iUmbGKWE50uXc3z1iesgKr4HkhSagjRh9qzY6IvPAOia4AFFzlH4TKdwrcSnd1Skj0tzYW-UHRkrUwWWTa-iMD62zQFgmslprlQNm71_2zHX",
+               "width" : 6000
+            }
+         ],
+         "place_id" : "ChIJ3VCSn7CpXIYRg9gQESWpFDc",
+         "plus_code" : {
+            "compound_code" : "V3VW+GQ San Marcos, Texas",
+            "global_code" : "76X4V3VW+GQ"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ3VCSn7CpXIYRg9gQESWpFDc",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 651,
+         "vicinity" : "1975 Aquarena Springs Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8827944,
+               "lng" : -97.91016479999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.88416242989272,
+                  "lng" : -97.90883637010728
+               },
+               "southwest" : {
+                  "lat" : 29.88146277010727,
+                  "lng" : -97.91153602989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Apartments At River Ridge",
+         "photos" : [
+            {
+               "height" : 5312,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104102629487110230241\"\u003eKristina Castillo\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jnD19VdtTNovLbeMUrNEdmrAIRZmAr5wD1kvCN13jw8y7knnaCSyF3QcOeDI_VPFwDX3kYnc_flI-JU4mq3mgtuBngeTwQn1Qu67P8-nJggB0r8IAqVNTul0q52KXFN_3xgYahSklH1vRMei1VfUiVyMfrl_3J04a1u-iiKmGZq_6I9",
+               "width" : 2988
+            }
+         ],
+         "place_id" : "ChIJb3FN7K6pXIYR9imoml5v88s",
+         "plus_code" : {
+            "compound_code" : "V3MQ+4X San Marcos, Texas",
+            "global_code" : "76X4V3MQ+4X"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJb3FN7K6pXIYR9imoml5v88s",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 2,
+         "vicinity" : "1650 River Rd, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8943176,
+               "lng" : -97.9158039
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89560597989272,
+                  "lng" : -97.91442627010727
+               },
+               "southwest" : {
+                  "lat" : 29.89290632010728,
+                  "lng" : -97.91712592989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Spring West Apartments",
+         "place_id" : "ChIJOcENNUuoXIYRgvs-uUlhWFk",
+         "plus_code" : {
+            "compound_code" : "V3VM+PM San Marcos, Texas",
+            "global_code" : "76X4V3VM+PM"
+         },
+         "rating" : 5,
+         "reference" : "ChIJOcENNUuoXIYRgvs-uUlhWFk",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 2,
+         "vicinity" : "1623 Aquarena Springs Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8554631,
+               "lng" : -97.9507971
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.85669262989272,
+                  "lng" : -97.94958772010729
+               },
+               "southwest" : {
+                  "lat" : 29.85399297010728,
+                  "lng" : -97.95228737989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Palazzo Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 1280,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116028447806081874391\"\u003eThe Palazzo\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jnK2x-8tX-wo47twEsmkIX9AFXiD43mn1s0qAFy5a8UTyv6N0GtMWhmvLmd38JMQobHgL9pdVFzePMOPTJjg-uM2VpBnmJzwTlyzLzThYipOLyEFQimBeodTYZGZMUTWeztYXBZcjn5d9owB2NIeK0AU_NqZdC9nP2geu3hAuLHoZTE",
+               "width" : 1900
+            }
+         ],
+         "place_id" : "ChIJ7-_mJpqoXIYR3-5SB_t9adE",
+         "plus_code" : {
+            "compound_code" : "V24X+5M San Marcos, Texas",
+            "global_code" : "76X4V24X+5M"
+         },
+         "rating" : 2.8,
+         "reference" : "ChIJ7-_mJpqoXIYR3-5SB_t9adE",
+         "scope" : "GOOGLE",
+         "types" : [ "real_estate_agency", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 58,
+         "vicinity" : "1011 Wonder World Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8861087,
+               "lng" : -97.94453709999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.88745497989272,
+                  "lng" : -97.94321137010726
+               },
+               "southwest" : {
+                  "lat" : 29.88475532010728,
+                  "lng" : -97.94591102989271
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lindsay Oaks Apartments",
+         "photos" : [
+            {
+               "height" : 4032,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112622069532280042351\"\u003esalman habib\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jmLVacL0P3kqut71KZkYD6BgoDT_95moxXoEdnbo_LUXjCBcw-3oqtm7O2y-NwPI7lGSAFv6bTag9vfkXc0oz3QyzJRl56fzFUwtmuOTci0W-UKrvf-OBnZ9Fm6u--MxVcYR4s7Ku2Szd1ItWNE7-tD5XL4P0eyrVPyRnpDw7C3CSAv",
+               "width" : 2268
+            }
+         ],
+         "place_id" : "ChIJ_-nSbW-oXIYR6lCAftIYEvs",
+         "plus_code" : {
+            "compound_code" : "V3P4+C3 San Marcos, Texas",
+            "global_code" : "76X4V3P4+C3"
+         },
+         "rating" : 3.2,
+         "reference" : "ChIJ_-nSbW-oXIYR6lCAftIYEvs",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 5,
+         "vicinity" : "435 N Comanche St, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8978807,
+               "lng" : -97.94186959999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89916432989272,
+                  "lng" : -97.94044047010728
+               },
+               "southwest" : {
+                  "lat" : 29.89646467010728,
+                  "lng" : -97.94314012989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Logan Ridge Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 788,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103834757402674610305\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jklcMj8NoMp9KqSDacwEdTj2y7SwJZH3_PbtaATpKBxln33BAsw5stwJjb21la5DNL5k7uKvcxJHwYqdbiOqT4wAOWa_AIoLvDGYti3LQlyBS33VxH7hG6Y8GeYvK7ffM0fWQ-LWixdhwekmsRgzT8TrNMtGJwHBXmBNRvhqjyXO_kt",
+               "width" : 940
+            }
+         ],
+         "place_id" : "ChIJo_p_vhSoXIYRxRxbx_woI1Y",
+         "plus_code" : {
+            "compound_code" : "V3X5+57 San Marcos, Texas",
+            "global_code" : "76X4V3X5+57"
+         },
+         "rating" : 3.1,
+         "reference" : "ChIJo_p_vhSoXIYRxRxbx_woI1Y",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 33,
+         "vicinity" : "225 Ramsay St, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8971194,
+               "lng" : -97.966797
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89827637989272,
+                  "lng" : -97.96540324999999
+               },
+               "southwest" : {
+                  "lat" : 29.89557672010728,
+                  "lng" : -97.96834065
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Edge",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 844,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116281289884949339062\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jlJIxLFCpu6W_fsC_QANI0IPdWle4J15VM_HNWXSjg3ekdjvezZL3D7Sgffc877JCIuAcktJ5xeSwJ5CZgHyGIXqhJYLzwPjFCOZTizK752sEHUYZU6gmKqFsQCvSmo1gWEbJZFHFTBnJgRgnVDIKExI1lu20-J-PTr2-6H0_6ptcaq",
+               "width" : 1266
+            }
+         ],
+         "place_id" : "ChIJ4aQvT-enXIYRXwW1tl4sOAw",
+         "plus_code" : {
+            "compound_code" : "V2WM+R7 San Marcos, Texas",
+            "global_code" : "76X4V2WM+R7"
+         },
+         "rating" : 2.8,
+         "reference" : "ChIJ4aQvT-enXIYRXwW1tl4sOAw",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 235,
+         "vicinity" : "1740 Ranch Rd 12, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8662307,
+               "lng" : -97.9467578
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.86749542989273,
+                  "lng" : -97.94530822010728
+               },
+               "southwest" : {
+                  "lat" : 29.86479577010728,
+                  "lng" : -97.94800787989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Villas at Willow Springs",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 480,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108592927565409109920\"\u003eVillas At Willow Springs\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jmIGnUDb-2lntthilibxibMAcsjOyoDvymJ4qSJOL2NVYYNZt-6fSvsuzue7bKuknL0zYKGByjVsd2f_S3kIMKUcOM0ccYHdntgKutSqDLijeRCfMoSXCvQYoWQOsJvKO7mGJShU30lZPErJiI_w0T_ga7bFXUbHGAkdbOSOoXnvOvW",
+               "width" : 640
+            }
+         ],
+         "place_id" : "ChIJFXZlPo-oXIYRLxWkHE2fu-k",
+         "plus_code" : {
+            "compound_code" : "V383+G8 San Marcos, Texas",
+            "global_code" : "76X4V383+G8"
+         },
+         "rating" : 2.7,
+         "reference" : "ChIJFXZlPo-oXIYRLxWkHE2fu-k",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 78,
+         "vicinity" : "1506 IH 35 S, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.90178,
+               "lng" : -97.91686329999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.90307797989272,
+                  "lng" : -97.91557752010728
+               },
+               "southwest" : {
+                  "lat" : 29.90037832010727,
+                  "lng" : -97.91827717989271
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Elevation on Post Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 4482,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105959305493278028545\"\u003eElevation on Post Apartments\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jlSfWgmtBehedqrEOUEIX3KMiLU168jPwySGuIWIKh0IKbGnl0VvQG37pN5QVkEVh-ZFhWO3N3NDYtZCRRTpxbpi0BNJmUDrW2p07tg3mqzYIUHvE_JvZtQHnfYBSzAnx_nzXsUuuyraaquAfpEmM7PtfZfYd4Dcj4OldFXv_LdmdLN",
+               "width" : 6721
+            }
+         ],
+         "place_id" : "ChIJlwDi8DSoXIYRXcVdkIDpEJY",
+         "plus_code" : {
+            "compound_code" : "W32M+P7 San Marcos, Texas",
+            "global_code" : "76X4W32M+P7"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJlwDi8DSoXIYRXcVdkIDpEJY",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 196,
+         "vicinity" : "1629 Post Rd, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8487186,
+               "lng" : -97.9671096
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.84998122989273,
+                  "lng" : -97.96573867010729
+               },
+               "southwest" : {
+                  "lat" : 29.84728157010728,
+                  "lng" : -97.96843832989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Grand at Stonecreek",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 3782,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107525576723770059456\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jnHDtizHieM3w3iyCWvdcvj8MzOKJZlKKOH7gWtTsAjy2Ry5NdE47iJ--y3spnYQVGLH2eEi_OsvYWoOHNLAKKPX3PukOVP6QE8RFqBGyBvF5kNGUQU7EEGvLYEldhWuBUFDr86zQcGK6xqkVrJ62c9gyVmyEa_KNizD8YeQchnPbWk",
+               "width" : 5673
+            }
+         ],
+         "place_id" : "ChIJD2jjfSOnXIYR2D3Pw82l5-s",
+         "plus_code" : {
+            "compound_code" : "R2XM+F5 San Marcos, Texas",
+            "global_code" : "76X4R2XM+F5"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJD2jjfSOnXIYR2D3Pw82l5-s",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 101,
+         "vicinity" : "490 Barnes Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8303114,
+               "lng" : -97.96316979999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.83220712989273,
+                  "lng" : -97.96096975000002
+               },
+               "southwest" : {
+                  "lat" : 29.82950747010728,
+                  "lng" : -97.96390314999999
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "McCarty Commons",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 683,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102601924626689275991\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jm0pWNYc-vl8V00CqjSEh_rR3CS51iauh0TbnnP6a0r0uqeGRn2Ga5yGNxKYw6UpV7I3PFQVl46m6v_lcWs3cTWtxzVDnDZXw80rBeiPNZ6xTf5D_1VlTOFXiumB_JH0yfad52NyzSIkJS5vJL9liYh3emaG24eRqldrMznp9_l1vue",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJe0GbVKmnXIYRMdgXQ_ApTJc",
+         "plus_code" : {
+            "compound_code" : "R2JP+4P San Marcos, Texas",
+            "global_code" : "76X4R2JP+4P"
+         },
+         "rating" : 3.3,
+         "reference" : "ChIJe0GbVKmnXIYRMdgXQ_ApTJc",
+         "scope" : "GOOGLE",
+         "types" : [ "real_estate_agency", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 74,
+         "vicinity" : "1476 E McCarty Ln, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8911934,
+               "lng" : -97.9187213
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89256817989272,
+                  "lng" : -97.91734237010726
+               },
+               "southwest" : {
+                  "lat" : 29.88986852010727,
+                  "lng" : -97.92004202989271
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Palm Square Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "place_id" : "ChIJ3zreY0yoXIYRD0HilYMJgn8",
+         "plus_code" : {
+            "compound_code" : "V3RJ+FG San Marcos, Texas",
+            "global_code" : "76X4V3RJ+FG"
+         },
+         "rating" : 1.7,
+         "reference" : "ChIJ3zreY0yoXIYRD0HilYMJgn8",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 23,
+         "vicinity" : "1360 Thorpe Ln, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.9027799,
+               "lng" : -97.9005885
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.90470117989273,
+                  "lng" : -97.89883042010729
+               },
+               "southwest" : {
+                  "lat" : 29.90200152010728,
+                  "lng" : -97.90153007989274
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Grove at San Marcos",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 1001,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116035814777895509186\"\u003eThe Grove\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jneyqMCcty15Wi0KHpkVygXWiyN3-nmFiQpyV3TdO12lw9UHhFV6bxgCSEF5-c4HvVTurrmrtuRlqDR3EaFI7G3OJqnqq_0v7mQ53g2n62QihUrTN-w1TL5ThUNJUQCmnbTT9rI1q3HN9Xu5HjCB3i5tmDyXVwocmFPUExqHslncGou",
+               "width" : 1500
+            }
+         ],
+         "place_id" : "ChIJM0NKtfioXIYRkiMPRZS_XGw",
+         "plus_code" : {
+            "compound_code" : "W33X+4Q San Marcos, Texas",
+            "global_code" : "76X4W33X+4Q"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJM0NKtfioXIYRkiMPRZS_XGw",
+         "scope" : "GOOGLE",
+         "types" : [ "real_estate_agency", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 215,
+         "vicinity" : "1150 River Ridge Pkwy, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8467993,
+               "lng" : -97.9761151
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.8495494,
+                  "lng" : -97.97537435000001
+               },
+               "southwest" : {
+                  "lat" : 29.84588259999999,
+                  "lng" : -97.97833734999999
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sienna Pointe",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 700,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108738224383794060148\"\u003eSienna Pointe\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jmyJnNM2uhurMQE9CP3aaGYp-MZZ176P35fQCawEwWK6QEDnhb2mPBrls0u8Ra0c8rIl7WtWEARGqCWyOgKWzFxeeH0JmhAXFYBBU12JkCa84v__nsovCxmWMmILGscoQw8hxvSVdHYyG0X2Nt3izqaAXH0jbL1bKeZvhI2whv_-LP1",
+               "width" : 1050
+            }
+         ],
+         "place_id" : "ChIJgQ-2eRWmXIYRGhkJcgH4y0g",
+         "plus_code" : {
+            "compound_code" : "R2WF+PH San Marcos, Texas",
+            "global_code" : "76X4R2WF+PH"
+         },
+         "rating" : 3.4,
+         "reference" : "ChIJgQ-2eRWmXIYRGhkJcgH4y0g",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 124,
+         "vicinity" : "2913 Hunter Rd, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.948364,
+               "lng" : -97.884793
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.94972192989272,
+                  "lng" : -97.88310972010729
+               },
+               "southwest" : {
+                  "lat" : 29.94702227010728,
+                  "lng" : -97.88580937989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Champions Crossing",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 749,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104947825590946326061\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jn5g10x2Wkj3y1cYVih9e28Azdf72u5lRl3j1aBTZys5ZERy2-l2mOMzQPOIWZL9KCTYuSOTV2phBs5RYtUUANEqOjeMyMfJ5FgOGaD_fU_sy5HRKUd7Vu5gs26q9RwwWCM5JBWoiK_jOS7WZ7NGevoqkyj0rhyMka14x4XFlar85Km",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJdfLqDm1WW4YRtoPdk5Z1uLo",
+         "plus_code" : {
+            "compound_code" : "W4X8+83 San Marcos, Texas",
+            "global_code" : "76X4W4X8+83"
+         },
+         "rating" : 3,
+         "reference" : "ChIJdfLqDm1WW4YRtoPdk5Z1uLo",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 40,
+         "vicinity" : "345 Champion Blvd, San Marcos"
+      }
+   ],
+   "status" : "OK"
+}
