@@ -9,6 +9,7 @@ import {
   IconButton,
   Input,
   Modal,
+  ScrollView,
   Text,
   VStack,
 } from 'native-base';
@@ -367,20 +368,22 @@ export default function MapMenu(props) {
   return (
     <Box ml={5} mt={100}>
       <Draggable>
-        <Button
-          mb={5}
-          onPress={() => setIsMenuCollapsed(!isMenuCollapsed)}>
+        <ScrollView>
+          <Button
+            mb={5}
+            onPress={() => setIsMenuCollapsed(!isMenuCollapsed)}>
           Toggle Menu
-        </Button>
-        <Collapsible collapsed={isMenuCollapsed}>
-          <Center w={200}>
-            <Box variant={'accented'} rounded={10} w={175} h={550}>
-              <LocationSection />
-              <PointsOfInterestSection setMapPOIs={setMapPOIs}/>
-              <ApartmentSection setAptMarkersVisible={setAptMarkersVisible}/>
-            </Box>
-          </Center>
-        </Collapsible>
+          </Button>
+          <Collapsible collapsed={isMenuCollapsed}>
+            <Center w={200}>
+              <Box variant={'accented'} rounded={10} w={175} h={550}>
+                <LocationSection />
+                <PointsOfInterestSection setMapPOIs={setMapPOIs}/>
+                <ApartmentSection setAptMarkersVisible={setAptMarkersVisible}/>
+              </Box>
+            </Center>
+          </Collapsible>
+        </ScrollView>
       </Draggable>
     </Box>
   );

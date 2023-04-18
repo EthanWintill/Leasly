@@ -2,11 +2,11 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {
   AlertDialog,
   Box,
+  Button,
   Center,
   Heading,
   Spinner,
   Text,
-  TextArea,
   View,
 } from 'native-base';
 import {
@@ -15,7 +15,6 @@ import {
   TransitLayer,
   Marker,
   useJsApiLoader,
-  InfoWindow,
 } from '@react-google-maps/api';
 
 import * as Location from 'expo-location';
@@ -33,8 +32,18 @@ const RESPONSES = [
 const MAPS_LIBRARIES = ['places'];
 
 function MapMarker(props) {
-  const {info, marker} = props;
+  const {
+    info,
+    marker,
+    allApartmentsArr,
+    navigation,
+  } = props;
   const [infoVisible, setInfoVisible] = useState(false);
+
+  let apartment = Object.values(allApartmentsArr).filter((apt) => apt.name === info.name);
+  if (apartment.length >= 1) {
+    apartment = apartment[0];
+  }
 
   return (
     <>
@@ -47,13 +56,26 @@ function MapMarker(props) {
             <Text>Rating: {info.rating}/5</Text>
             <Text>Tagged: {info.types.toString()}</Text>
           </AlertDialog.Body>
+          {!Array.isArray(apartment) &&
+            <AlertDialog.Footer>
+              <Button onPress={() => {
+                setInfoVisible(false);
+                navigation.navigate('viewApartment', {apartment});
+              }}>
+                View Apartment
+              </Button>
+            </AlertDialog.Footer>
+          }
         </AlertDialog.Content>
       </AlertDialog>
     </>
   );
 }
 
-export default function MapPage() {
+export default function MapPage(props) {
+  /* ---------------------------------- Props --------------------------------- */
+  const {navigation} = props;
+
   /* --------------------------------- States --------------------------------- */
 
   // Map
@@ -107,6 +129,9 @@ export default function MapPage() {
   // Location
   const [userLocation, setUserLocation] = useState();
   const [userLocationMap, setUserLocationMap] = useState({lat: 0, lng: 0});
+
+  // Listings
+  const [allApartmentsArr, setAllApartmentsArr] = useState([]);
 
   /* ---------------------------- Utility Functions --------------------------- */
   // Load API
@@ -209,6 +234,19 @@ export default function MapPage() {
     map.setZoom(oldZoom);
   }, [mapStyle]);
 
+  // Using useEffect for single rendering
+  useEffect(() => {
+    // Using fetch to fetch the api from
+    // flask server it will be redirected to proxy
+    fetch('https://leaslybackend.herokuapp.com/api/apartments').then((res) =>
+      res.json().then((data) => {
+        // Setting a data from api
+        setAllApartmentsArr(data);
+      }),
+    );
+  }, []);
+
+
   /* ------------------------------ Map Component ----------------------------- */
   // Component properties
   const mapProps = {
@@ -238,6 +276,8 @@ export default function MapPage() {
                           return (
                             <MapMarker
                               key={k}
+                              navigation={navigation}
+                              allApartmentsArr={allApartmentsArr}
                               marker={{
                                 visible: aptMarkersVisible,
                                 position: {lat: r.geometry.location.lat, lng: r.geometry.location.lng},
@@ -254,7 +294,10 @@ export default function MapPage() {
                   );
                 })
               }
-              <MapMenu mapPOIs={mapPOIs} setMapPOIs={setMapPOIs} setAptMarkersVisible={setAptMarkersVisible}/>
+              <MapMenu
+                mapPOIs={mapPOIs}
+                setMapPOIs={setMapPOIs}
+                setAptMarkersVisible={setAptMarkersVisible}/>
             </GoogleMap>
         }
         {!isLoaded && hasLocationPerms &&
