@@ -146,6 +146,28 @@ const BoxTheme = {
   },
 };
 
+// NativeBase.Center
+const CenterTheme = {
+  variants: {
+    accented: ({colorMode}) => {
+      return {
+        bg: colorPreset(colorMode, 'bg_light', 'bg_light'),
+      };
+    },
+  },
+};
+
+// NativeBase.VStack
+const VStackTheme = {
+  variants: {
+    accented: ({colorMode}) => {
+      return {
+        bg: colorPreset(colorMode, 'bg_light', 'bg_light'),
+      };
+    },
+  },
+};
+
 /* ---------------------------------- Forms --------------------------------- */
 
 // NativeBase.Button
@@ -252,6 +274,8 @@ const Theme = extendTheme({
   components: {
     View: ViewTheme,
     Box: BoxTheme,
+    Center: CenterTheme,
+    VStack: VStackTheme,
     Text: TextTheme,
     Button: ButtonTheme,
     FormControlLabel: FormControlLabelTheme,
