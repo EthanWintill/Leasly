@@ -1,0 +1,910 @@
+{
+   "html_attributions" : [],
+   "results" : [
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8942354,
+               "lng" : -97.9080422
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89660210000001,
+                  "lng" : -97.90710544999999
+               },
+               "southwest" : {
+                  "lat" : 29.8934465,
+                  "lng" : -97.91085245000002
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "CastleRock at San Marcos Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 2186,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117372079958864264245\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jkktXHajKiU1_EhQaCWeVc7j-H6HUuFhOa7WoIH2-zZw6Snx0_LAqBs_CCb_hhavSqj9A1KzeegnqD4zeQQi4UYLHSaJQlKj-NOnkLwV1YtercpzH5IoOrofOT2_L3I-dfQmOmbGZaGvjPmCOOEd0WLdyjUwyBT6R7F36BF9EuLgSH4",
+               "width" : 3277
+            }
+         ],
+         "place_id" : "ChIJAQuIhrapXIYRuqdo7Y_9Xy0",
+         "plus_code" : {
+            "compound_code" : "V3VR+MQ San Marcos, Texas",
+            "global_code" : "76X4V3VR+MQ"
+         },
+         "rating" : 2.8,
+         "reference" : "ChIJAQuIhrapXIYRuqdo7Y_9Xy0",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 261,
+         "vicinity" : "1610 N Interstate 35, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.893095,
+               "lng" : -97.95832299999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89439597989272,
+                  "lng" : -97.95705182010728
+               },
+               "southwest" : {
+                  "lat" : 29.89169632010728,
+                  "lng" : -97.95975147989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Highcrest Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 600,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100336991612552272911\"\u003eHighcrest Apartments\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jlwxLkXFbtjrB8IMF96BI7Adq78DITUF9fBf6_u5bkveIU6yOF_3wc293G2NBijO9XW7owqr9u3wU0cLVaXdO34V4LrSd-vV8rHokDABGe7mophdFrexSXXqoebeMgQ2ijSGLSe7nLAKZiw5vLB1Ft0P3ktySfdkWl1-6R0Ej8tRv21",
+               "width" : 787
+            }
+         ],
+         "place_id" : "ChIJo6cao3WoXIYRaFufGz_Cpe4",
+         "plus_code" : {
+            "compound_code" : "V2VR+6M San Marcos, Texas",
+            "global_code" : "76X4V2VR+6M"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJo6cao3WoXIYRaFufGz_Cpe4",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 50,
+         "vicinity" : "1518 Old, Ranch Rd 12, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8854501,
+               "lng" : -97.9443668
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.88654822989272,
+                  "lng" : -97.94299502010728
+               },
+               "southwest" : {
+                  "lat" : 29.88384857010728,
+                  "lng" : -97.94569467989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pointe San Marcos",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 2400,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100775908640423815390\"\u003ePointe San Marcos\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jnW5TAKoA138js4lpIWYdtHZ055HXlH2irbvQP0IEXT4yo1v9IteNxG-Di_CLaf8UkkREKA0aY8BltYk68LrrBQCcFge9wnYJkcZObYRkZetIpxHN23Zq6oB7oX8VlNMYaS-Uyy_e0TE0nbLwxEgAhy0h0dW_X1pFO0Js52IQbWizau",
+               "width" : 3599
+            }
+         ],
+         "place_id" : "ChIJFVFd4GeoXIYRcudcijG4l2E",
+         "plus_code" : {
+            "compound_code" : "V3P4+57 San Marcos, Texas",
+            "global_code" : "76X4V3P4+57"
+         },
+         "rating" : 3.3,
+         "reference" : "ChIJFVFd4GeoXIYRcudcijG4l2E",
+         "scope" : "GOOGLE",
+         "types" : [ "finance", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 160,
+         "vicinity" : "417 N Comanche St, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.901143,
+               "lng" : -97.958016
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.90252582989272,
+                  "lng" : -97.95663467010729
+               },
+               "southwest" : {
+                  "lat" : 29.89982617010728,
+                  "lng" : -97.95933432989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Langtry Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "place_id" : "ChIJLxvuGQqoXIYRNZ-CPLuiZ6c",
+         "plus_code" : {
+            "compound_code" : "W22R+FQ San Marcos, Texas",
+            "global_code" : "76X4W22R+FQ"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJLxvuGQqoXIYRNZ-CPLuiZ6c",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 27,
+         "vicinity" : "205 Craddock Ave, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8701758,
+               "lng" : -97.9254708
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.87150827989272,
+                  "lng" : -97.92414007010728
+               },
+               "southwest" : {
+                  "lat" : 29.86880862010728,
+                  "lng" : -97.92683972989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Curve at River Road Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 341,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102482205794440720828\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jlmtEQLJ4YoUsFsoFkS0yei2zA5bufr4hHivgaOy0-y1IGl4Dr4hqfvy0-9hHnxm81rAqFNE6jVExmUulZVmV2gbWlCr8L76Np1Pr8LOb1OFYPRFo3INltl9nFPVzP-DnFK1y9gnv2xgcvxrRoETa8dNavB6Kt7jrZ_iI0K2vzXR4qt",
+               "width" : 518
+            }
+         ],
+         "place_id" : "ChIJ-WzM6_moXIYRlsvIF-eZ858",
+         "plus_code" : {
+            "compound_code" : "V3CF+3R San Marcos, Texas",
+            "global_code" : "76X4V3CF+3R"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJ-WzM6_moXIYRlsvIF-eZ858",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 57,
+         "vicinity" : "705 River Rd #104, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.871934,
+               "lng" : -97.92895209999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.87764615,
+                  "lng" : -97.92767795
+               },
+               "southwest" : {
+                  "lat" : 29.86933155,
+                  "lng" : -97.93095575
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Redpoint San Marcos",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 1000,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110022820811362030075\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jmMlasvZikejipv0CiEiCYzkGXqjCb-409tydqh_6EDWgjlhjWePp3yjlH7SmgOOu0Cs7LiEZlV5vPclKdYnUYe75OaDY8hYCAyhESZ33jIbgHtZ6ask5F7OPczYyZPqHr1PGQ2oNeaMftDDdyazFVlqO39R6fRxkt1Ws97aua9M_yh",
+               "width" : 1500
+            }
+         ],
+         "place_id" : "ChIJ36lw4GeoXIYRbVa8u3iqmXU",
+         "plus_code" : {
+            "compound_code" : "V3CC+QC San Marcos, Texas",
+            "global_code" : "76X4V3CC+QC"
+         },
+         "rating" : 3.5,
+         "reference" : "ChIJ36lw4GeoXIYRbVa8u3iqmXU",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 336,
+         "vicinity" : "650 River Rd, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.888787,
+               "lng" : -97.9194638
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89018817989272,
+                  "lng" : -97.91806967010729
+               },
+               "southwest" : {
+                  "lat" : 29.88748852010727,
+                  "lng" : -97.92076932989274
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Summit",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 1360,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114717122476201359960\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jkw05iIs3uUG7QnJ0FjnR7U5L41sRC1rRxf8h9kAq8LvGTXU5luGU4tkC0TfvfR7GmnuHuNtmwYdVXY0xCRNfllcHutJSqkzYCipLBg7yUiMGIyXOCVdVbAA8RC6Pdl2ZBz5XDOuvRRQf3KuX-qRHu6MHA_MmDlNBfFUkEt9K8PmPhZ",
+               "width" : 2030
+            }
+         ],
+         "place_id" : "ChIJ6V2ltU2oXIYRBecH1x-6QiA",
+         "plus_code" : {
+            "compound_code" : "V3QJ+G6 San Marcos, Texas",
+            "global_code" : "76X4V3QJ+G6"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJ6V2ltU2oXIYRBecH1x-6QiA",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 49,
+         "vicinity" : "1348 Thorpe Ln, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.891921,
+               "lng" : -97.9163373
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89347517989273,
+                  "lng" : -97.91497172010727
+               },
+               "southwest" : {
+                  "lat" : 29.89077552010728,
+                  "lng" : -97.91767137989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "AQUA 16 Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 1536,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111597379857371158207\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jkjzaiGzT9c9V1OON1ryWqgzY9-qGFXphWRLdhc7tn_IXXl38OSw-LgGHeWQsELTqiAek-kK3iRE4ZSF6yONbNtINbSRpwYR0sLVjKQJVavj5Q_lMsAQTmGazWek7ogX_wzRrjqeuABr3qqZPRL1is_9_MsFtX-MVN1kXdYy6SzUT8Y",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJid1zr0yoXIYRYmnFtIVVWlE",
+         "plus_code" : {
+            "compound_code" : "V3RM+QF San Marcos, Texas",
+            "global_code" : "76X4V3RM+QF"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJid1zr0yoXIYRYmnFtIVVWlE",
+         "scope" : "GOOGLE",
+         "types" : [ "real_estate_agency", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 96,
+         "vicinity" : "1640 Aquarena Springs Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.854549,
+               "lng" : -97.94857650000002
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.85554507989272,
+                  "lng" : -97.94707917010727
+               },
+               "southwest" : {
+                  "lat" : 29.85284542010728,
+                  "lng" : -97.94977882989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Topaz Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105650906858242604218\"\u003eCedars of San Marcos\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jnHJ0aKy7gOmBIQNPOzpjX0aTWU3uqKbnouT9y2tCmiVWFe5IspCK73cVjeb0K384vAPdBGf5DcPegL010J8uRp2lRUATfb-SOb4YsHRJ3G6YQq2tsaFIKKD2MT0DC8G746gZOwQA2kgYNF12TTcv9Y09aEpoRHJuDyxkmhTIXTPDSy",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJFzYv3pmoXIYRy8TJidhTu34",
+         "plus_code" : {
+            "compound_code" : "V332+RH San Marcos, Texas",
+            "global_code" : "76X4V332+RH"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJFzYv3pmoXIYRy8TJidhTu34",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 129,
+         "vicinity" : "1101 Leah Ave, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.891877,
+               "lng" : -97.90722099999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89293792989272,
+                  "lng" : -97.90336295
+               },
+               "southwest" : {
+                  "lat" : 29.89023827010728,
+                  "lng" : -97.91103235
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Riverside Ranch",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 3679,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111721790654562017898\"\u003eRiverside Ranch Apartments\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jk5pjbinyzmrh0sxEkwpfarlgGZG_QPDnfEHWe9QREuFcK-DyUZf-4ZGfYZMRy4qR6GbYmGVMzjktNZ0Bg-LqU8oSOoFmz5zBPUEUjODez8wbc7QK019JdgggC_28osaJzlcJSEmd38HO8-p7LHdfgVlntZz30-1ohDQIWEtM3sE0zX",
+               "width" : 5519
+            }
+         ],
+         "place_id" : "ChIJP9eo3rCpXIYRdUBTrlyFQ54",
+         "plus_code" : {
+            "compound_code" : "V3RV+Q4 San Marcos, Texas",
+            "global_code" : "76X4V3RV+Q4"
+         },
+         "rating" : 2.7,
+         "reference" : "ChIJP9eo3rCpXIYRdUBTrlyFQ54",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 114,
+         "vicinity" : "1805 Aquarena Springs Dr #1613, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.890459,
+               "lng" : -97.919631
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89183997989272,
+                  "lng" : -97.91828202010728
+               },
+               "southwest" : {
+                  "lat" : 29.88914032010728,
+                  "lng" : -97.92098167989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Thorpe Ln. Apartments",
+         "place_id" : "ChIJ723HRkyoXIYRFc4aT7y7BS4",
+         "plus_code" : {
+            "compound_code" : "V3RJ+55 San Marcos, Texas",
+            "global_code" : "76X4V3RJ+55"
+         },
+         "rating" : 0,
+         "reference" : "ChIJ723HRkyoXIYRFc4aT7y7BS4",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 0,
+         "vicinity" : "1354 Thorpe Ln, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8955337,
+               "lng" : -97.94419739999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89702462989272,
+                  "lng" : -97.94269427010728
+               },
+               "southwest" : {
+                  "lat" : 29.89432497010728,
+                  "lng" : -97.94539392989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Garden Oaks",
+         "place_id" : "ChIJnTD3qfGpXIYRZUIs2JgU2jU",
+         "plus_code" : {
+            "compound_code" : "V3W4+58 San Marcos, Texas",
+            "global_code" : "76X4V3W4+58"
+         },
+         "rating" : 0,
+         "reference" : "ChIJnTD3qfGpXIYRZUIs2JgU2jU",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 0,
+         "vicinity" : "1117 N LBJ Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8891834,
+               "lng" : -97.9059547
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89062172989273,
+                  "lng" : -97.90462802010728
+               },
+               "southwest" : {
+                  "lat" : 29.88792207010728,
+                  "lng" : -97.90732767989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "River Oaks Villas Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 2592,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104648171797817196911\"\u003eRiver Oaks Villas\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jloSJUvWcxH49MNNg9RF6DMMgfNLZr9UXAd_0BnzDThsbOaY733jc9agWb90eI93MVurIsWxKq_TFj-gePUMsYfxzsrKcpnThx9uGYZTHTApAhgtF_hK4GyMnU1L_3mHdE2ZF6jr8z194h7ORxS9DYuuF1dluzBxa5nx8-zN7MNYIyS",
+               "width" : 3872
+            }
+         ],
+         "place_id" : "ChIJe6Juf7qpXIYRNIpCt6s-wGw",
+         "plus_code" : {
+            "compound_code" : "V3QV+MH San Marcos, Texas",
+            "global_code" : "76X4V3QV+MH"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJe6Juf7qpXIYRNIpCt6s-wGw",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 110,
+         "vicinity" : "1900 Aquarena Springs Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8921327,
+               "lng" : -97.9022543
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89427095,
+                  "lng" : -97.90099292010729
+               },
+               "southwest" : {
+                  "lat" : 29.88942275,
+                  "lng" : -97.90369257989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Arba",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 2499,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108294105265865247383\"\u003eAspen Heights San Marcos\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jk6eDY6n0n6z8Dq0tHjnyKj82e3OOapE6wtaAB7KYgJ7Np2EzxS0W4b7-Q25D6dE78JuA74n19HZtaqqVE7TGZsY0NsX5HAbzMVjcK3Q-DO7mh2gLOFm-IAVv9256Kn-_iBI1eviqtZuUpdOsAx-R35VjU_c72yPXi0EaFjmWxDtD_G",
+               "width" : 3747
+            }
+         ],
+         "place_id" : "ChIJQ8tMe0uoXIYR8daVkfKPntA",
+         "plus_code" : {
+            "compound_code" : "V3RX+V3 San Marcos, Texas",
+            "global_code" : "76X4V3RX+V3"
+         },
+         "rating" : 3.2,
+         "reference" : "ChIJQ8tMe0uoXIYR8daVkfKPntA",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 192,
+         "vicinity" : "1980 Aquarena Springs Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8488044,
+               "lng" : -97.9528732
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.85046912989273,
+                  "lng" : -97.9476919
+               },
+               "southwest" : {
+                  "lat" : 29.84776947010728,
+                  "lng" : -97.95566069999998
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Springmarc",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 3647,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102844598608092286357\"\u003eLCP360 Production\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jnIRJicY4VBVQ3AcwAsTS9gkTcamdnm4XTQ-rzW0lgIV745ZU1-jD-wROKmWYoSkZ-WqI4ab2E64RZd24VCZFb9hxwJOX8TwNrqI3US8_wNrkxt_b90l_ddB9SreSUupRGiw3sFAP4BR56gWZHZ3AQVIj4iO9ni3STvMiWeaigIUWU",
+               "width" : 5462
+            }
+         ],
+         "place_id" : "ChIJ3xm3kqKoXIYRgD-n3N3FjoA",
+         "plus_code" : {
+            "compound_code" : "R2XW+GV San Marcos, Texas",
+            "global_code" : "76X4R2XW+GV"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ3xm3kqKoXIYRgD-n3N3FjoA",
+         "scope" : "GOOGLE",
+         "types" : [ "real_estate_agency", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 196,
+         "vicinity" : "1350 Sadler Drive, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8189618,
+               "lng" : -97.94426500000002
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.82027737989271,
+                  "lng" : -97.94245412010726
+               },
+               "southwest" : {
+                  "lat" : 29.81757772010727,
+                  "lng" : -97.94515377989271
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Reserve at San Marcos",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 2008,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113768915051891943492\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jln9fGx78cqZNZHPPkENqv5FSZICIT8V2cBw3AqjU2zBZVVK51qA8UL26IaICeXqefJuf9sEFPLJcuFCDL_i906goRtfRy9tNLPhAW7CaUA8VU2HwdgQGyRV8Y3E55zDyaXIqfVB371ZwHw34HedbRmF7Bg9CfMt_W1EeqGZqfREpbl",
+               "width" : 3008
+            }
+         ],
+         "place_id" : "ChIJe1ugfQevXIYRTkmFcxS7txc",
+         "plus_code" : {
+            "compound_code" : "R394+H7 San Marcos, Texas",
+            "global_code" : "76X4R394+H7"
+         },
+         "rating" : 2.7,
+         "reference" : "ChIJe1ugfQevXIYRTkmFcxS7txc",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 26,
+         "vicinity" : "4210 Texas Hwy 123, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8332247,
+               "lng" : -97.9410235
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.83457692989272,
+                  "lng" : -97.93970597010728
+               },
+               "southwest" : {
+                  "lat" : 29.83187727010728,
+                  "lng" : -97.94240562989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mission Trail",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 2848,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106202726640488586067\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jndh8SwQ0VQPN5Yz6gRj6IBrT9Rcc96MRcR6M0-OHjh1dCV7VCD_kQchlSQzPinY1joyi079a7-QnooOG7XKZdKfsysrqTwOe8SsObGp3kHFFTDHH6j-6ucNN389naooGPI8p-WUIaV4y7nMt6toOfOW0St6K6qvjx2rYXqLpbdStVO",
+               "width" : 4288
+            }
+         ],
+         "place_id" : "ChIJu33ki4spXYYRTU-31QjXSdk",
+         "plus_code" : {
+            "compound_code" : "R3M5+7J San Marcos, Texas",
+            "global_code" : "76X4R3M5+7J"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJu33ki4spXYYRTU-31QjXSdk",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 95,
+         "vicinity" : "3085 Texas Hwy 123, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.9259876,
+               "lng" : -97.8956172
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.92735942989272,
+                  "lng" : -97.89429337010728
+               },
+               "southwest" : {
+                  "lat" : 29.92465977010728,
+                  "lng" : -97.89699302989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Hawthorne at Blanco Riverwalk",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 4480,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115614103132738793438\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jlMKlPp-bmjfVXoOlPfk1hLwuItZbvb8pc9hTDFmDk71wBbW-xtOspyr7IlfeOlB29EDednK-b0tJKy5icssNFW9GekDeIozgBiflvaatyven_WP8X7jm6zv5hbkfZrqfWcWz75oPx80XkLoSGu9gUP1fDU2vUeSIb-CVhRYbJkCSDX",
+               "width" : 6720
+            }
+         ],
+         "place_id" : "ChIJO-v_vXxXW4YRKT1jcuvmjow",
+         "plus_code" : {
+            "compound_code" : "W4G3+9Q San Marcos, Texas",
+            "global_code" : "76X4W4G3+9Q"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJO-v_vXxXW4YRKT1jcuvmjow",
+         "scope" : "GOOGLE",
+         "types" : [ "real_estate_agency", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 118,
+         "vicinity" : "191 Cotter Ave, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.900608,
+               "lng" : -97.9126895
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.90144357989272,
+                  "lng" : -97.90797245
+               },
+               "southwest" : {
+                  "lat" : 29.89874392010728,
+                  "lng" : -97.91549585
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Copper Beech at San Marcos",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 1001,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117661766868324720650\"\u003eCopper Beech Townhomes\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jmeBHat1HuFadiK5AjmTcY_d77g5VL2LzxMkzB7n4dAPLSBtw4sQ48M0o0BKnG1TRo723geGAXP3nEqEbZDp-XZgywTosC_aLrc4U4TBPAWprTDZAZp0fi31aPmGQyT3qQA2nuIrip31uWEeLiA15vwD9NUv3QfKvo1g8QEDywPktIv",
+               "width" : 1500
+            }
+         ],
+         "place_id" : "ChIJX6pgi8mpXIYRll11kdmZ-js",
+         "plus_code" : {
+            "compound_code" : "W32P+6W San Marcos, Texas",
+            "global_code" : "76X4W32P+6W"
+         },
+         "rating" : 3.4,
+         "reference" : "ChIJX6pgi8mpXIYRll11kdmZ-js",
+         "scope" : "GOOGLE",
+         "types" : [ "real_estate_agency", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 401,
+         "vicinity" : "1701 Mill St, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8863537,
+               "lng" : -97.9219275
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.88773992989272,
+                  "lng" : -97.9212134
+               },
+               "southwest" : {
+                  "lat" : 29.88504027010728,
+                  "lng" : -97.92406980000001
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Lyndon at Springtown",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 4051,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106083449481164624561\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jnWU7WCcGu9Un6S2KEdcrMf6--Al6wATbRs2CO7ExZ4n3cp1o1FXMAhQDPhE0OjuctSlqRfZHRA3zmqIfHar239jIpI2uwfTp5G2U7BLO79WAuOAYCYe1FmeAjGKP-AYCuEqU3K2YIa3aG1g9fqzKP5z7jFLnMDuzXkiKMloZtJfSXH",
+               "width" : 7200
+            }
+         ],
+         "place_id" : "ChIJS9M6qXKpXIYRM-1TEnreaN0",
+         "plus_code" : {
+            "compound_code" : "V3PH+G6 San Marcos, Texas",
+            "global_code" : "76X4V3PH+G6"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJS9M6qXKpXIYRM-1TEnreaN0",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 102,
+         "vicinity" : "200 Springtown Way, San Marcos"
+      }
+   ],
+   "status" : "OK"
+}

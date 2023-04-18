@@ -1,5 +1,8 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {
+  AlertDialog,
+  Box,
+  Button,
   Center,
   Heading,
   Spinner,
@@ -20,9 +23,59 @@ import useEffectAfterMount from '../../hooks/AfterMountHook';
 import MapStyle from './MapStyle';
 import MapMenu from './MapMenu';
 
+const RESPONSES = [
+  require('./poi/response10000-0.json'),
+  require('./poi/response10000-1.json'),
+  require('./poi/response10000-2.json'),
+];
+
 const MAPS_LIBRARIES = ['places'];
 
-export default function MapPage() {
+function MapMarker(props) {
+  const {
+    info,
+    marker,
+    allApartmentsArr,
+    navigation,
+  } = props;
+  const [infoVisible, setInfoVisible] = useState(false);
+
+  let apartment = Object.values(allApartmentsArr).filter((apt) => apt.name === info.name);
+  if (apartment.length >= 1) {
+    apartment = apartment[0];
+  }
+
+  return (
+    <>
+      <Marker onClick={() => setInfoVisible(true)} {...marker}/>
+      <AlertDialog isOpen={infoVisible} onClose={() => setInfoVisible(false)}>
+        <AlertDialog.Content>
+          <AlertDialog.CloseButton />
+          <AlertDialog.Header>{info.name}</AlertDialog.Header>
+          <AlertDialog.Body>
+            <Text>Rating: {info.rating}/5</Text>
+            <Text>Tagged: {info.types.toString()}</Text>
+          </AlertDialog.Body>
+          {!Array.isArray(apartment) &&
+            <AlertDialog.Footer>
+              <Button onPress={() => {
+                setInfoVisible(false);
+                navigation.navigate('viewApartment', {apartment});
+              }}>
+                View Apartment
+              </Button>
+            </AlertDialog.Footer>
+          }
+        </AlertDialog.Content>
+      </AlertDialog>
+    </>
+  );
+}
+
+export default function MapPage(props) {
+  /* ---------------------------------- Props --------------------------------- */
+  const {navigation} = props;
+
   /* --------------------------------- States --------------------------------- */
 
   // Map
@@ -71,10 +124,14 @@ export default function MapPage() {
       stylers: [{'visibility': mapPOIs['poi.sports_complex']}],
     },
   ]));
+  const [aptMarkersVisible, setAptMarkersVisible] = useState(true);
 
   // Location
   const [userLocation, setUserLocation] = useState();
   const [userLocationMap, setUserLocationMap] = useState({lat: 0, lng: 0});
+
+  // Listings
+  const [allApartmentsArr, setAllApartmentsArr] = useState([]);
 
   /* ---------------------------- Utility Functions --------------------------- */
   // Load API
@@ -177,6 +234,19 @@ export default function MapPage() {
     map.setZoom(oldZoom);
   }, [mapStyle]);
 
+  // Using useEffect for single rendering
+  useEffect(() => {
+    // Using fetch to fetch the api from
+    // flask server it will be redirected to proxy
+    fetch('https://leaslybackend.herokuapp.com/api/apartments').then((res) =>
+      res.json().then((data) => {
+        // Setting a data from api
+        setAllApartmentsArr(data);
+      }),
+    );
+  }, []);
+
+
   /* ------------------------------ Map Component ----------------------------- */
   // Component properties
   const mapProps = {
@@ -197,7 +267,37 @@ export default function MapPage() {
               <BicyclingLayer/>
               <TransitLayer />
               <Marker position={userLocationMap} cursor={'Current Location'}/>
-              <MapMenu mapPOIs={mapPOIs} setMapPOIs={setMapPOIs}/>
+              {
+                RESPONSES.map((json, key) => {
+                  return (
+                    <React.Fragment key={key}>
+                      {
+                        json.results.map((r, k) => {
+                          return (
+                            <MapMarker
+                              key={k}
+                              navigation={navigation}
+                              allApartmentsArr={allApartmentsArr}
+                              marker={{
+                                visible: aptMarkersVisible,
+                                position: {lat: r.geometry.location.lat, lng: r.geometry.location.lng},
+                              }}
+                              info={{
+                                name: r.name,
+                                rating: r.rating,
+                                types: r.types,
+                              }}/>
+                          );
+                        })
+                      }
+                    </React.Fragment>
+                  );
+                })
+              }
+              <MapMenu
+                mapPOIs={mapPOIs}
+                setMapPOIs={setMapPOIs}
+                setAptMarkersVisible={setAptMarkersVisible}/>
             </GoogleMap>
         }
         {!isLoaded && hasLocationPerms &&

@@ -1,0 +1,853 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "AUjq9jnD6LFIFku7LcBc80HLfU306RuzBvpSydXgZ32AkzbLG2TVVGCaZGUWj-_ncwWAWvCYSwZ82kpAccr3I7zaFWSferX8kaiebDHeWMKdDpBmL5wjgN1sGpseUqHebRanVsW7AXnZVGAi5dPwM7LqUtWikc9o-h3Q1NDCf8n83x0DtIg0ZcZg5zt5eKcsNXLBti-QL-DuX9jqOY-hucAY7Rq2tMysLMaKHQZXAsjCEMVmmtjdMT867h1Ivj6-Z1ukyTakkgbDzhflRk9p-iXbgaqrgQysAL_ya4q6j4laH22OYSfEJw840LJ3xvYsFoTWxwyktYQIv5szXE9KACssZ4yx6cZfhyx2aIUIZEXmT3XXJX1qWaaMUzGXpOz2hlNjKGHZPJNbmVJBxyw6Ppoou_Uy_2z9quw1nDw5iSfVijTyLvTDMMj2r_QUB34",
+   "results" : [
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8593817,
+               "lng" : -97.9497478
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.86075902989273,
+                  "lng" : -97.94842972010728
+               },
+               "southwest" : {
+                  "lat" : 29.85805937010728,
+                  "lng" : -97.95112937989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wood Brook Apartments",
+         "place_id" : "ChIJi7kusjakXIYRq8VUPjpc_So",
+         "plus_code" : {
+            "compound_code" : "V352+Q4 San Marcos, Texas",
+            "global_code" : "76X4V352+Q4"
+         },
+         "rating" : 4,
+         "reference" : "ChIJi7kusjakXIYRq8VUPjpc_So",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 3,
+         "vicinity" : "1706 N Interstate 35 Frontage Rd, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8571877,
+               "lng" : -97.9433782
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.85853757989272,
+                  "lng" : -97.94203422010727
+               },
+               "southwest" : {
+                  "lat" : 29.85583792010728,
+                  "lng" : -97.94473387989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Parkway Grande Apartment Homes",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 495,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112026704241699840647\"\u003eParkway Falls Apartment Homes\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jmHX0WuP-2dtbAfnrTrSuYO6k0-glxj7YCzKOTbTHYWx_trQiRJORr3tE587SLX2-UiLEmD-2ycRc0VbeNzN9W3Z0Qe484F6wwZwLBK05yQJfnarVDOy5jevkSp8oSRkzLswGvNYy2sIYY4fVB78_JBnjCtGc0WxKHvaV8DFwIImFbT",
+               "width" : 940
+            }
+         ],
+         "place_id" : "ChIJSStYf5eoXIYR5xwytXAjVTE",
+         "plus_code" : {
+            "compound_code" : "V344+VP San Marcos, Texas",
+            "global_code" : "76X4V344+VP"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJSStYf5eoXIYR5xwytXAjVTE",
+         "scope" : "GOOGLE",
+         "types" : [ "real_estate_agency", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 128,
+         "vicinity" : "1811 Medical Pkwy, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8713834,
+               "lng" : -97.92392579999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.87269967989272,
+                  "lng" : -97.92253707010728
+               },
+               "southwest" : {
+                  "lat" : 29.87000002010728,
+                  "lng" : -97.92523672989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "River Road Apartments",
+         "place_id" : "ChIJ4xvHNDipXIYRqd6vPGyUV4Y",
+         "plus_code" : {
+            "compound_code" : "V3CG+H9 San Marcos, Texas",
+            "global_code" : "76X4V3CG+H9"
+         },
+         "rating" : 0,
+         "reference" : "ChIJ4xvHNDipXIYRqd6vPGyUV4Y",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 0,
+         "vicinity" : "755 River Rd, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8976085,
+               "lng" : -97.9105646
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89889172989273,
+                  "lng" : -97.90918262010729
+               },
+               "southwest" : {
+                  "lat" : 29.89619207010729,
+                  "lng" : -97.91188227989274
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Avalon Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 480,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115958124124737100577\"\u003eAvalon Apartments\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jmrjOs1kYFulQj1-dSyf7UD-eIW6DnE095NX9juEfo8wp2tQ3ljAHgWercroFR_th_rUFUlhRGLWzvJE3giaHbumbpbSVpLBXe6W8MFHrI8VRLapXmmVSYx81fAWD9xUaClPva2lYg4Uy-ViOjrN6FVeYFwQMJqjqgizs2E7aWJsvbD",
+               "width" : 640
+            }
+         ],
+         "place_id" : "ChIJceJbcrapXIYR3w3DUGIC64s",
+         "plus_code" : {
+            "compound_code" : "V3XQ+2Q San Marcos, Texas",
+            "global_code" : "76X4V3XQ+2Q"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJceJbcrapXIYR3w3DUGIC64s",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 20,
+         "vicinity" : "1703 N Interstate 35 Frontage Rd, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8806291,
+               "lng" : -97.91861349999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.88213182989273,
+                  "lng" : -97.91741737010727
+               },
+               "southwest" : {
+                  "lat" : 29.87943217010728,
+                  "lng" : -97.92011702989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Clarewood Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 3096,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105285999048139017965\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jn0GVTOupGO0KgurzJVQPCX8ItDNhfKAI4Fq_uBFBxGXBybqJ5dbPCy2pdDcs2BZEo492DHGe1gEo6Bm0VTCz6xSFucKuu4lEs3JVMtolI2BXyPHA8d83Oft-G0qXnxH61w_pq8A5l-bRr14PgmB7D4JGXdN2JcagKJYwl-1f_K-oS7",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJpWymflSoXIYRDCslCCEKPi0",
+         "plus_code" : {
+            "compound_code" : "V3JJ+7H San Marcos, Texas",
+            "global_code" : "76X4V3JJ+7H"
+         },
+         "rating" : 3.5,
+         "reference" : "ChIJpWymflSoXIYRDCslCCEKPi0",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 49,
+         "vicinity" : "1400 Clarewood Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8973169,
+               "lng" : -97.91905109999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89868377989272,
+                  "lng" : -97.91771122010728
+               },
+               "southwest" : {
+                  "lat" : 29.89598412010728,
+                  "lng" : -97.92041087989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Village Green Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 1500,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104670616269344575891\"\u003eVillage Green Apartments\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jm_sBdMADQOFL3HfvbXyIz27NAJi1pUilLsarerPQZh-RALv54-iJX2mvcNYmq-wsGNUk12xAjaNU0Uei3xM-HoE3K_K7gOOMihb3GJer7egPkPT2jG8ws0n7C-Q0RFJUYWiWxwd3qdT09r4f0cx9EzDCRc9O3iMEgKSpvWQ_FsdVQ1",
+               "width" : 2100
+            }
+         ],
+         "place_id" : "ChIJf5Q9ZUqoXIYRwbLHS0HCNik",
+         "plus_code" : {
+            "compound_code" : "V3WJ+WC San Marcos, Texas",
+            "global_code" : "76X4V3WJ+WC"
+         },
+         "rating" : 3,
+         "reference" : "ChIJf5Q9ZUqoXIYRwbLHS0HCNik",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 14,
+         "vicinity" : "201 1st St, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8944986,
+               "lng" : -97.9443593
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89590527989273,
+                  "lng" : -97.94294092010728
+               },
+               "southwest" : {
+                  "lat" : 29.89320562010728,
+                  "lng" : -97.94564057989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Chestnut Place Apartments",
+         "place_id" : "ChIJRSYH9GyoXIYRrrBIBLBTGVU",
+         "plus_code" : {
+            "compound_code" : "V3V4+Q6 San Marcos, Texas",
+            "global_code" : "76X4V3V4+Q6"
+         },
+         "rating" : 1,
+         "reference" : "ChIJRSYH9GyoXIYRrrBIBLBTGVU",
+         "scope" : "GOOGLE",
+         "types" : [ "real_estate_agency", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 2,
+         "vicinity" : "1021 Chestnut St, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8973112,
+               "lng" : -97.945036
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89868392989272,
+                  "lng" : -97.94371317010727
+               },
+               "southwest" : {
+                  "lat" : 29.89598427010727,
+                  "lng" : -97.94641282989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Hill Country Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 451,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106308153998579138718\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jkPmrmn0_YT0uNbhTJ1wtOL603gvw4hm5iVj5lJxagn75UtqxIMRKFS11qXeDhMc_NzAmEju9-UWfmCMJ8mk1_4fk9-GALxu8qf_al8ALN5IimFGpTWxoURMh-hr1J41ZVr_BG40_HXQGmC51Ak_nFHzY0imel64CLLy9oZodr3OoH1",
+               "width" : 650
+            }
+         ],
+         "place_id" : "ChIJyXSHQBOoXIYRikKTtYVH5hU",
+         "plus_code" : {
+            "compound_code" : "V3W3+WX San Marcos, Texas",
+            "global_code" : "76X4V3W3+WX"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJyXSHQBOoXIYRikKTtYVH5hU",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 57,
+         "vicinity" : "1230 N LBJ Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8794051,
+               "lng" : -97.92276939999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.88072767989272,
+                  "lng" : -97.92145867010728
+               },
+               "southwest" : {
+                  "lat" : 29.87802802010728,
+                  "lng" : -97.92415832989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sutton Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 1000,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106430129838791357383\"\u003eNest Apartments\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jmvvNfzN7SYY0td9qSy0bplsnpwzon281ZHgRIKNBmCHzIand5B0GUk5NA9JiUzKL_Fod-Qmd85RMdtcBIC_UDCJBblbYAZbE_pyr0VXKGzFBGDPl-tiDkIZDPGrKJfvQqbiEFTKPFmSrXTEyqUufVIeSzyI6QsXPe-4N6t4vMRZBi0",
+               "width" : 1500
+            }
+         ],
+         "place_id" : "ChIJd6686laoXIYRqkGwu0KZXTw",
+         "plus_code" : {
+            "compound_code" : "V3HG+QW San Marcos, Texas",
+            "global_code" : "76X4V3HG+QW"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJd6686laoXIYRqkGwu0KZXTw",
+         "scope" : "GOOGLE",
+         "types" : [ "real_estate_agency", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 91,
+         "vicinity" : "518 Linda Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8879775,
+               "lng" : -97.92562289999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.88919777989272,
+                  "lng" : -97.92408407010728
+               },
+               "southwest" : {
+                  "lat" : 29.88649812010727,
+                  "lng" : -97.92678372989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Englebrook Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 350,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109370894607419537242\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jl2t-gJJ81-EPYnIWzuYibj-kbZbP5R42VLilU1bYeehWtS0ZIL2gkEbgaY8OWtu4ruKtJKwwWcgkozFUd0t7B7ouPmJTF4BtAcKh_qd7TGUep2YOTmbLRtWtTZHYpOur1Gypn_Vx3czlVJWVZyEyiWtzb9ou7vbY8BqKizKb7Oap-a",
+               "width" : 650
+            }
+         ],
+         "place_id" : "ChIJS-_FtU-oXIYR2fc8ljOrN1E",
+         "plus_code" : {
+            "compound_code" : "V3QF+5Q San Marcos, Texas",
+            "global_code" : "76X4V3QF+5Q"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJS-_FtU-oXIYR2fc8ljOrN1E",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 10,
+         "vicinity" : "200 Robbie Ln, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.9023265,
+               "lng" : -97.9162204
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.90367017989272,
+                  "lng" : -97.91487827010728
+               },
+               "southwest" : {
+                  "lat" : 29.90097052010728,
+                  "lng" : -97.91757792989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mosscliff Apartments",
+         "place_id" : "ChIJcVQ9yTSoXIYRolfwQVJ4f5M",
+         "plus_code" : {
+            "compound_code" : "W32M+WG San Marcos, Texas",
+            "global_code" : "76X4W32M+WG"
+         },
+         "rating" : 3.3,
+         "reference" : "ChIJcVQ9yTSoXIYRolfwQVJ4f5M",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 11,
+         "vicinity" : "1637 Post Rd # A101, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8797328,
+               "lng" : -97.92171930000001
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.88156877989272,
+                  "lng" : -97.92094107010729
+               },
+               "southwest" : {
+                  "lat" : 29.87886912010727,
+                  "lng" : -97.92364072989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Townwood Apartments",
+         "place_id" : "ChIJwznupFaoXIYRC2qfLa3Wbvg",
+         "plus_code" : {
+            "compound_code" : "V3HH+V8 San Marcos, Texas",
+            "global_code" : "76X4V3HH+V8"
+         },
+         "rating" : 3.2,
+         "reference" : "ChIJwznupFaoXIYRC2qfLa3Wbvg",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 24,
+         "vicinity" : "520 Linda Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8916034,
+               "lng" : -97.9213257
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89310987989273,
+                  "lng" : -97.92014197010728
+               },
+               "southwest" : {
+                  "lat" : 29.89041022010728,
+                  "lng" : -97.92284162989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Stadium View Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 2592,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100333648831168559493\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jlFa9H10_wjmblkT-hIyuHi2GqgYqdiMn2gG0zNYHD22rta3zdCkjJhvvBSZSCdNsfpg1ceeRpII2v5YQqPgYN5ttIOPUK3r0I76KSVw7DS2kykddjTl9TdtqIMRVDsQUvqiCXJT5jrN2OinaO-9Ih7cjC6dSSVKFi46i3MmWaGoN70",
+               "width" : 3888
+            }
+         ],
+         "place_id" : "ChIJLXikqk6oXIYRC9o5x67drL4",
+         "plus_code" : {
+            "compound_code" : "V3RH+JF San Marcos, Texas",
+            "global_code" : "76X4V3RH+JF"
+         },
+         "rating" : 3.3,
+         "reference" : "ChIJLXikqk6oXIYRC9o5x67drL4",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 8,
+         "vicinity" : "100 Warden Ln, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8555259,
+               "lng" : -97.94789879999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.85684607989273,
+                  "lng" : -97.94650697010727
+               },
+               "southwest" : {
+                  "lat" : 29.85414642010728,
+                  "lng" : -97.94920662989271
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Park Hill Apartment Homes",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 453,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117889305389444639425\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jlrQ4E6Wh8oRfIWYMb4IbMpX0VFq253OpcLawb2Yedf7U3N2yn2qGECXTjJ0ddckbA3piGY1US8JR8ymxU6jbM7HSUbGedDZPoezGJN_8qMVScax56rmIOqirFdC8A6MorpjXP2fQM5p6hUN_nD-nXqBW7verZKqm-xLJO2NK0oSdn7",
+               "width" : 680
+            }
+         ],
+         "place_id" : "ChIJk2-nN5eoXIYRIWcB51l_qpI",
+         "plus_code" : {
+            "compound_code" : "V342+6R San Marcos, Texas",
+            "global_code" : "76X4V342+6R"
+         },
+         "rating" : 3.3,
+         "reference" : "ChIJk2-nN5eoXIYRIWcB51l_qpI",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 46,
+         "vicinity" : "1001 Leah Ave, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8736128,
+               "lng" : -97.9280637
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.87497367989272,
+                  "lng" : -97.92672692010727
+               },
+               "southwest" : {
+                  "lat" : 29.87227402010728,
+                  "lng" : -97.92942657989271
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Riverview Apartments",
+         "place_id" : "ChIJl5hf6PeoXIYRjL1Rtbo1s6k",
+         "plus_code" : {
+            "compound_code" : "V3FC+CQ San Marcos, Texas",
+            "global_code" : "76X4V3FC+CQ"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJl5hf6PeoXIYRjL1Rtbo1s6k",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 6,
+         "vicinity" : "601 River Rd, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8952271,
+               "lng" : -97.9159035
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89654412989272,
+                  "lng" : -97.91450497010729
+               },
+               "southwest" : {
+                  "lat" : 29.89384447010728,
+                  "lng" : -97.91720462989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Westfield Apartments",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 846,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114240295880286970467\"\u003eWestfield Apartments\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jlXpfwvUMVbL5NkMO-4nzUOg5A5Fox1F4OiX0JiIIowziJLo5yYo7uOICgPYLv9tl5-YjVjg_A9stnTaDW6HP-99aGefApOc5AICu71eJPULacUbLRlRUk6oDEcxlv66bSKPpvwO9_Ff4Xahjv95PasAA5Zv1dH6mKZOGlZ6qj3XlN-",
+               "width" : 1472
+            }
+         ],
+         "place_id" : "ChIJNZD9PkuoXIYRfH4XPHxOBsY",
+         "plus_code" : {
+            "compound_code" : "V3WM+3J San Marcos, Texas",
+            "global_code" : "76X4V3WM+3J"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJNZD9PkuoXIYRfH4XPHxOBsY",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 99,
+         "vicinity" : "112 West Ave, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.9074326,
+               "lng" : -97.911041
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.90879967989272,
+                  "lng" : -97.90974192010728
+               },
+               "southwest" : {
+                  "lat" : 29.90610002010728,
+                  "lng" : -97.91244157989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Encino Pointe",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 683,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100365802246626959393\"\u003eEncino Pointe\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jmVNv5PkcO7DT8xrlGbpVXOOebIHRImFEbUjQB_LrvXNZaPZmIZ6YrR9u4TePkQHLxfVrN60ps3A3qbRD1ut5bRbb1kNaWZpTIOPuoEpF3esY26hfzEynheT2PCmNtJ4PJnTFDPzAzgSEU7mV9YtLdXxjrA5gsDCKg9y7VrPkaJVnOE",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJ6aD5zc2pXIYRSH2z41lowG4",
+         "plus_code" : {
+            "compound_code" : "W34Q+XJ San Marcos, Texas",
+            "global_code" : "76X4W34Q+XJ"
+         },
+         "rating" : 3.4,
+         "reference" : "ChIJ6aD5zc2pXIYRSH2z41lowG4",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 111,
+         "vicinity" : "1800 Post Rd, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8463902,
+               "lng" : -97.8390302
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.84776102989272,
+                  "lng" : -97.83767987010728
+               },
+               "southwest" : {
+                  "lat" : 29.84506137010727,
+                  "lng" : -97.84037952989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Martindale Apartments",
+         "place_id" : "ChIJD7F-C5CrXIYRAA4HFE3x67E",
+         "plus_code" : {
+            "compound_code" : "R5W6+H9 Martindale, Texas",
+            "global_code" : "76X4R5W6+H9"
+         },
+         "rating" : 1.6,
+         "reference" : "ChIJD7F-C5CrXIYRAA4HFE3x67E",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 5,
+         "vicinity" : "12943 TX-142 #27, Martindale"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.8953129,
+               "lng" : -97.94393409999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.89680802989271,
+                  "lng" : -97.94242207010728
+               },
+               "southwest" : {
+                  "lat" : 29.89410837010727,
+                  "lng" : -97.94512172989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Audrey Oaks Apartments",
+         "photos" : [
+            {
+               "height" : 604,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100384049252499708907\"\u003eAudrey Oaks Apartments\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jlLyAfXNVAw1943zhzcfn-w0qLt8ZQU8KBS7Ndm6taMFW9RQUScKJyWBSWcJBbFcvfKM8_si2wWX6Qk5h5fXs3QrG1j6Hupo9d1W9pJhRCF5t7dyeyfSEE2vWTHllW_BamWX483AkrKQylJhSuLRA78Gn65WKmDBA7NY5AcsiBIKNOM",
+               "width" : 828
+            }
+         ],
+         "place_id" : "ChIJg9unu2yoXIYRtMmQAPKZjog",
+         "plus_code" : {
+            "compound_code" : "V3W4+4C San Marcos, Texas",
+            "global_code" : "76X4V3W4+4C"
+         },
+         "rating" : 5,
+         "reference" : "ChIJg9unu2yoXIYRtMmQAPKZjog",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 4,
+         "vicinity" : "1111 N LBJ Dr, San Marcos"
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "geometry" : {
+            "location" : {
+               "lat" : 29.90102479999999,
+               "lng" : -97.9179077
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 29.90235487989272,
+                  "lng" : -97.91658157010728
+               },
+               "southwest" : {
+                  "lat" : 29.89965522010727,
+                  "lng" : -97.91928122989273
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Post Oak Villas",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 816,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117940648042648616614\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "AUjq9jkLYCeYSVSbA8b3jh89ZogXJmJezDg81fq1VoaDqZx8Cgr3Eqjbd_kZWwyW6hZtJ5h6bjqcg8_nQ-9Go1yQfeMa35lXteYI2Hx74kzxQqSW2e8yV8FSYA1UpaR4k86-ylpfaRZ7IkM9hT54mGz7hY4Te-J46O5MS5ksV1F01-7sHndG",
+               "width" : 612
+            }
+         ],
+         "place_id" : "ChIJg7H__DSoXIYRnwTOgJ5nZMY",
+         "plus_code" : {
+            "compound_code" : "W32J+CR San Marcos, Texas",
+            "global_code" : "76X4W32J+CR"
+         },
+         "rating" : 2.8,
+         "reference" : "ChIJg7H__DSoXIYRnwTOgJ5nZMY",
+         "scope" : "GOOGLE",
+         "types" : [ "point_of_interest", "establishment" ],
+         "user_ratings_total" : 8,
+         "vicinity" : "1617 Post Rd, San Marcos"
+      }
+   ],
+   "status" : "OK"
+}
