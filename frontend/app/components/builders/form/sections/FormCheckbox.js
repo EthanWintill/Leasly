@@ -1,7 +1,10 @@
 import React from 'react';
-import {Checkbox, FormControl, Icon} from 'native-base';
+import {
+  Checkbox,
+  Icon,
+} from 'native-base';
 
-import {AbstractFormComponentBuilder} from './FormComponent';
+import {AbstractFormSectionBuilder} from './FormSection';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 /* -------------------------------------------------------------------------- */
@@ -48,7 +51,7 @@ export default function FormCheckbox(props) {
 /*                                  Builders                                  */
 /* -------------------------------------------------------------------------- */
 
-class FormCheckboxBuilder extends AbstractFormComponentBuilder {
+class FormCheckboxBuilder extends AbstractFormSectionBuilder {
   constructor(props, listener) {
     super(props);
     this.listener = listener;

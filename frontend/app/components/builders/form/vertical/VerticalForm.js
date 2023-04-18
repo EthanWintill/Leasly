@@ -36,7 +36,7 @@ function VerticalForm(props) {
             case 'checkbox':
               return (
                 <React.Fragment key={key}>
-                  {element.formCheckbox}
+                  {element.section}
                 </React.Fragment>
               );
             case 'heading':
@@ -46,11 +46,15 @@ function VerticalForm(props) {
             case 'input':
               return (
                 <React.Fragment key={key}>
-                  {element.formInput}
+                  {element.section}
                 </React.Fragment>
               );
             case 'component':
-              return element.component;
+              return (
+                <React.Fragment key={key}>
+                  {element.component}
+                </React.Fragment>
+              );
           }
         })
       }

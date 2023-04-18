@@ -1,7 +1,10 @@
 import React from 'react';
-import {FormControl, Radio} from 'native-base';
+import {
+  FormControl,
+  Radio,
+} from 'native-base';
 
-import {AbstractFormComponentBuilder} from './FormComponent';
+import {AbstractFormSectionBuilder} from './FormSection';
 
 /* -------------------------------------------------------------------------- */
 /*                                  Component                                 */
@@ -38,7 +41,7 @@ export default function FormRadio(props) {
 /*                                  Builders                                  */
 /* -------------------------------------------------------------------------- */
 
-class FormRadioBuilder extends AbstractFormComponentBuilder {
+class FormRadioBuilder extends AbstractFormSectionBuilder {
   constructor(props, listener) {
     super(props);
     this.listener = listener;

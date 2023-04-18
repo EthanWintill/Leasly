@@ -10,15 +10,15 @@ import AbstractComponentBuilder from '../../AbstractComponentBuilder';
  *
  * @abstract
  */
-class AbstractFormComponentBuilder extends AbstractComponentBuilder {
+export default class AbstractFormSectionBuilder extends AbstractComponentBuilder {
   constructor(props) {
     super(props);
-    if (this.constructor === AbstractFormComponentBuilder) {
+    if (this.constructor === AbstractFormSectionBuilder) {
       throw new Error('Abstract classes can\'t be instantiated.');
     }
   }
 }
 
 export {
-  AbstractFormComponentBuilder,
+  AbstractFormSectionBuilder,
 };

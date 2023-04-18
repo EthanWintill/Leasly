@@ -1,6 +1,7 @@
 import AbstractComponentBuilder from '../../AbstractComponentBuilder';
-import { FormCheckboxBuilder } from '../components/FormCheckbox';
-import {FormInputBuilder} from '../components/FormInput';
+import {FormCheckboxBuilder} from '../sections/FormCheckbox';
+import {FormInputBuilder} from '../sections/FormInput';
+import { AbstractFormSectionBuilder } from '../sections/FormSection';
 
 /**
  * Builds a form property map. Abstract as it does not build a component.
@@ -81,24 +82,13 @@ export default class AbstractFormBuilder extends AbstractComponentBuilder {
     return this;
   }
 
-  addInput(formInput) {
-    if (formInput instanceof FormInputBuilder) {
-      formInput = formInput.build();
+  addSection(sectionId, section) {
+    if (section instanceof AbstractFormSectionBuilder) {
+      section = section.build();
     }
     this.elements.push({
-      element: 'input',
-      formInput,
-    });
-    return this;
-  }
-
-  addCheckbox(formCheckbox) {
-    if (formCheckbox instanceof FormCheckboxBuilder) {
-      formCheckbox = formCheckbox.build();
-    }
-    this.elements.push({
-      element: 'checkbox',
-      formCheckbox,
+      element: sectionId,
+      section,
     });
     return this;
   }

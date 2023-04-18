@@ -3,7 +3,8 @@ import {
   FormControl,
   Input,
 } from 'native-base';
-import {AbstractFormComponentBuilder} from './FormComponent';
+
+import {AbstractFormSectionBuilder} from './FormSection';
 
 /* -------------------------------------------------------------------------- */
 /*                                  Component                                 */
@@ -15,7 +16,7 @@ import {AbstractFormComponentBuilder} from './FormComponent';
  *
  * 'label': {@link FormControl.Label}
  * 'error': {@link FormControl.ErrorMessage}
- * 'help': {@link FormControl.HelperText}
+ * 'help':  {@link FormControl.HelperText}
  * 'input': {@link Input}
  *
  * @param {*} props
@@ -80,7 +81,7 @@ export default function FormInput(props) {
  * Builder for a form group property map. Does not return a component, but tells
  * a form builder how to construct the group.
  */
-class FormInputBuilder extends AbstractFormComponentBuilder {
+class FormInputBuilder extends AbstractFormSectionBuilder {
   constructor(props) {
     super(props);
   }
