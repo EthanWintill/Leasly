@@ -2,8 +2,9 @@ import {React, useState} from 'react';
 import {Box, Button, Center, HStack, Heading, Text, View} from 'native-base';
 import {auth, signInWithEmailAndPassword} from '../../util/FirebaseFuncs';
 
-import FormBuilders from '../../components/builders/form/FormBuilders';
 import useEffectAfterMount from '../../hooks/AfterMountHook';
+import FormBuilders from '../../components/builders/form/FormBuilders';
+import FormSections from '../../components/builders/form/FormSections';
 
 export default function LoginPage(props) {
   const {navigation} = props;
@@ -72,8 +73,9 @@ export default function LoginPage(props) {
             <Button variant={'link'} py={0} onPress={() => navigation.navigate('signup')}>Sign-up</Button>
           </HStack>,
       )
-      .addInput(
-          FormBuilders.Input({invalidConditions: {
+      .addSection(
+          'input',
+          FormSections.Input({invalidConditions: {
             'login': () => loginFailed,
           }})
               .addLabel('Email')

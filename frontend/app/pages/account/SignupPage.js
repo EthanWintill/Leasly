@@ -6,6 +6,7 @@ import {doc, setDoc} from 'firebase/firestore';
 
 import useEffectAfterMount from '../../hooks/AfterMountHook';
 import FormBuilders from '../../components/builders/form/FormBuilders';
+import FormSections from '../../components/builders/form/FormSections';
 
 export default function SignupPage(props) {
   const {navigation} = props;
@@ -148,8 +149,9 @@ export default function SignupPage(props) {
             <Button variant={'link'} py={0} onPress={() => navigation.navigate('signin')}>Sign-in</Button>
           </HStack>,
       )
-      .addInput(
-          FormBuilders.Input({invalidConditions: {
+      .addSection(
+          'input',
+          FormSections.Input({invalidConditions: {
             'signup': () => signupFailed,
             'pass_matches': () => !passwordsMatch,
             'pass_length': () => !passwordGoodLength,
