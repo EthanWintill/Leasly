@@ -124,3 +124,5 @@ frontend2/
 web-build
 build
 testfrontend/
+
+.firebase/**/*
