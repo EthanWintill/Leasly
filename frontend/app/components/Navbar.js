@@ -37,6 +37,11 @@ function NavbarMenu(props) {
         });
   };
 
+  const navigate = (page, p) => {
+    setIsOpen(false);
+    navigation.navigate(page, p);
+  };
+
   return (
     <Menu placement="bottom left"
       mt={65}
@@ -52,18 +57,18 @@ function NavbarMenu(props) {
             toggled={isOpen} toggle={setIsOpen}/>
         );
       }}>
-      <Menu.Item onPress={() => navigation.navigate('home')}>Home</Menu.Item>
+      <Menu.Item onPress={() => navigate('home')}>Home</Menu.Item>
       {isSignedIn &&
-        <Menu.Item onPress={() => navigation.navigate('profile')}>Profile</Menu.Item>
+        <Menu.Item onPress={() => navigate('profile')}>Profile</Menu.Item>
       }
       {isSignedIn &&
-        <Menu.Item onPress={() => navigation.navigate('addApartment')}>Post a Sublet</Menu.Item>
+        <Menu.Item onPress={() => navigate('addApartment')}>Post a Sublet</Menu.Item>
       }
-      <Menu.Item onPress={() => navigation.navigate('allApartments')}>View Apartments</Menu.Item>
+      <Menu.Item onPress={() => navigate('allApartments')}>View Apartments</Menu.Item>
       {isSignedIn &&
-        <Menu.Item onPress={() => navigation.navigate('messages', {sublet: ''})}>Messages</Menu.Item>
+        <Menu.Item onPress={() => navigate('messages', {sublet: ''})}>Messages</Menu.Item>
       }
-      <Menu.Item onPress={() => navigation.navigate('map')()}>View Map (Beta)</Menu.Item>
+      <Menu.Item onPress={() => navigate('map')}>View Map (Beta)</Menu.Item>
       {isSignedIn &&
         <Menu.Item onPress={() => {
           signout();
