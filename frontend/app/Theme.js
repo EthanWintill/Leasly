@@ -132,15 +132,62 @@ const ViewTheme = {
   },
 };
 
+// NativeBase.ScrollView
+const ScrollViewTheme = {
+  baseStyle: ({colorMode}) => {
+    return {
+      bg: colorPreset(colorMode, 'bg_dark', 'bg_dark'),
+    };
+  },
+  variants: {
+    accented: ({colorMode}) => {
+      return {
+        bg: color(colorMode, 'gray_dark', 'rose'),
+      };
+    },
+  },
+  defaultProps: {
+    w: '100%',
+    h: '100%',
+  },
+};
+
 /* --------------------------------- Layout --------------------------------- */
 
 // NativeBase.Box
 const BoxTheme = {
   variants: {
+    accented: ({colorMode}) => {
+      return {
+        bg: color(colorMode, 'gray_dark', 'rose'),
+      };
+    },
     rounded_25_accent: ({colorMode}) => {
       return {
         bg: colorPreset(colorMode, 'bg_light', 'bg_light'),
         rounded: '25',
+      };
+    },
+  },
+};
+
+// NativeBase.Center
+const CenterTheme = {
+  variants: {
+    accented: ({colorMode}) => {
+      return {
+        bg: colorPreset(colorMode, 'bg_light', 'bg_light'),
+      };
+    },
+  },
+};
+
+// NativeBase.VStack
+const VStackTheme = {
+  variants: {
+    accented: ({colorMode}) => {
+      return {
+        bg: colorPreset(colorMode, 'bg_light', 'bg_light'),
       };
     },
   },
@@ -251,7 +298,10 @@ const Theme = extendTheme({
   },
   components: {
     View: ViewTheme,
+    ScrollView: ScrollViewTheme,
     Box: BoxTheme,
+    Center: CenterTheme,
+    VStack: VStackTheme,
     Text: TextTheme,
     Button: ButtonTheme,
     FormControlLabel: FormControlLabelTheme,
