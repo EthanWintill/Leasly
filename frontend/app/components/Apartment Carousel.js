@@ -55,7 +55,8 @@ export default function ApartmentCarousel(props) {
         height={325}
         autoPlay={true}
         data={listings}
-        scrollAnimationDuration={1000}
+        scrollAnimationDuration={1500}
+        autoPlayInterval={8000}
         renderItem={({index}) => _renderItem(index)}
       />
     </View>
