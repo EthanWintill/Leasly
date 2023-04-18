@@ -132,6 +132,26 @@ const ViewTheme = {
   },
 };
 
+// NativeBase.ScrollView
+const ScrollViewTheme = {
+  baseStyle: ({colorMode}) => {
+    return {
+      bg: colorPreset(colorMode, 'bg_dark', 'bg_dark'),
+    };
+  },
+  variants: {
+    accented: ({colorMode}) => {
+      return {
+        bg: color(colorMode, 'gray_dark', 'rose'),
+      };
+    },
+  },
+  defaultProps: {
+    w: '100%',
+    h: '100%',
+  },
+};
+
 /* --------------------------------- Layout --------------------------------- */
 
 // NativeBase.Box
@@ -278,6 +298,7 @@ const Theme = extendTheme({
   },
   components: {
     View: ViewTheme,
+    ScrollView: ScrollViewTheme,
     Box: BoxTheme,
     Center: CenterTheme,
     VStack: VStackTheme,

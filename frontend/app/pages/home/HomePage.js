@@ -37,10 +37,9 @@ function HomePage(props) {
   // text-shadow: -1px 1px 10px rgba(0, 0, 0, 0.75)
 
   const jumbo = {
-    mt: '4%',
-    pt: '14rem',
+    pt: '10rem',
     width: '100%',
-    height: '40rem',
+    height: '35rem',
   };
 
   const titleText = {
@@ -58,15 +57,9 @@ function HomePage(props) {
           </Center>
         </Flex>
       </ImageBackground>
-
-      {/* Carousel listing recent postings? Not necessary at all btw*/}
-
       <ApartmentSubleaseBoard listings={data.listings} />
-
-      {/**/}
-
       <Center>
-        <HStack space={10}>
+        <HStack mt={50} space={10}>
           <Button onPress={() => navigation.navigate('addApartment')}>Create a New Listing</Button>
           <Button onPress={() => navigation.navigate('allApartments')}>View All Apartments</Button>
         </HStack>
