@@ -1,4 +1,5 @@
-import {FormGroupBuilder} from './FormGroup';
+import {FormInputBuilder} from './components/FormInput';
+import {FormRadioBuilder} from './components/FormRadio';
 import {VerticalFormBuilder} from './vertical/VerticalForm';
 
 /**
@@ -15,13 +16,23 @@ export default class FormBuilders {
   }
 
   /**
-   * Creates a new {@link FormGroupBuilder}.
+   * Creates a new {@link FormInputBuilder}.
    *
    * @param {Map} props
-   * @return {FormGroupBuilder}
+   * @return {InputFormBuilder}
    */
-  static Group(props) {
-    return new FormGroupBuilder(props);
+  static Input(props) {
+    return new FormInputBuilder(props);
+  }
+
+  /**
+   * Creates a new {@link FormRadioBuilder}.
+   *
+   * @param {Map} props
+   * @return {FormRadioBuilder}
+   */
+  static Radio(props) {
+    return new FormRadioBuilder(props);
   }
 
   /**
