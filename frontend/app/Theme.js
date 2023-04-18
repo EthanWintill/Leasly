@@ -137,6 +137,11 @@ const ViewTheme = {
 // NativeBase.Box
 const BoxTheme = {
   variants: {
+    accented: ({colorMode}) => {
+      return {
+        bg: color(colorMode, 'gray_dark', 'rose'),
+      };
+    },
     rounded_25_accent: ({colorMode}) => {
       return {
         bg: colorPreset(colorMode, 'bg_light', 'bg_light'),

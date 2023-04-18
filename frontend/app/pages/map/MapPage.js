@@ -20,9 +20,11 @@ import useEffectAfterMount from '../../hooks/AfterMountHook';
 import MapStyle from './MapStyle';
 import MapMenu from './MapMenu';
 
+const MAPS_LIBRARIES = ['places'];
 
 export default function MapPage() {
   /* --------------------------------- States --------------------------------- */
+
   // Map
   const [hasLocationPerms, setHasLocationPerms] = useState(true);
   const [map, setMap] = useState(null);
@@ -79,6 +81,7 @@ export default function MapPage() {
   const {isLoaded, loadError} = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: 'AIzaSyDuDlAlIKsMkjv-VFiWL4yYkQIbs3akKMw',
+    libraries: MAPS_LIBRARIES,
   });
 
   const getUserLocation = async () => {
@@ -130,6 +133,7 @@ export default function MapPage() {
     updateMapPosition();
   }, [userLocationMap]);
 
+  // Update map styles
   useEffectAfterMount(() => {
     setMapStyle(MapStyle.concat([
       {
@@ -166,11 +170,11 @@ export default function MapPage() {
     ]));
   }, [mapPOIs]);
 
+  // Update google map styles
   useEffectAfterMount(() => {
     const oldZoom = map.getZoom();
     map.setOptions({styles: mapStyle});
     map.setZoom(oldZoom);
-    console.log(mapStyle);
   }, [mapStyle]);
 
   /* ------------------------------ Map Component ----------------------------- */
