@@ -1,4 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
+import './ApartmentSubleaseBoard.css';
+import {useNavigation} from '@react-navigation/native';
+
+/*
 import {Dimensions} from 'react-native';
 import {
   Box,
@@ -10,13 +14,14 @@ import {
   View,
 } from 'native-base';
 import Carousel from 'react-native-reanimated-carousel';
+*/
 
-const ApartmentSubleaseBoard = (props) => {
+const ApartmentSubleaseBoard = ({listings}) => {
   /* ---------------------------------- Props --------------------------------- */
-  const {navigation, listings} = props;
-
+  // const {navigation, listings} = props;
+  const navigation = useNavigation();
   /* ---------------------------- Utility Functions --------------------------- */
-  const _renderItem = (index) => {
+  /* const _renderItem = (index) => {
     const item = listings[index];
     return (
       <Center>
@@ -48,18 +53,41 @@ const ApartmentSubleaseBoard = (props) => {
     );
   };
 
+  */
+
   return (
-    <View flex={true} w={'100%'} h={325}>
-      <Carousel
-        loop
-        width={Dimensions.get('window').width}
-        height={325}
-        autoPlay={true}
-        data={listings}
-        scrollAnimationDuration={1000}
-        renderItem={({index}) => _renderItem(index)}
-      />
-    </View>
+    <div className="bountyContainer">
+      <p className="bountyTitle">Subleases Available </p>
+      <button type="button" className="aptmntViewButton"onClick={() => {
+        navigation.navigate('addApartment');
+      }}> Post a Sublease </button>
+      <div className="bountyView">
+        {(listings.length === 0) ? <p className="noSubleases"> No Current Subleases!</p> :
+          listings.map((sublet) => {
+            if (sublet.subleaser_id) {
+              return (
+                <div className="bountyCards">
+                  <img className="bountyImage" src={`data:image/png;base64,${sublet.image}`} />
+                  <div className="bountyGeneral">
+                    <p> {sublet.apartment_name}</p>
+                    <p> Poster: {sublet.subleaser_id}</p>
+                    <p> Floor Plan: {sublet.bed} bed, {sublet.bath} bath</p>
+                    <p> Price: ${sublet.rent}/month</p>
+                  </div>
+                  <div className="bountyDescription">
+                    <p> {sublet.description}</p>
+                    <button type="button" className="aptmntViewButton" onClick={() => {
+                      navigation.navigate('messages', {sublet: sublet.subleaser_id});
+                    }}> Message </button>
+                  </div>
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
+      </div>
+    </div>
   );
 };
 
