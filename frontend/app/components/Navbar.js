@@ -57,7 +57,7 @@ function NavbarMenu(props) {
         <Menu.Item onPress={() => navigation.navigate('profile')}>Profile</Menu.Item>
       }
       {isSignedIn &&
-        <Menu.Item onPress={() => navigation.navigate('addApartment')}>Add An Apartment</Menu.Item>
+        <Menu.Item onPress={() => navigation.navigate('addApartment')}>Post a Sublet</Menu.Item>
       }
       <Menu.Item onPress={() => navigation.navigate('allApartments')}>View Apartments</Menu.Item>
       {isSignedIn &&
