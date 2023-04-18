@@ -65,3 +65,17 @@
     width: 5rem;
     margin: auto;
 }
+
+.aptmntViewButton{
+    width: 20rem;
+    height: 3rem;
+    color: white;
+    background-color: #443182;
+    border: 1px solid #443182;
+    border-radius: 5px;
+}
+
+.aptmntViewButton:hover{
+    cursor: pointer;
+    background-color: #2e1f6e;
+}

@@ -8,6 +8,9 @@ const ApartmentSubleaseBoard = ({listings}) => {
   return (
     <div className="bountyContainer">
       <p className="bountyTitle">Subleases Available </p>
+      <button type="button" className="aptmntViewButton"onClick={() => {
+        navigation.navigate('addApartments');
+      }}> Post a Sublease </button>
       <div className="bountyView">
         {(listings.length === 0) ? <p className="noSubleases"> No Current Subleases!</p> :
           listings.map((sublet) => {
@@ -23,7 +26,7 @@ const ApartmentSubleaseBoard = ({listings}) => {
                   </div>
                   <div className="bountyDescription">
                     <p> {sublet.description}</p>
-                    <button type="button" onClick={() => {
+                    <button type="button" className="aptmntViewButton" onClick={() => {
                       navigation.navigate('messages', {sublet: sublet.subleaser_id});
                     }}> Message </button>
                   </div>

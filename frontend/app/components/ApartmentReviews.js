@@ -26,7 +26,7 @@ export default function ApartmentReviews({identifier}) {
             </div>
           ))}
       </div>
-      <button type="button" onClick={() => {
+      <button type="button" className="aptmntViewButton" onClick={() => {
         navigation.navigate('review', {ApartmentName});
       }}>
         Write a review!

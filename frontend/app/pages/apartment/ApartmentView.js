@@ -20,6 +20,7 @@ export default function ViewApartmentPage({ }) {
   const [data, setdata] = useState({
     listings: [],
   });
+  const [apartmentRating, setApartmentRating] = useState(0);
   const info = useRoute().params.apartment;
   useEffect(() => {
     fetch('https://leaslybackend.herokuapp.com/api/sublets?apartment=' + info.name).then((res) =>
@@ -31,6 +32,18 @@ export default function ViewApartmentPage({ }) {
         console.log(sublets);
       }),
     );
+
+    fetch(`https://leaslybackend.herokuapp.com/api/review?apartment=${info.name}`).then((res) =>
+      res.json()).then((data) => {
+      const tempArr = [];
+      let tempNumber = 0;
+      data.forEach((review) => {
+        tempArr.push(review.rating);
+        tempNumber += review.rating;
+      });
+
+      setApartmentRating(tempNumber / tempArr.length);
+    });
     // eslint-disable-next-line
   }, []);
 
@@ -42,7 +55,7 @@ export default function ViewApartmentPage({ }) {
         <div className="apartmentInfo">
           <p className="apartmentName"> {info.name}</p>
           <p> Rating</p>
-          <p> {info.rating}/5</p>
+          <p> {apartmentRating}/5</p>
           <p> Apartment Info</p>
           <a> {info.link} </a>
           <p> {info.phone}</p>
