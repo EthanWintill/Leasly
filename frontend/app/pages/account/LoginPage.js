@@ -2,8 +2,9 @@ import {React, useState} from 'react';
 import {Box, Button, Center, HStack, Heading, Text, View} from 'native-base';
 import {auth, signInWithEmailAndPassword} from '../../util/FirebaseFuncs';
 
-import FormBuilders from '../../components/builders/form/FormBuilders';
 import useEffectAfterMount from '../../hooks/AfterMountHook';
+import FormBuilders from '../../components/builders/form/FormBuilders';
+import FormSections from '../../components/builders/form/FormSections';
 
 export default function LoginPage(props) {
   const {navigation} = props;
@@ -27,7 +28,7 @@ export default function LoginPage(props) {
    * null of absent.
    */
   const login = async () =>{
-    let error = false;
+    let noError = true;
     await signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           console.log(userCredential.user.uid);
@@ -35,9 +36,9 @@ export default function LoginPage(props) {
         })
         .catch((err) => {
           console.error(`${err.code}: ${err.message}`);
-          error = true;
+          noError = false;
         });
-    return error;
+    return noError;
   };
 
   // Use builder to create form
@@ -62,7 +63,7 @@ export default function LoginPage(props) {
       })
       .setHeader(
           <Box>
-            <Heading size={'lg'} fontWeight={'semibol'}>Welcome</Heading>
+            <Heading size={'lg'} fontWeight={'semibold'}>Welcome</Heading>
             <Heading mt={1} size={'xs'} fontWeight={'medium'}>Sign-in to continue!</Heading>
           </Box>,
       )
@@ -72,8 +73,9 @@ export default function LoginPage(props) {
             <Button variant={'link'} py={0} onPress={() => navigation.navigate('signup')}>Sign-up</Button>
           </HStack>,
       )
-      .addFormGroup(
-          FormBuilders.Group({invalidConditions: {
+      .addSection(
+          'input',
+          FormSections.Input({invalidConditions: {
             'login': () => loginFailed,
           }})
               .addLabel('Email')
@@ -95,13 +97,15 @@ export default function LoginPage(props) {
           {
             mt: 5,
             onPress: () => {
-              const allowed = email.length > 0 &&
-                password.length > 0;
-              if (allowed && login()) {
-                navigation.navigate('home');
-              } else {
-                setLoginFailed(true);
-              }
+              (async () => {
+                const allowed = email.length > 0 &&
+                  password.length > 0;
+                if (allowed && await login()) {
+                  navigation.navigate('home');
+                } else {
+                  setLoginFailed(true);
+                }
+              })();
             },
           })
       .addButton(

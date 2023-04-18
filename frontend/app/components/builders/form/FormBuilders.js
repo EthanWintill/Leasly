@@ -1,4 +1,3 @@
-import {FormGroupBuilder} from './FormGroup';
 import {VerticalFormBuilder} from './vertical/VerticalForm';
 
 /**
@@ -12,16 +11,6 @@ export default class FormBuilders {
     if (this.constructor === FormBuilders) {
       throw new Error('Abstract classes can\'t be instantiated.');
     }
-  }
-
-  /**
-   * Creates a new {@link FormGroupBuilder}.
-   *
-   * @param {Map} props
-   * @return {FormGroupBuilder}
-   */
-  static Group(props) {
-    return new FormGroupBuilder(props);
   }
 
   /**

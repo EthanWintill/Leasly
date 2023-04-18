@@ -6,6 +6,7 @@ import {doc, setDoc} from 'firebase/firestore';
 
 import useEffectAfterMount from '../../hooks/AfterMountHook';
 import FormBuilders from '../../components/builders/form/FormBuilders';
+import FormSections from '../../components/builders/form/FormSections';
 
 export default function SignupPage(props) {
   const {navigation} = props;
@@ -57,13 +58,14 @@ export default function SignupPage(props) {
    * Creates a user in firebase based on the form data.
    */
   const signup = async () => {
-    let error = false;
+    let noError = true;
     await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           updateProfile(auth.currentUser, {
             displayName: username,
           }).catch((errorr)=>{
             console.log({errorr});
+            noError = false;
           });
           const userData = {
             email: email,
@@ -88,14 +90,14 @@ export default function SignupPage(props) {
               })
               .catch((err) => {
                 console.error(err);
-                error = true;
+                noError = false;
               });
         })
         .catch((err) => {
           console.error(`${err.code}: ${err.message}`);
-          error = true;
+          noError = false;
         });
-    return error;
+    return noError;
   };
 
   /* get username, create document with that name in userData collection, and a field
@@ -147,8 +149,9 @@ export default function SignupPage(props) {
             <Button variant={'link'} py={0} onPress={() => navigation.navigate('signin')}>Sign-in</Button>
           </HStack>,
       )
-      .addFormGroup(
-          FormBuilders.Group({invalidConditions: {
+      .addSection(
+          'input',
+          FormSections.Input({invalidConditions: {
             'signup': () => signupFailed,
             'pass_matches': () => !passwordsMatch,
             'pass_length': () => !passwordGoodLength,
@@ -170,17 +173,19 @@ export default function SignupPage(props) {
           {
             mt: 5,
             onPress: () => {
-              const allowed = passwordsMatch &&
-                passwordGoodLength &&
-                email.length > 0 &&
-                username.length > 0 &&
-                password.length > 0 &&
-                confirmPassword.length > 0;
-              if (allowed && signup()) {
-                navigation.navigate('home');
-              } else {
-                setSignupFailed(true);
-              }
+              (async () => {
+                const allowed = passwordsMatch &&
+                  passwordGoodLength &&
+                  email.length > 0 &&
+                  username.length > 0 &&
+                  password.length > 0 &&
+                  confirmPassword.length > 0;
+                if (allowed && await signup()) {
+                  navigation.navigate('home');
+                } else {
+                  setSignupFailed(true);
+                }
+              })();
             },
           })
       .addButton(

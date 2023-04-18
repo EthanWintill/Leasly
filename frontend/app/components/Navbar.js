@@ -63,6 +63,7 @@ function NavbarMenu(props) {
       {isSignedIn &&
         <Menu.Item onPress={() => navigation.navigate('messages', {sublet: ''})}>Messages</Menu.Item>
       }
+      <Menu.Item onPress={() => navigation.navigate('map')()}>View Map (Beta)</Menu.Item>
       {isSignedIn &&
         <Menu.Item onPress={() => {
           signout();
