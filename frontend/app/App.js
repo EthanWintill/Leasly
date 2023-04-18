@@ -11,6 +11,7 @@ import ApartmentListPage from './pages/apartment/ApartmentListPage';
 import ApartmentView from './pages/apartment/ApartmentView';
 import HomePage from './pages/home/HomePage';
 import Messages from './pages/messages/Messages';
+import MapPage from './pages/map/MapPage';
 
 import Navbar from './components/Navbar';
 import {Theme} from './Theme';
@@ -23,7 +24,7 @@ export default function App() {
     <NativeBaseProvider theme={Theme}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="SigninPage"
+          initialRouteName="home"
           screenOptions={{
             // eslint-disable-next-line react/no-unstable-nested-components
             header: (props) => <Navbar {...props} />,
@@ -38,6 +39,7 @@ export default function App() {
           <Stack.Screen name="viewApartment" component={ApartmentView}/>
           <Stack.Screen name="messages" component={Messages}/>
           <Stack.Screen name="review" component={ReviewApartment}/>
+          <Stack.Screen name="map" component={MapPage}/>
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

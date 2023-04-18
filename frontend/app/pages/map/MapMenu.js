@@ -2,6 +2,7 @@ import React, {useCallback, useRef, useState} from 'react';
 import {
   Box,
   Button,
+  Center,
   Divider,
   FormControl,
   HStack,
@@ -20,7 +21,7 @@ import FormBuilders from '../../components/builders/form/FormBuilders';
 import FormSections from '../../components/builders/form/FormSections';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
-function PointsOfInterest(props) {
+function PointsOfInterestSection(props) {
   /* ---------------------------------- Props --------------------------------- */
   const {setMapPOIs} = props;
 
@@ -152,6 +153,62 @@ function PointsOfInterest(props) {
   );
 }
 
+function LocationSection(props) {
+  /* ---------------------------------- Props --------------------------------- */
+  const {locations} = props;
+
+  /* --------------------------------- States --------------------------------- */
+  // Locations
+  const [dynamicLocations, setDynamicLocations] = useState(locations);
+
+  /* -------------------------------- Component ------------------------------- */
+  return (
+    <>
+      <VStack>
+        <Text bold fontSize={'xl'} ml={5} mt={5}>
+          Locations
+        </Text>
+        <Divider/>
+        <Center mt={2}>
+          <Button.Group isAttached mx={{
+            base: 'auto',
+            md: 0,
+          }} size="xs">
+            <Button>Walk</Button>
+            <Button>Drive</Button>
+            <Button>Bike</Button>
+            <Button>Transit</Button>
+          </Button.Group>
+        </Center>
+        <Box mt={2}>
+          {dynamicLocations &&
+          Object.keys(dynamicLocations).map((title, key) => {
+            return (
+              <HStack ml={2} mt={2} space={5} key={key}>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  colorScheme="secondary"
+                  onPress={() => setDynamicLocations(Object.fromEntries(Object.entries(dynamicLocations).filter(([k]) => k !== title)))}>
+                    Remove
+                </Button>
+                <Text fontSize={'2xl'}>{title}</Text>
+              </HStack>
+            );
+          })
+          }
+          <AddLocationButton
+            setDynamicLocations={setDynamicLocations}
+            icon={{
+              size: 'md',
+              alignSelf: 'flex-start',
+              ml: dynamicLocations ? 0 : 2}} />
+        </Box>
+      </VStack>
+    </>
+  );
+}
+
 function AddLocationButton(props) {
   /* ---------------------------------- Props --------------------------------- */
   const {setDynamicLocations} = props;
@@ -249,59 +306,28 @@ function AddLocationButton(props) {
 export default function MapMenu(props) {
   /* ---------------------------------- Props --------------------------------- */
   const {setMapPOIs} = props;
-  const {locations} = props;
 
   /* --------------------------------- States --------------------------------- */
   // Collapsible
   const [isMenuCollapsed, setIsMenuCollapsed] = useState(false);
 
-  // Locations
-  const [dynamicLocations, setDynamicLocations] = useState(locations);
-
   /* -------------------------------- Component ------------------------------- */
   return (
-    <Box ml={2} mt={100}>
+    <Box ml={5} mt={100}>
       <Draggable>
-        <Box>
-          <Button
-            mb={5}
-            onPress={() => setIsMenuCollapsed(!isMenuCollapsed)}>
+        <Button
+          mb={5}
+          onPress={() => setIsMenuCollapsed(!isMenuCollapsed)}>
           Toggle Menu
-          </Button>
-          <Collapsible collapsed={isMenuCollapsed}>
+        </Button>
+        <Collapsible collapsed={isMenuCollapsed}>
+          <Center w={200}>
             <Box variant={'accented'} rounded={10} w={175} h={500}>
-              <Text bold fontSize={'xl'} ml={5} mt={5}>
-                Locations
-              </Text>
-              <Divider/>
-              <VStack>
-                {dynamicLocations &&
-                  Object.keys(dynamicLocations).map((title, key) => {
-                    return (
-                      <HStack ml={2} mt={2} space={5} key={key}>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          colorScheme="secondary"
-                          onPress={() => setDynamicLocations(Object.fromEntries(Object.entries(dynamicLocations).filter(([k]) => k !== title)))}>
-                            Remove
-                        </Button>
-                        <Text fontSize={'2xl'}>{title}</Text>
-                      </HStack>
-                    );
-                  })
-                }
-                <AddLocationButton
-                  setDynamicLocations={setDynamicLocations}
-                  icon={{
-                    size: 'md',
-                    alignSelf: 'flex-start',
-                    ml: dynamicLocations ? 0 : 2}} />
-              </VStack>
-              <PointsOfInterest setMapPOIs={setMapPOIs}/>
+              <LocationSection />
+              <PointsOfInterestSection setMapPOIs={setMapPOIs}/>
             </Box>
-          </Collapsible>
-        </Box>
+          </Center>
+        </Collapsible>
       </Draggable>
     </Box>
   );
