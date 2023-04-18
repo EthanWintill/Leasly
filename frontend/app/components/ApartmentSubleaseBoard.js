@@ -29,7 +29,7 @@ const ApartmentSubleaseBoard = (props) => {
           <Text fontSize={'xl'}>Subleases Available </Text>
           {item.subleaser_id &&
           <>
-            <Image src={`data:image/png;base64,${item.image}`}/>
+            <Image src={`data:image/jpeg;base64,${item.image}`}/>
             <Text> {item.apartment_name}</Text>
             <Text>Poster: {item.subleaser_id}</Text>
             <Text>Floor Plan: {item.bed} bed, {item.bath} bath</Text>
