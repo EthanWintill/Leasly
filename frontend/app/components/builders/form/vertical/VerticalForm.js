@@ -2,14 +2,10 @@ import React from 'react';
 import {
   Box,
   Button,
-  Checkbox,
   Heading,
-  Icon,
   VStack,
 } from 'native-base';
 
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import FormInput from '../components/FormInput';
 import AbstractFormBuilder from './FormBuilder';
 
 /* -------------------------------------------------------------------------- */
@@ -39,23 +35,9 @@ function VerticalForm(props) {
               );
             case 'checkbox':
               return (
-                <>
-                  {element.icon &&
-                    <Checkbox
-                      key={key}
-                      {...element.props}
-                      icon={<Icon as={<MaterialCommunityIcons name={element.icon} />} />}>
-                      {element.text}
-                    </Checkbox>
-                  }
-                  {!element.icon &&
-                    <Checkbox
-                      key={key}
-                      {...element.props}>
-                      {element.text}
-                    </Checkbox>
-                  }
-                </>
+                <React.Fragment key={key}>
+                  {element.formCheckbox}
+                </React.Fragment>
               );
             case 'heading':
               return (

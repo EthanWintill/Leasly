@@ -1,7 +1,7 @@
 import React from 'react';
 import {FormControl, Radio} from 'native-base';
 
-import FormComponent, {AbstractFormComponentBuilder} from './FormComponent';
+import {AbstractFormComponentBuilder} from './FormComponent';
 
 /* -------------------------------------------------------------------------- */
 /*                                  Component                                 */
@@ -44,11 +44,12 @@ class FormRadioBuilder extends AbstractFormComponentBuilder {
     this.listener = listener;
   }
 
-  radio(invalidConditions, props) {
+  radio(text, invalidConditions, props) {
     props = this.getOrCreateProps(props);
     props.errorsOn = invalidConditions;
     this.elements.push({
       element: 'radio',
+      text,
       props,
     });
     return this;

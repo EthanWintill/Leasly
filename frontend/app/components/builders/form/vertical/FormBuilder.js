@@ -1,4 +1,5 @@
 import AbstractComponentBuilder from '../../AbstractComponentBuilder';
+import { FormCheckboxBuilder } from '../components/FormCheckbox';
 import {FormInputBuilder} from '../components/FormInput';
 
 /**
@@ -87,6 +88,17 @@ export default class AbstractFormBuilder extends AbstractComponentBuilder {
     this.elements.push({
       element: 'input',
       formInput,
+    });
+    return this;
+  }
+
+  addCheckbox(formCheckbox) {
+    if (formCheckbox instanceof FormCheckboxBuilder) {
+      formCheckbox = formCheckbox.build();
+    }
+    this.elements.push({
+      element: 'checkbox',
+      formCheckbox,
     });
     return this;
   }

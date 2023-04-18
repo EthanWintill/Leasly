@@ -1,3 +1,4 @@
+import { FormCheckboxBuilder } from './components/FormCheckbox';
 import {FormInputBuilder} from './components/FormInput';
 import {FormRadioBuilder} from './components/FormRadio';
 import {VerticalFormBuilder} from './vertical/VerticalForm';
@@ -13,6 +14,16 @@ export default class FormBuilders {
     if (this.constructor === FormBuilders) {
       throw new Error('Abstract classes can\'t be instantiated.');
     }
+  }
+
+  /**
+   * Creates a new {@link FormCheckboxBuilder}.
+   *
+   * @param {Map} props
+   * @return {FormCheckboxBuilder}
+   */
+  static Checkbox(props) {
+    return new FormCheckboxBuilder(props);
   }
 
   /**
