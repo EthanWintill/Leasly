@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {ImageBackground} from 'react-native';
 import {
   Button,
@@ -10,17 +10,35 @@ import {
 } from 'native-base';
 
 import backgroundImage from '../../../assets/backgrounds/school.jpg';
+import ApartmentCarousel from '../../components/Apartment Carousel';
 
 function HomePage(props) {
   const {navigation} = props;
 
-  // text-shadow: -1px 1px 10px rgba(0, 0, 0, 0.75)
+
+  const [data, setdata] = useState({
+    listings: [],
+  });
+
+  // Using useEffect for single rendering
+  useEffect(() => {
+    // Using fetch to fetch the api from
+    // flask server it will be redirected to proxy
+    fetch('https://leaslybackend.herokuapp.com/api/sublets?sort_by=date_dec').then((res) =>
+      res.json().then((sublets) => {
+        // Setting a data from api
+        // only one listing rn, feel free to add some
+        setdata({
+          listings: sublets,
+        });
+      }),
+    );
+  }, []);
 
   const jumbo = {
-    mt: '4%',
-    pt: '14rem',
+    pt: '12rem',
     width: '100%',
-    height: '40rem',
+    height: '30rem',
   };
 
   const titleText = {
@@ -38,13 +56,9 @@ function HomePage(props) {
           </Center>
         </Flex>
       </ImageBackground>
-
-      {/* Carousel listing recent postings? Not necessary at all btw*/}
-
-      {/**/}
-
+      <ApartmentCarousel navigation={navigation} listings={data.listings}/>
       <Center>
-        <HStack space={10}>
+        <HStack mt={10} space={10}>
           <Button onPress={() => navigation.navigate('addApartment')}>Create a New Listing</Button>
           <Button onPress={() => navigation.navigate('allApartments')}>View All Apartments</Button>
         </HStack>

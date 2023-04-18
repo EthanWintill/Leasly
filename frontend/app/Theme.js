@@ -298,7 +298,6 @@ const Theme = extendTheme({
   },
   components: {
     View: ViewTheme,
-    ScrollView: ScrollViewTheme,
     Box: BoxTheme,
     Center: CenterTheme,
     VStack: VStackTheme,
