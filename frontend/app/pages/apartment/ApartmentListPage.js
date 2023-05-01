@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import testur from '../../../assets/apartments/apartment.jpg';
 import './ApartmentListPage.css';
+import { apts } from '../../util/FirebaseFuncs';
 
 export default function ApartmentListPage(props) {
   const [allApartmentsArr, setAllApartmentsArr] = useState([]);
@@ -18,13 +19,15 @@ export default function ApartmentListPage(props) {
     );
   }, []);
 
+
   const {navigation} = props;
   return (
     <div className="mainContainer">
       <div className="listContainer">
         {allApartmentsArr.map((apartment) =>
           <div className="apartmentCard" key={apartment.name}>
-            <img src={testur} alt="n/a" />
+            
+            <img src={apts.where("name", "==", apartment.name).image} alt="n/a" />
             <p>{apartment.name}</p>
             {/* on click, get the apartments name and pass that as a  prop to apartmntview.js.
                       or pass the apartments name itself to navigate("")*/}
