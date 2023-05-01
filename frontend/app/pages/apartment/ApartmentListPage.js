@@ -22,7 +22,7 @@ export default function ApartmentListPage(props) {
 
   const {navigation} = props;
   return (
-    <div className="mainContainer">
+    <div className="mainContainer"> 
       <div className="listContainer">
         {allApartmentsArr.map((apartment) =>
           <div className="apartmentCard" key={apartment.name}> 
