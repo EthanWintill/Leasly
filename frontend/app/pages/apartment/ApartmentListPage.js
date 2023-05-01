@@ -25,7 +25,7 @@ export default function ApartmentListPage(props) {
     <div className="mainContainer">
       <div className="listContainer">
         {allApartmentsArr.map((apartment) =>
-          <div className="apartmentCard" key={apartment.name}>
+          <div className="apartmentCard" key={apartment.name}> 
             
             <img src={apts.where("name", "==", apartment.name).image} alt="n/a" />
             <p>{apartment.name}</p>
