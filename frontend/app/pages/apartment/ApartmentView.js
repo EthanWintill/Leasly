@@ -5,8 +5,9 @@ import {MaterialIcons} from 'react-native-vector-icons';
 // import {View} from 'native-base';
 import ApartmentReviews from '../../components/ApartmentReviews';
 import ApartmentSubleaseBoard from '../../components/ApartmentSubleaseBoard';
-import testur from '../../../assets/apartments/apartment.jpg';
+//import testur from '../../../assets/apartments/apartment.jpg';
 import './ApartmentView.css';
+import { apts } from '../../util/FirebaseFuncs';
 
 /* needed functions
         - add image links
@@ -51,7 +52,7 @@ export default function ViewApartmentPage({ }) {
     {/* View goes here, but i don't know how to make this one specifically light themed*/ },
     <div className="aptmntViewContainer">
       <div className="apartmentInfoContainer">
-        <img className="apartmentImage" src={testur} />
+        <img className="apartmentImage" src={apts.where("name", "==", apartment.name).image} />
         <div className="apartmentInfo">
           <p className="apartmentName"> {info.name}</p>
           <p> Rating</p>

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-import testur from '../../../assets/apartments/apartment.jpg';
+
 import './ApartmentListPage.css';
 import { apts } from '../../util/FirebaseFuncs';
 
